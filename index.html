@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>SentinelHQ – Web3 Risk Intelligence Engine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="SentinelHQ is an AI-powered Web3 risk intelligence engine. Real-time token risk scores, VC & whale tracking, and event monitoring for exchanges, funds and regulators." />
+
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bg: "#050816",
+                        card: "#0b1020",
+                        accent: "#38bdf8",
+                        accent2: "#a855f7",
+                        soft: "#1f2937"
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="h-full bg-bg text-gray-100">
+    <!-- 背景渐变装饰 -->
+    <div class="pointer-events-none fixed inset-0 -z-10 bg-gradient-to-b from-bg via-bg to-black"></div>
+    <div
+        class="pointer-events-none fixed inset-x-0 top-0 -z-10 h-64 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.25),_transparent_60%)]">
+    </div>
+
+    <!-- 页面容器 -->
+    <div class="min-h-screen flex flex-col">
+        <!-- 顶部导航 -->
+        <header class="border-b border-gray-800/60 backdrop-blur bg-bg/80 sticky top-0 z-40">
+            <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+                <a href="/" class="flex items-center gap-2">
+                    <div
+                        class="h-8 w-8 rounded-xl bg-gradient-to-tr from-accent to-accent2 flex items-center justify-center text-xs font-bold">
+                        SHQ
+                    </div>
+                    <div>
+                        <div class="font-semibold tracking-wide">SentinelHQ</div>
+                        <div class="text-xs text-gray-400">Web3 Risk Intelligence Engine</div>
+                    </div>
+                </a>
+
+                <nav class="hidden md:flex items-center gap-6 text-sm text-gray-300">
+                    <a href="#product" class="hover:text-white">Product</a>
+                    <a href="#use-cases" class="hover:text-white">Use cases</a>
+                    <a href="#technology" class="hover:text-white">Technology</a>
+                    <a href="#contact" class="hover:text-white">Contact</a>
+                    <a href="/demo.html"
+                        class="ml-4 inline-flex items-center rounded-full bg-accent px-4 py-1.5 text-sm font-medium text-black hover:bg-sky-400 transition">
+                        View Demo
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- 主内容 -->
+        <main class="flex-1">
+            <!-- Hero 区 -->
+            <section class="mx-auto max-w-6xl px-4 pt-12 pb-14">
+                <div class="grid gap-10 md:grid-cols-2 items-center">
+                    <div>
+                        <p
+                            class="inline-flex items-center rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-xs font-medium text-accent mb-4">
+                            DeepTech · Web3 Risk & Intelligence
+                        </p>
+
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight">
+                            AI-powered
+                            <span class="bg-gradient-to-r from-accent to-accent2 bg-clip-text text-transparent">
+                                Web3 Risk Intelligence Engine
+                            </span>
+                            for exchanges, funds & regulators.
+                        </h1>
+
+                        <p class="mt-5 text-sm sm:text-base text-gray-300 leading-relaxed">
+                            SentinelHQ aggregates on-chain data, CEX announcements, VC & whale activity and social
+                            signals.
+                            Our engine scores token risk in real time and generates human-readable alerts for risk,
+                            compliance
+                            and trading teams.
+                        </p>
+
+                        <div class="mt-6 flex flex-wrap items-center gap-3">
+                            <a href="/demo.html"
+                                class="inline-flex items-center justify-center rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-black hover:bg-sky-400 transition shadow-lg shadow-sky-500/30">
+                                View interactive demo
+                            </a>
+                            <button type="button"
+                                class="inline-flex items-center justify-center rounded-full border border-gray-600/70 px-5 py-2.5 text-sm font-medium text-gray-200 hover:border-gray-400/80 hover:bg-soft/60 transition">
+                                Download technical overview (soon)
+                            </button>
+                        </div>
+
+                        <dl class="mt-8 grid grid-cols-2 gap-4 text-xs sm:text-sm">
+                            <div class="rounded-xl border border-gray-800 bg-card/80 px-4 py-3">
+                                <dt class="text-gray-400">Chains & data sources</dt>
+                                <dd class="mt-1 font-semibold text-white">Multi-chain · CEX · Social · VC</dd>
+                            </div>
+                            <div class="rounded-xl border border-gray-800 bg-card/80 px-4 py-3">
+                                <dt class="text-gray-400">Use cases</dt>
+                                <dd class="mt-1 font-semibold text-white">Listing risk, fund risk, AML/KYT</dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <!-- 右侧：Dashboard 示意卡片 -->
+                    <div class="relative">
+                        <div
+                            class="absolute -top-6 -right-6 h-32 w-32 rounded-full bg-gradient-to-tr from-accent/30 to-accent2/40 blur-3xl opacity-60">
+                        </div>
+                        <div
+                            class="relative rounded-2xl border border-gray-800 bg-card/90 p-4 shadow-xl shadow-black/60">
+                            <div class="flex items-center justify-between text-xs text-gray-400 mb-3">
+                                <span>Live Monitoring Snapshot</span>
+                                <span class="flex items-center gap-1">
+                                    <span class="h-2 w-2 rounded-full bg-green-400 animate-pulse"></span>
+                                    Realtime feed
+                                </span>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-3 text-xs">
+                                <div class="rounded-xl bg-soft/80 p-3">
+                                    <div class="text-gray-400">Active Tokens</div>
+                                    <div class="mt-1 text-xl font-semibold text-white">12</div>
+                                    <div class="mt-1 text-[11px] text-emerald-400">4 new in last 24h</div>
+                                </div>
+                                <div class="rounded-xl bg-soft/80 p-3">
+                                    <div class="text-gray-400">High-Risk Alerts</div>
+                                    <div class="mt-1 text-xl font-semibold text-white">2</div>
+                                    <div class="mt-1 text-[11px] text-amber-400">CEX inflow spike</div>
+                                </div>
+                                <div class="rounded-xl bg-soft/80 p-3">
+                                    <div class="text-gray-400">VC Projects</div>
+                                    <div class="mt-1 text-xl font-semibold text-white">5</div>
+                                    <div class="mt-1 text-[11px] text-sky-400">Tier-1 & Tier-2</div>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 rounded-xl border border-gray-700 bg-bg/60 p-3 text-xs">
+                                <div class="flex items-center justify-between text-gray-400 mb-2">
+                                    <span>Signals (24h)</span>
+                                    <span>Score · Risk · Source</span>
+                                </div>
+                                <div class="space-y-1">
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-mono text-[11px] text-gray-300">SOON / ETH</span>
+                                        <span class="flex items-center gap-3">
+                                            <span
+                                                class="rounded-full bg-emerald-500/15 px-2 py-0.5 text-[11px] text-emerald-300">Score
+                                                85</span>
+                                            <span
+                                                class="rounded-full bg-red-500/15 px-2 py-0.5 text-[11px] text-red-300">High</span>
+                                            <span class="text-[11px] text-gray-400">LookOnChain</span>
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-mono text-[11px] text-gray-300">TGT / BSC</span>
+                                        <span class="flex items-center gap-3">
+                                            <span
+                                                class="rounded-full bg-emerald-500/15 px-2 py-0.5 text-[11px] text-emerald-300">Score
+                                                62</span>
+                                            <span
+                                                class="rounded-full bg-amber-500/15 px-2 py-0.5 text-[11px] text-amber-300">Medium</span>
+                                            <span class="text-[11px] text-gray-400">Twitter</span>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="mt-3 rounded-lg bg-soft/80 p-2 text-[11px] text-gray-200">
+                                    <div class="mb-1 text-[11px] font-semibold text-gray-100">AI Insight (preview)</div>
+                                    <p>
+                                        Model summary: SOON shows unusual CEX inflows from VC-linked wallets and
+                                        price/volume divergence. Recommended: raise listing risk and monitor closely.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Product 模块 -->
+            <section id="product" class="border-t border-gray-800/60 bg-black/20 py-12">
+                <div class="mx-auto max-w-6xl px-4">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-6">Product modules</h2>
+
+                    <div class="grid gap-6 md:grid-cols-3 text-sm">
+                        <!-- Risk Score SaaS -->
+                        <article class="rounded-2xl border border-gray-800 bg-card/80 p-5 flex flex-col">
+                            <h3 class="text-base font-semibold mb-2">Risk Score SaaS</h3>
+                            <p class="text-gray-300">
+                                Real-time risk scores for tokens, addresses and projects. Combine on-chain
+                                behavior, price action, liquidity, and social signals into a single score.
+                            </p>
+                            <ul class="mt-3 space-y-1 text-xs text-gray-300">
+                                <li>• Per-token & per-wallet risk scores</li>
+                                <li>• Configurable thresholds for CEX listing / delisting</li>
+                                <li>• REST API & dashboard views</li>
+                            </ul>
+                            <div class="mt-4 text-xs text-gray-400">Model: subscription per seat / per token universe.
+                            </div>
+                        </article>
+
+                        <!-- Token Intelligence API -->
+                        <article class="rounded-2xl border border-gray-800 bg-card/80 p-5 flex flex-col">
+                            <h3 class="text-base font-semibold mb-2">Token Intelligence API</h3>
+                            <p class="text-gray-300">
+                                A unified feed of token-related events: exchange announcements, listings, VC rounds,
+                                liquidity changes and protocol news.
+                            </p>
+                            <ul class="mt-3 space-y-1 text-xs text-gray-300">
+                                <li>• Event timeline & normalized metadata</li>
+                                <li>• AI-generated summaries for each event</li>
+                                <li>• Usage-based API pricing</li>
+                            </ul>
+                            <div class="mt-4 text-xs text-gray-400">Model: pay-per-call / enterprise packages.</div>
+                        </article>
+
+                        <!-- Whale & VC Insight -->
+                        <article class="rounded-2xl border border-gray-800 bg-card/80 p-5 flex flex-col">
+                            <h3 class="text-base font-semibold mb-2">Whale & VC Insight</h3>
+                            <p class="text-gray-300">
+                                Track key VC and whale wallets across chains. Detect accumulation, distribution and
+                                CEX inflow patterns early.
+                            </p>
+                            <ul class="mt-3 space-y-1 text-xs text-gray-300">
+                                <li>• Curated VC & whale address lists</li>
+                                <li>• Clustered behavior & smart alerts</li>
+                                <li>• Telegram / email / webhook integration</li>
+                            </ul>
+                            <div class="mt-4 text-xs text-gray-400">Model: Pro & Enterprise tiers.</div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Use cases -->
+            <section id="use-cases" class="py-12">
+                <div class="mx-auto max-w-6xl px-4">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-6">Who is SentinelHQ for?</h2>
+
+                    <div class="grid gap-6 md:grid-cols-4 text-xs sm:text-sm">
+                        <div class="rounded-2xl border border-gray-800 bg-card/80 p-4">
+                            <h3 class="font-semibold mb-1">Centralized exchanges</h3>
+                            <p class="text-gray-300">
+                                Listing committees, market surveillance and risk teams that need automatic red flags
+                                before and after listing a token.
+                            </p>
+                        </div>
+                        <div class="rounded-2xl border border-gray-800 bg-card/80 p-4">
+                            <h3 class="font-semibold mb-1">Crypto funds & family offices</h3>
+                            <p class="text-gray-300">
+                                Portfolio monitoring, early exit alerts and risk scoring for potential investments and
+                                existing positions.
+                            </p>
+                        </div>
+                        <div class="rounded-2xl border border-gray-800 bg-card/80 p-4">
+                            <h3 class="font-semibold mb-1">DeFi protocols & L2 projects</h3>
+                            <p class="text-gray-300">
+                                Treasury monitoring, governance token risk, and ecosystem-wide event detection.
+                            </p>
+                        </div>
+                        <div class="rounded-2xl border border-gray-800 bg-card/80 p-4">
+                            <h3 class="font-semibold mb-1">Regulators & compliance</h3>
+                            <p class="text-gray-300">
+                                A technical layer to support AML / KYT processes with transparent explanations per
+                                alert, not just black-box scores.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technology teaser -->
+            <section id="technology" class="border-t border-gray-800/60 bg-black/20 py-12">
+                <div class="mx-auto max-w-6xl px-4">
+                    <div class="grid gap-8 md:grid-cols-2 items-center">
+                        <div>
+                            <h2 class="text-xl sm:text-2xl font-semibold mb-3">DeepTech architecture</h2>
+                            <p class="text-sm text-gray-300 mb-4">
+                                Behind the demo, SentinelHQ runs a modular monitoring engine: multi-source data
+                                ingestion,
+                                strategy and simulation layer, and AI-based signal ranking and explanation.
+                            </p>
+                            <ul class="space-y-1 text-xs text-gray-300">
+                                <li>• Ingestion: Twitter / CEX announcements / on-chain events / VC wallets</li>
+                                <li>• Strategy: volatility & trend detectors, whale & VC cluster tracker</li>
+                                <li>• AI: DeepSeek / GPT for classification, scoring support & natural language insights
+                                </li>
+                                <li>• Delivery: REST APIs, web dashboard and webhook alerts</li>
+                            </ul>
+                        </div>
+                        <div class="rounded-2xl border border-gray-800 bg-card/80 p-4 text-xs text-gray-300">
+                            <div class="font-semibold text-gray-100 mb-2">Designed for i-Lab level DeepTech</div>
+                            <p>
+                                SentinelHQ is not a trading bot. It is an intelligence and risk analysis engine that can
+                                serve as infrastructure for exchanges, funds and regulators.
+                            </p>
+                            <p class="mt-2">
+                                The system is built around reproducible pipelines, simulation tools and explainable AI
+                                to
+                                meet institutional requirements.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact -->
+            <section id="contact" class="py-10">
+                <div class="mx-auto max-w-6xl px-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div>
+                        <h2 class="text-lg font-semibold">Get in touch</h2>
+                        <p class="mt-1 text-sm text-gray-300">
+                            Preparing for 2026 i-Lab and looking for design partners (CEX / fund / L2 project).
+                        </p>
+                    </div>
+                    <div class="text-sm text-gray-300">
+                        <div>Email: <span class="font-mono">contact@sentinelhq.io</span> (placeholder)</div>
+                        <div class="mt-1">Location: France · EU</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="border-t border-gray-800/60 py-4 text-center text-xs text-gray-500">
+            © <span id="year"></span> SentinelHQ. Web3 Risk Intelligence Engine.
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
