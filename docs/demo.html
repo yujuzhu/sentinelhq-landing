@@ -6,128 +6,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SentinelHQ – Live Monitoring Demo</title>
 
-    <!-- Optional local additional CSS -->
-    <link rel="stylesheet" href="./index.css" />
-
-    <!-- Main Tailwind + Vite build stylesheet -->
+    <!-- 加载构建后的 CSS（Tailwind + index.css 的最终版本） -->
     <link rel="stylesheet" href="/sentinelhq-landing/assets/index-FVwtFQ7y.css" />
 </head>
+
 
 <!-- Global deep theme + improved readability -->
 
 <body class="bg-[#0A0F1C] text-white antialiased">
 
-    <!-- Top Header -->
-    <header class="px-4 md:px-6 pt-10 pb-14 md:pb-16 max-w-5xl mx-auto">
-        <div class="flex items-center gap-3 mb-6">
-            <div class="w-8 h-8 rounded-xl bg-sky-500 flex items-center justify-center font-bold">SHQ</div>
-            <div class="text-lg font-semibold">SentinelHQ</div>
-            <div class="text-slate-400 text-sm">Demo</div>
-        </div>
+    <header class="border-b border-white/5 bg-gradient-to-b from-slate-950/70 to-transparent">
+        <div class="max-w-6xl mx-auto px-4 md:px-6 pt-8 pb-10 md:pb-14">
 
-        <!-- Responsive heading -->
-        <h1 class="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-            Live Monitoring Demo
-        </h1>
+            <!-- 顶部品牌行 -->
+            <div class="flex items-center gap-2 text-xs text-slate-300 mb-6">
+                <div
+                    class="w-8 h-8 rounded-xl bg-sky-500 flex items-center justify-center font-bold text-[11px] tracking-tight">
+                    SHQ
+                </div>
+                <span class="font-semibold">SentinelHQ</span>
+                <span class="text-slate-500">Demo</span>
+            </div>
 
-        <!-- FR highlight tag -->
-        <p class="mt-2 inline-flex items-center gap-2 text-xs text-sky-100 bg-sky-500/15 px-3 py-1 rounded-full">
-            <span class="text-[10px] font-semibold uppercase tracking-wide text-sky-300">FR · i-Lab</span>
-            <span>Version de démonstration (FR/EN) conçue pour le dossier i-Lab.</span>
-        </p>
+            <!-- 小标题 + 主标题 -->
+            <p class="text-[11px] font-semibold tracking-[0.25em] text-sky-400 uppercase mb-3">
+                Web3 Risk Intelligence Engine
+            </p>
 
-        <!-- FR paragraph -->
-        <p class="mt-4 text-sm md:text-base text-slate-200 leading-relaxed">
-            Prototype du moteur d’intelligence Web3 (IA & cybersécurité), aligné avec les priorités France 2030.
-        </p>
+            <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-4">
+                Live Monitoring Demo
+            </h1>
 
-        <!-- EN paragraph -->
-        <p class="mt-3 text-sm md:text-base text-slate-400 leading-relaxed">
-            This demo illustrates how SentinelHQ aggregates token signals, calculates risk scores and generates AI
-            insights.
-            The screenshots are based on our internal Retool dashboard used to prototype the Web3 Risk Intelligence
-            Engine.
-        </p>
+            <!-- 法语注解区域：整体偏蓝，和英文明显区分 -->
+            <div class="space-y-2 mb-4">
+                <!-- FR Tag -->
+                <p class="inline-flex items-center gap-2 text-xs text-sky-100 bg-sky-500/15 px-3 py-1 rounded-full">
+                    <span class="text-[10px] font-semibold uppercase tracking-wide text-sky-300">FR · i-Lab</span>
+                    <span>Version de démonstration (FR/EN) conçue pour le dossier i-Lab.</span>
+                </p>
 
-        <!-- Badges -->
-        <div class="flex flex-wrap gap-3 mt-6 text-xs">
-            <span class="px-3 py-1 rounded-full bg-sky-500/10 text-sky-300">AI-powered</span>
-            <span class="px-3 py-1 rounded-full bg-sky-500/10 text-sky-300">Web3 Security</span>
-            <span class="px-3 py-1 rounded-full bg-sky-500/10 text-sky-300">Real-time Monitoring</span>
-            <span class="px-3 py-1 rounded-full bg-sky-500/10 text-sky-300">SaaS Prototype</span>
+                <!-- FR 主说明，整行偏蓝展示（评委一眼看出是法语解释） -->
+                <p class="text-sm md:text-base text-sky-200 leading-relaxed">
+                    Prototype du moteur d’intelligence Web3 (IA & cybersécurité), aligné avec les priorités France 2030.
+                </p>
+            </div>
+
+            <!-- 英文说明（偏中性灰） -->
+            <p class="text-sm md:text-base text-slate-300 leading-relaxed max-w-4xl">
+                This demo illustrates how SentinelHQ aggregates token signals, calculates risk scores and generates AI
+                insights.
+                The screenshots are based on our internal Retool dashboard used to prototype the Web3 Risk Intelligence
+                Engine.
+            </p>
+
+            <!-- 高亮标签 -->
+            <div class="flex flex-wrap gap-3 mt-6 text-xs">
+                <span class="px-3 py-1 rounded-full bg-sky-500/10 text-sky-300">AI-powered</span>
+                <span class="px-3 py-1 rounded-full bg-sky-500/10 text-sky-300">Web3 Security</span>
+                <span class="px-3 py-1 rounded-full bg-sky-500/10 text-sky-300">Real-time Monitoring</span>
+                <span class="px-3 py-1 rounded-full bg-sky-500/10 text-sky-300">SaaS Prototype</span>
+            </div>
         </div>
     </header>
 
-    <!-- Main Container -->
-    <main class="max-w-5xl mx-auto px-4 md:px-6 pb-20 md:pb-24">
+    <main class="max-w-6xl mx-auto px-4 md:px-6 pb-20 md:pb-24">
 
-        <!-- Dashboard views section -->
-        <section id="screens">
-            <h2 class="text-2xl md:text-3xl font-semibold mb-6">Dashboard views</h2>
+        <!-- 顶部说明部分（在你的第一个表格之前） -->
+        <section class="pt-6 md:pt-8">
+            <h2 class="text-xs font-semibold tracking-[0.22em] text-slate-400 uppercase mb-1">
+                Dashboard views
+            </h2>
 
-            <p class="text-sm md:text-base text-slate-400 mb-10 leading-relaxed">
-                Replace the grey placeholders below with your own screenshots from Retool.
-                For investors and i-Lab judges, these three views already show the core logic of the engine.
+            <p class="text-sm md:text-base text-slate-300 mb-4 leading-relaxed">
+                Replace the grey placeholders below with your own screenshots from Retool. For investors and i-Lab
+                judges,
+                these views already show the core logic of the engine.
             </p>
 
-            <!-- BLOCK 1 -->
-            <div class="mb-14 md:mb-16">
-                <h3 class="text-lg md:text-xl font-semibold mb-1">1. Overview – Signals & KPIs</h3>
+            <!-- FR 解释条：法语高亮 -->
+            <p
+                class="inline-flex items-center gap-2 text-[11px] text-sky-100 bg-sky-500/20 px-3 py-1 rounded-full mb-2">
+                <span class="font-semibold tracking-wide text-sky-300 uppercase text-[10px]">FR · Vue d’ensemble</span>
+                <span>Vue d’ensemble du moteur de signaux — activité des tokens, volume de signaux et alertes à haut
+                    risque.</span>
+            </p>
 
-                <p
-                    class="text-xs text-sky-100 bg-sky-500/15 inline-flex items-center gap-2 px-3 py-1 rounded-full mb-3">
-                    <span class="text-[10px] font-semibold uppercase tracking-wide text-sky-300">FR</span>
-                    <span>Vue d’ensemble du moteur de signaux — activité des tokens, volume de signaux et alertes à haut
-                        risque.</span>
-                </p>
+            <!-- 英文解释：保持中性灰 -->
+            <p class="text-sm md:text-base text-slate-300 mt-2 mb-4 leading-relaxed">
+                High-level view of active tokens, signal volume in the last 24h, and high-risk alerts.
+            </p>
+        </section>
 
-                <p class="text-sm md:text-base text-slate-400 mb-4 leading-relaxed">
-                    High-level view of active tokens, signal volume in the last 24h, and high-risk alerts.
-                </p>
+        <!-- ⬇️ 从这里开始，保留你现在已有的第一个表格及后面所有内容，不需要动 ⬇️ -->
+        <!-- 你的 <table> ... Signals / How the demo is powered / From demo to product 等全部保持原样 -->
 
-                <img src="./images/overview.png" alt="Dashboard overview"
-                    class="w-full rounded-xl shadow-lg max-h-[480px] md:max-h-full object-cover" />
-            </div>
 
-            <!-- BLOCK 2 -->
-            <div class="mb-14 md:mb-16">
-                <h3 class="text-lg md:text-xl font-semibold mb-1">2. Token detail + AI insight panel</h3>
+        <img src="./images/overview.png" alt="Dashboard overview"
+            class="w-full rounded-xl shadow-lg max-h-[480px] md:max-h-full object-cover" />
+        </div>
 
-                <p
-                    class="text-xs text-sky-100 bg-sky-500/15 inline-flex items-center gap-2 px-3 py-1 rounded-full mb-3">
-                    <span class="text-[10px] font-semibold uppercase tracking-wide text-sky-300">FR</span>
-                    <span>Analyse détaillée d’un token — métriques, source des signaux et explication automatique
-                        générée par l’IA.</span>
-                </p>
+        <!-- BLOCK 2 -->
+        <div class="mb-14 md:mb-16">
+            <h3 class="text-lg md:text-xl font-semibold mb-1">2. Token detail + AI insight panel</h3>
 
-                <p class="text-sm md:text-base text-slate-400 mb-4 leading-relaxed">
-                    Drill-down view for a single token, showing metrics, source information and an AI-generated
-                    explanation of the risk.
-                </p>
+            <p class="text-xs text-sky-100 bg-sky-500/15 inline-flex items-center gap-2 px-3 py-1 rounded-full mb-3">
+                <span class="text-[10px] font-semibold uppercase tracking-wide text-sky-300">FR</span>
+                <span>Analyse détaillée d’un token — métriques, source des signaux et explication automatique
+                    générée par l’IA.</span>
+            </p>
 
-                <img src="./images/token-detail.png" alt="Token detail panel"
-                    class="w-full rounded-xl shadow-lg max-h-[480px] md:max-h-full object-cover" />
-            </div>
+            <p class="text-sm md:text-base text-slate-400 mb-4 leading-relaxed">
+                Drill-down view for a single token, showing metrics, source information and an AI-generated
+                explanation of the risk.
+            </p>
 
-            <!-- BLOCK 3 -->
-            <div class="mb-16 md:mb-20">
-                <h3 class="text-lg md:text-xl font-semibold mb-1">3. Watchlist & alert logs</h3>
+            <img src="./images/token-detail.png" alt="Token detail panel"
+                class="w-full rounded-xl shadow-lg max-h-[480px] md:max-h-full object-cover" />
+        </div>
 
-                <p
-                    class="text-xs text-sky-100 bg-sky-500/15 inline-flex items-center gap-2 px-3 py-1 rounded-full mb-3">
-                    <span class="text-[10px] font-semibold uppercase tracking-wide text-sky-300">FR</span>
-                    <span>Suivi temporel des tokens — historique des alertes et préparation aux intégrations Telegram /
-                        webhook.</span>
-                </p>
+        <!-- BLOCK 3 -->
+        <div class="mb-16 md:mb-20">
+            <h3 class="text-lg md:text-xl font-semibold mb-1">3. Watchlist & alert logs</h3>
 
-                <p class="text-sm md:text-base text-slate-400 mb-4 leading-relaxed">
-                    Time-series view of tracked tokens, alert history, and readiness for Telegram / email / webhook
-                    integrations.
-                </p>
+            <p class="text-xs text-sky-100 bg-sky-500/15 inline-flex items-center gap-2 px-3 py-1 rounded-full mb-3">
+                <span class="text-[10px] font-semibold uppercase tracking-wide text-sky-300">FR</span>
+                <span>Suivi temporel des tokens — historique des alertes et préparation aux intégrations Telegram /
+                    webhook.</span>
+            </p>
 
-                <img src="./images/watchlist.png" alt="Watchlist and alerts"
-                    class="w-full rounded-xl shadow-lg max-h-[480px] md:max-h-full object-cover" />
-            </div>
+            <p class="text-sm md:text-base text-slate-400 mb-4 leading-relaxed">
+                Time-series view of tracked tokens, alert history, and readiness for Telegram / email / webhook
+                integrations.
+            </p>
+
+            <img src="./images/watchlist.png" alt="Watchlist and alerts"
+                class="w-full rounded-xl shadow-lg max-h-[480px] md:max-h-full object-cover" />
+        </div>
         </section>
 
         <!-- Powering + Product -->
