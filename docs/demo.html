@@ -15,23 +15,16 @@
 
 <body class="bg-[#0A0F1C] text-white antialiased">
 
-    <header class="border-b border-white/10 bg-gradient-to-b from-slate-950/80 to-slate-900/60">
-        <div class="max-w-6xl mx-auto px-4 md:px-6 py-5 flex items-center justify-between">
-            <!-- 左侧 Logo + 名称 -->
-            <div class="flex items-center gap-3">
-                <div
-                    class="h-9 w-9 rounded-xl bg-gradient-to-tr from-sky-500 to-cyan-400 flex items-center justify-center text-xs font-bold">
-                    SHQ
+    <header class="border-b border-white/10 bg-slate-950/80">
+        <div class="max-w-6xl mx-auto px-4 md:px-6 py-4 flex items-center">
+            <!-- 只保留品牌 + 副标题 -->
+            <div class="leading-tight">
+                <div class="text-xl font-semibold text-white">
+                    SentinelHQ
                 </div>
-                <div class="leading-tight">
-                    <div class="font-semibold text-sm md:text-base">SentinelHQ</div>
-                    <div class="text-xs text-slate-400">Demo</div>
+                <div class="text-sm text-slate-400">
+                    Web3 Risk Intelligence Engine
                 </div>
-            </div>
-
-            <!-- 右侧预留（可以留空，后面想加链接也方便） -->
-            <div class="hidden md:flex items-center gap-4 text-xs text-slate-400">
-                <span class="uppercase tracking-[0.18em] text-slate-500">Live Monitoring</span>
             </div>
         </div>
     </header>
@@ -44,7 +37,7 @@
         </p>
 
         <!-- 主标题 -->
-        <h1 class="text-3xl md:text-4xl font-bold leading-tight text-white mb-5">
+        <h1 class="text-3xl md:text-[32px] font-bold leading-tight text-white mb-5">
             Live Monitoring Demo
         </h1>
 
@@ -97,10 +90,11 @@
         these views already show the core logic of the engine.
     </p>
 
+    <!-- FR 解释条：法语高亮 -->
     <p
         class="inline-flex items-center gap-2 text-sm px-3 py-1 rounded-full bg-sky-600/10 border border-sky-500/20 text-sky-200 mb-3">
         <span class="text-[11px] font-bold uppercase tracking-wide text-sky-300">
-            FR · Vue d’ensemble
+            FR ·
         </span>
         <span>
             Vue d’ensemble du moteur de signaux — activité des tokens, volume de signaux et alertes à haut risque.
