@@ -73,8 +73,9 @@ function Hero() {
 
         <div className="flex flex-wrap items-center gap-3 mb-6">
           <a
-            href="#demo"
-            className="px-4 py-2 rounded-full bg-brand-500 hover:bg-brand-600 text-xs font-medium text-white shadow-soft"
+            href="./demo.html"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             观看实时 Demo
           </a>
