@@ -8,6 +8,89 @@
 
     <!-- 加载构建后的 CSS（Tailwind + index.css 的最终版本） -->
     <link rel="stylesheet" href="/sentinelhq-landing/assets/index-FVwtFQ7y.css" />
+
+    <style>
+      /* =========================
+         SentinelHQ Demo — KPI Capsule UI (stable, no Tailwind dependency)
+         ========================= */
+      .kpiGrid{
+        display:grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap:16px;
+        align-items:stretch;
+      }
+      @media (max-width: 980px){
+        .kpiGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      }
+      @media (max-width: 560px){
+        .kpiGrid{ grid-template-columns: 1fr; }
+      }
+
+      .kpiCard{
+        background: linear-gradient(180deg, rgba(17,24,39,.78), rgba(15,23,42,.62));
+        border: 1px solid rgba(255,255,255,.10);
+        border-radius: 22px;
+        padding: 18px 18px;
+        min-height: 178px;
+        display:flex;
+        flex-direction:column;
+        box-shadow:
+          0 0 0 1px rgba(255,255,255,.03),
+          inset 0 0 0 1px rgba(6,182,212,.06);
+      }
+      .kpiCard:hover{
+        border-color: rgba(6,182,212,.25);
+        box-shadow:
+          0 0 0 1px rgba(255,255,255,.03),
+          inset 0 0 0 1px rgba(6,182,212,.10),
+          0 10px 26px rgba(0,0,0,.35);
+      }
+
+      .kpiTitle{
+        text-align:center;
+        font-weight: 800;
+        font-size: 16px;
+        letter-spacing: -0.01em;
+        color:#fff;
+      }
+      .kpiMetric{
+        text-align:center;
+        font-size:12px;
+        opacity:.78;
+        margin-top: 4px;
+      }
+      .kpiValue{
+        text-align:center;
+        font-weight: 900;
+        font-size: clamp(28px, 2.2vw, 36px);
+        margin: 14px 0 10px;
+        color:#06B6D4;
+      }
+      .kpiDesc{
+        margin-top:auto;
+        font-size:12px;
+        opacity:.78;
+        line-height:1.45;
+      }
+
+      /* Primary emphasis (still equal width) */
+      .kpiPrimary{
+        border-color: rgba(6,182,212,.30);
+        box-shadow:
+          0 0 0 1px rgba(255,255,255,.03),
+          inset 0 0 0 1px rgba(6,182,212,.14),
+          0 12px 34px rgba(0,0,0,.38);
+      }
+
+      /* Optional: safer image rendering in sections 2/3 */
+      .demoShot{
+        width:100%;
+        border-radius: 14px;
+        box-shadow: 0 16px 40px rgba(0,0,0,.35);
+        border: 1px solid rgba(255,255,255,.10);
+      }
+    </style>
+
 </head>
 
 
@@ -117,11 +200,47 @@
     <div class="mb-14 md:mb-16">
         <h3 class="text-lg md:text-xl font-semibold mb-2">1. Signals overview (KPI + Live table)</h3>
 
-        <!-- KPI cards -->
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <!-- Primary -->
-            <div class="rounded-2xl bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-sky-400/30 p-5 shadow-lg">
-                <div class="text-center font-semibold text-white text-lg">Signals Engine</div>
+        
+        <!-- KPI cards (capsule) -->
+        <div class="kpiGrid">
+            <div class="kpiCard kpiPrimary">
+                <div class="kpiTitle">Signals Engine</div>
+                <div class="kpiMetric">Multi-source alerts</div>
+                <div class="kpiValue">34</div>
+                <div class="kpiDesc">
+                    Aggregated alerts from CEX listings, whale transfers, VC activity, and on-chain patterns.
+                    AI-ranked by risk score.
+                </div>
+            </div>
+
+            <div class="kpiCard">
+                <div class="kpiTitle">On-chain Monitoring</div>
+                <div class="kpiMetric">Chains covered</div>
+                <div class="kpiValue">8</div>
+                <div class="kpiDesc">
+                    Real-time listeners across BTC, ETH, BSC, Solana, Arbitrum, Base, zkSync, and Linea.
+                </div>
+            </div>
+
+            <div class="kpiCard">
+                <div class="kpiTitle">VC &amp; Whale Radar</div>
+                <div class="kpiMetric">Tracked entities</div>
+                <div class="kpiValue">120</div>
+                <div class="kpiDesc">
+                    Monitoring 120+ VC &amp; whale wallets for inflows/outflows into CEXs.
+                </div>
+            </div>
+
+            <div class="kpiCard">
+                <div class="kpiTitle">Watchlists</div>
+                <div class="kpiMetric">Watchlist tokens</div>
+                <div class="kpiValue">12</div>
+                <div class="kpiDesc">
+                    Custom watchlists and thematic groups (L1, DeFi, Meme, AI).
+                </div>
+            </div>
+        </div>
+
                 <div class="text-center text-slate-300 text-sm mt-1">Multi-source alerts</div>
                 <div class="text-center text-4xl font-extrabold text-cyan-400 my-4">34</div>
                 <div class="text-slate-300 text-sm leading-relaxed mt-2">
@@ -228,7 +347,7 @@
         </p>
 
         <img src="./images/token-detail.png" alt="Token detail panel"
-            class="w-full rounded-xl shadow-lg max-h-[480px] md:max-h-full object-cover" />
+            class="demoShot max-h-[480px] md:max-h-full object-cover" />
     </div>
 
     <!-- BLOCK 3 -->
@@ -247,7 +366,7 @@
         </p>
 
         <img src="./images/watchlist.png" alt="Watchlist and alerts"
-            class="w-full rounded-xl shadow-lg max-h-[480px] md:max-h-full object-cover" />
+            class="demoShot max-h-[480px] md:max-h-full object-cover" />
     </div>
     </section>
 
