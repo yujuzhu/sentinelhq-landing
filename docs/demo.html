@@ -87,6 +87,7 @@
         <div class="border-b border-white/10 mt-8 md:mt-10"></div>
     </section>
 
+    <section class="max-w-6xl mx-auto px-4 md:px-6 pb-12">
     <p class="text-sm md:text-base text-slate-300 mb-4 leading-relaxed">
         The views below are taken from the internal Retool dashboard used
         to prototype the engine.
@@ -108,17 +109,110 @@
     <p class="text-sm md:text-base text-slate-300 mt-2 mb-4 leading-relaxed">
         High-level view of active tokens, signal volume in the last 24h, and high-risk alerts.
     </p>
-    </section>
 
     <!-- ⬇️ 从这里开始，保留你现在已有的第一个表格及后面所有内容，不需要动 ⬇️ -->
     <!-- 你的 <table> ... Signals / How the demo is powered / From demo to product 等全部保持原样 -->
 
+    <!-- BLOCK 1 -->
+    <div class="mb-14 md:mb-16">
+        <h3 class="text-lg md:text-xl font-semibold mb-2">1. Signals overview (KPI + Live table)</h3>
 
-    <img src="./images/overview.png" alt="Dashboard overview"
-        class="w-full rounded-xl shadow-lg max-h-[480px] md:max-h-full object-cover" />
+        <!-- KPI cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <!-- Primary -->
+            <div class="rounded-2xl bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-sky-400/30 p-5 shadow-lg">
+                <div class="text-center font-semibold text-white text-lg">Signals Engine</div>
+                <div class="text-center text-slate-300 text-sm mt-1">Multi-source alerts</div>
+                <div class="text-center text-4xl font-extrabold text-cyan-400 my-4">34</div>
+                <div class="text-slate-300 text-sm leading-relaxed mt-2">
+                    Aggregated alerts from CEX listings, whale transfers, VC activity, and on-chain patterns.
+                    AI-ranked by risk score.
+                </div>
+            </div>
+
+            <div class="rounded-2xl bg-slate-900/50 border border-white/10 p-5">
+                <div class="text-center font-semibold text-white text-lg">On-chain Monitoring</div>
+                <div class="text-center text-slate-300 text-sm mt-1">Chains covered</div>
+                <div class="text-center text-4xl font-extrabold text-cyan-300 my-4">8</div>
+                <div class="text-slate-300 text-sm leading-relaxed mt-2">
+                    Real-time listeners across BTC, ETH, BSC, Solana, Arbitrum, Base, zkSync, and Linea.
+                </div>
+            </div>
+
+            <div class="rounded-2xl bg-slate-900/50 border border-white/10 p-5">
+                <div class="text-center font-semibold text-white text-lg">VC &amp; Whale Radar</div>
+                <div class="text-center text-slate-300 text-sm mt-1">Tracked entities</div>
+                <div class="text-center text-4xl font-extrabold text-cyan-300 my-4">120</div>
+                <div class="text-slate-300 text-sm leading-relaxed mt-2">
+                    Monitoring 120+ VC &amp; whale wallets for inflows/outflows into CEXs.
+                </div>
+            </div>
+
+            <div class="rounded-2xl bg-slate-900/50 border border-white/10 p-5">
+                <div class="text-center font-semibold text-white text-lg">Watchlists</div>
+                <div class="text-center text-slate-300 text-sm mt-1">Watchlist tokens</div>
+                <div class="text-center text-4xl font-extrabold text-cyan-300 my-4">12</div>
+                <div class="text-slate-300 text-sm leading-relaxed mt-2">
+                    Custom watchlists and thematic groups (L1, DeFi, Meme, AI).
+                </div>
+            </div>
+        </div>
+
+        <!-- Live table (mock for demo) -->
+        <div class="mt-6 rounded-2xl bg-white/5 border border-white/10 overflow-hidden">
+            <div class="flex items-center justify-between px-5 py-3 border-b border-white/10">
+                <div class="font-semibold">Latest signals</div>
+                <div class="text-xs text-slate-400">Mock data · will be replaced by live engine</div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="min-w-full text-sm">
+                    <thead class="text-slate-300 bg-white/5">
+                        <tr>
+                            <th class="text-left px-5 py-3 font-medium">Token</th>
+                            <th class="text-left px-5 py-3 font-medium">Chain</th>
+                            <th class="text-left px-5 py-3 font-medium">Score</th>
+                            <th class="text-left px-5 py-3 font-medium">Risk</th>
+                            <th class="text-left px-5 py-3 font-medium">Source</th>
+                            <th class="text-left px-5 py-3 font-medium">Type</th>
+                            <th class="text-left px-5 py-3 font-medium">Time</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white/10 text-slate-200">
+                        <tr>
+                            <td class="px-5 py-3 font-semibold">TGT</td>
+                            <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full bg-sky-500/15 border border-sky-500/25 text-sky-200">BSC</span></td>
+                            <td class="px-5 py-3">82</td>
+                            <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/25 text-emerald-200">Low</span></td>
+                            <td class="px-5 py-3">LookOnChain</td>
+                            <td class="px-5 py-3">CEX Alert</td>
+                            <td class="px-5 py-3">2025-01-12 14:33</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3 font-semibold">SOON</td>
+                            <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full bg-indigo-500/15 border border-indigo-500/25 text-indigo-200">ETH</span></td>
+                            <td class="px-5 py-3">65</td>
+                            <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full bg-amber-500/15 border border-amber-500/25 text-amber-200">Medium</span></td>
+                            <td class="px-5 py-3">Twitter</td>
+                            <td class="px-5 py-3">VC Move</td>
+                            <td class="px-5 py-3">2025-01-12 13:08</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3 font-semibold">BTC</td>
+                            <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full bg-orange-500/15 border border-orange-500/25 text-orange-200">BTC</span></td>
+                            <td class="px-5 py-3">92</td>
+                            <td class="px-5 py-3"><span class="px-2 py-0.5 rounded-full bg-rose-500/15 border border-rose-500/25 text-rose-200">High</span></td>
+                            <td class="px-5 py-3">Whale Alert</td>
+                            <td class="px-5 py-3">Whale Inflow</td>
+                            <td class="px-5 py-3">2025-01-12 13:55</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
-    <!-- BLOCK 2 -->
+<!-- BLOCK 2 -->
     <div class="mb-14 md:mb-16">
         <h3 class="text-lg md:text-xl font-semibold mb-1">2. Token detail + AI insight panel</h3>
 
@@ -200,11 +294,13 @@
 
             Collaboration allows early access to the engine and contributes to shaping a Web3 risk
             infrastructure aligned with France2030 priorities.
-            Contact
+            </p>
+        <div class="mt-4 text-slate-200 text-sm">
+            <div class="font-semibold">Contact</div>
+            <div class="mt-1">For partnership inquiries or i-Lab evaluation: <span class="text-sky-300">admin@sentinelhq.io</span></div>
+            <div class="mt-1">FR : Pour toute demande liée au partenariat ou à l’évaluation i-Lab : <span class="text-sky-300">admin@sentinelhq.io</span></div>
+        </div>
+    </section>
 
-            For partnership inquiries or i-Lab evaluation contact:
-            📩 admin@sentinelhq.io
-
-            FR : Pour toute demande liée au partenariat ou à l’évaluation i-Lab :
-            📩 admin@sentinelhq.io
-            </
+</body>
+</html>
