@@ -89,7 +89,79 @@
         box-shadow: 0 16px 40px rgba(0,0,0,.35);
         border: 1px solid rgba(255,255,255,.10);
       }
-    </style>
+    
+/* ===== KPI Capsule Overrides (stable, product-grade) ===== */
+.kpiGrid{
+  display:grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+  align-items: stretch !important;
+}
+@media (max-width: 1024px){
+  .kpiGrid{ grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
+}
+@media (max-width: 640px){
+  .kpiGrid{ grid-template-columns: 1fr !important; }
+}
+.kpiCard{
+  min-height: 168px;
+  border-radius: 24px;
+  padding: 18px 18px 16px;
+  background: linear-gradient(180deg, rgba(17,24,39,.92), rgba(2,6,23,.86));
+  border: 1px solid rgba(148,163,184,.14);
+  box-shadow: 0 18px 40px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.05);
+  position: relative;
+  overflow: hidden;
+  display:flex;
+  flex-direction: column;
+}
+.kpiCard:before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background: radial-gradient(600px 180px at 30% 0%, rgba(6,182,212,.16), transparent 60%);
+  pointer-events:none;
+}
+.kpiCard:hover{
+  transform: translateY(-2px);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  border-color: rgba(6,182,212,.28);
+  box-shadow: 0 22px 52px rgba(0,0,0,.42), inset 0 1px 0 rgba(255,255,255,.06);
+}
+.kpiTitle{
+  font-weight: 800;
+  letter-spacing: .2px;
+  font-size: 15px;
+  color: rgba(255,255,255,.92);
+}
+.kpiMetric{
+  margin-top: 4px;
+  font-size: 12px;
+  color: rgba(203,213,225,.86);
+}
+.kpiValue{
+  margin-top: 14px;
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 1;
+  color: #06B6D4;
+}
+.kpiDesc{
+  margin-top: auto;
+  padding-top: 14px;
+  font-size: 12.5px;
+  line-height: 1.35;
+  color: rgba(226,232,240,.82);
+}
+.kpiPrimary{
+  border-color: rgba(6,182,212,.22);
+  background: linear-gradient(180deg, rgba(17,24,39,.96), rgba(2,6,23,.90));
+}
+.kpiPrimary:before{
+  background: radial-gradient(800px 220px at 20% 0%, rgba(6,182,212,.22), transparent 55%);
+}
+
+</style>
 
 </head>
 
@@ -241,45 +313,6 @@
             </div>
         </div>
 
-                <div class="text-center text-slate-300 text-sm mt-1">Multi-source alerts</div>
-                <div class="text-center text-4xl font-extrabold text-cyan-400 my-4">34</div>
-                <div class="text-slate-300 text-sm leading-relaxed mt-2">
-                    Aggregated alerts from CEX listings, whale transfers, VC activity, and on-chain patterns.
-                    AI-ranked by risk score.
-                </div>
-            </div>
-
-            <div class="rounded-2xl bg-slate-900/50 border border-white/10 p-5">
-                <div class="text-center font-semibold text-white text-lg">On-chain Monitoring</div>
-                <div class="text-center text-slate-300 text-sm mt-1">Chains covered</div>
-                <div class="text-center text-4xl font-extrabold text-cyan-300 my-4">8</div>
-                <div class="text-slate-300 text-sm leading-relaxed mt-2">
-                    Real-time listeners across BTC, ETH, BSC, Solana, Arbitrum, Base, zkSync, and Linea.
-                </div>
-            </div>
-
-            <div class="rounded-2xl bg-slate-900/50 border border-white/10 p-5">
-                <div class="text-center font-semibold text-white text-lg">VC &amp; Whale Radar</div>
-                <div class="text-center text-slate-300 text-sm mt-1">Tracked entities</div>
-                <div class="text-center text-4xl font-extrabold text-cyan-300 my-4">120</div>
-                <div class="text-slate-300 text-sm leading-relaxed mt-2">
-                    Monitoring 120+ VC &amp; whale wallets for inflows/outflows into CEXs.
-                </div>
-            </div>
-
-            <div class="rounded-2xl bg-slate-900/50 border border-white/10 p-5">
-                <div class="text-center font-semibold text-white text-lg">Watchlists</div>
-                <div class="text-center text-slate-300 text-sm mt-1">Watchlist tokens</div>
-                <div class="text-center text-4xl font-extrabold text-cyan-300 my-4">12</div>
-                <div class="text-slate-300 text-sm leading-relaxed mt-2">
-                    Custom watchlists and thematic groups (L1, DeFi, Meme, AI).
-                </div>
-            </div>
-        </div>
-
-        <!-- Live table (mock for demo) -->
-        <div class="mt-6 rounded-2xl bg-white/5 border border-white/10 overflow-hidden">
-            <div class="flex items-center justify-between px-5 py-3 border-b border-white/10">
                 <div class="font-semibold">Latest signals</div>
                 <div class="text-xs text-slate-400">Mock data · will be replaced by live engine</div>
             </div>
