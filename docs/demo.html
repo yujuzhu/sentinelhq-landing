@@ -1,1229 +1,1189 @@
 <html lang="en" class="h-full">
 
 <head>
-    <style>
-        @view-transition {
-            navigation: auto;
-        }
-    </style>
-    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
-    <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
+  <style>
+    @view-transition {
+      navigation: auto;
+    }
+  </style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
 </head>
 
 <body class="h-full bg-slate-900 text-slate-100"> ` 和
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>SentinelHQ - AI Web3 风险智能引擎演示</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>SentinelHQ - AI Web3 风险智能引擎演示</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
 
-        @keyframes pulse-glow {
+    @keyframes pulse-glow {
 
-            0%,
-            100% {
-                opacity: 0.3;
-            }
+      0%,
+      100% {
+        opacity: 0.3;
+      }
 
-            50% {
-                opacity: 0.6;
-            }
-        }
+      50% {
+        opacity: 0.6;
+      }
+    }
 
-        @keyframes float {
+    @keyframes float {
 
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
 
-            50% {
-                transform: translateY(-10px);
-            }
-        }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
 
-        @keyframes scan {
-            0% {
-                transform: translateY(0);
-            }
+    @keyframes scan {
+      0% {
+        transform: translateY(0);
+      }
 
-            100% {
-                transform: translateY(100%);
-            }
-        }
+      100% {
+        transform: translateY(100%);
+      }
+    }
 
-        @keyframes rotate {
-            from {
-                transform: translate(-50%, -50%) rotate(0deg);
-            }
+    @keyframes rotate {
+      from {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
 
-            to {
-                transform: translate(-50%, -50%) rotate(360deg);
-            }
-        }
+      to {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
 
-        @keyframes pulse-ring {
+    @keyframes pulse-ring {
 
-            0%,
-            100% {
-                transform: translate(-50%, -50%) scale(1);
-                opacity: 0.8;
-            }
+      0%,
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+      }
 
-            50% {
-                transform: translate(-50%, -50%) scale(1.1);
-                opacity: 0.4;
-            }
-        }
+      50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.4;
+      }
+    }
 
-        @keyframes heartbeat {
+    @keyframes heartbeat {
 
-            0%,
-            100% {
-                transform: scale(1);
-            }
+      0%,
+      100% {
+        transform: scale(1);
+      }
 
-            25% {
-                transform: scale(1.05);
-            }
+      25% {
+        transform: scale(1.05);
+      }
 
-            50% {
-                transform: scale(1);
-            }
+      50% {
+        transform: scale(1);
+      }
 
-            75% {
-                transform: scale(1.08);
-            }
-        }
+      75% {
+        transform: scale(1.08);
+      }
+    }
 
-        @keyframes counter-rotate {
-            from {
-                transform: translate(-50%, -50%) rotate(360deg);
-            }
+    @keyframes counter-rotate {
+      from {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
 
-            to {
-                transform: translate(-50%, -50%) rotate(0deg);
-            }
-        }
+      to {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+    }
 
-        @keyframes shimmer {
-            to {
-                background-position: 200% center;
-            }
-        }
+    @keyframes shimmer {
+      to {
+        background-position: 200% center;
+      }
+    }
 
-        .pulse-glow {
-            animation: pulse-glow 3s ease-in-out infinite;
-        }
+    .pulse-glow {
+      animation: pulse-glow 3s ease-in-out infinite;
+    }
 
-        .float-animation {
-            animation: float 6s ease-in-out infinite;
+    .float-animation {
+      animation: float 6s ease-in-out infinite;
 
-            .grid-background {
-                background-image: linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
-                background-size: 50px 50px;
-            }
+      .grid-background {
+        background-image: linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+        background-size: 50px 50px;
+      }
 
-            .glass-effect {
-                background: rgba(17, 24, 39, 0.7);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(59, 130, 246, 0.2);
-            }
+      .glass-effect {
+        background: rgba(17, 24, 39, 0.7);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+      }
 
-            .cyber-glow {
-                box-shadow: 0 0 20px currentColor;
-            }
+      .cyber-glow {
+        box-shadow: 0 0 20px currentColor;
+      }
 
-            .heartbeat {
-                animation: heartbeat 2s ease-in-out infinite;
-            }
-    </style>
-    <div id="app" class="w-full h-full overflow-auto"><!-- 导航 -->
-        <nav class="fixed top-0 left-0 right-0 z-50 glass-effect">
-            <div class="max-w-7xl mx-auto px-6 py-4">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <div class="text-2xl font-bold"> SentinelHQ </div>
-                        <div class="text-sm opacity-70 mt-1"> Web3 风险智能引擎 </div>
-                    </div>
-                    <div class="flex gap-4"><button
-                            class="px-6 py-2 rounded-md font-semibold transition-all hover:scale-105 bg-blue-600 hover:bg-blue-700">
-                            请求演示 </button> <button
-                            class="px-6 py-2 rounded-md border border-blue-500 hover:bg-blue-500 transition-all"> 联系我们
-                        </button> </div>
-                </div>
-            </div>
-        </nav><!-- 英雄区域 -->
-        <section class="relative pt-32 pb-20 px-6 overflow-hidden">
-            <div class="absolute inset-0 grid-background">​​</div><!-- 动画背景元素 -->
-            <div class="absolute top-20 left-10 w-64 h-64 bg-blue-500 rounded-full blur-3xl opacity-20 pulse-glow">
-            </div>
-            <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl opacity-20 pulse-glow"
-                style="animation-delay: 1.5s;"></div>
-            <div class="max-w-7xl mx-auto relative z-10">
-                <div class="text-center mb-16">
-                    <h1
-                        class="text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                        AI Web3 风险智能引擎演示</h1>
-                    <p class="text-xl mb-6 max-w-3xl mx-auto">基于 AI 的实时 Web3 风险智能基础设施，用于检测、监控和可解释地评估系统性区块链风险</p>
-                    <!-- 目标用户 - 对 i-Lab 至关重要 -->
-                    <div class="mt-6 mb-4">
-                        <div
-                            class="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 border-2 border-blue-400/40 rounded-full">
-                            <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewbox="0 0 24" 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                            </svg><span class="text-sm font-bold text-blue-200">专为以下用途设计：</span> <span
-                                class="text-sm font-semibold text-white">交易所 · 基金 · 合规团队 · L2 生态系统</span> </div>
-                    </div><!-- 战略定位声明 -->
-                    <div class="mt-4 mb-6">
-                        <p class="text-sm opacity-75 italic max-w-2xl mx-auto leading-relaxed">
-                            此演示展示的是风险智能基础设施，而非交易或价格预测工具。</p>
-                    </div><!-- 法语描述框 -->
-                    <div class="max-w-4xl mx-auto glass-effect rounded-xl p-6 mb-4 text-left">
-                        <div class="mb-4">
-                            <h3 class="text-lg font-bold mb-3 text-blue-300">🇫🇷 FR · i-Lab</h3>
-                            <p class="opacity-90 leading-relaxed mb-2"><strong>Version de演示（法语/英语）</strong> conçue pour
-                                le dossier i-Lab。</p>
-                            <p class="opacity-80leading-relaxed text-sm">Prototype d'un moteur d'intelligence Web3
-                                nouvelle génération — IA可解释+分析comportementale —aligné avec les Priorités
-                                France2030（网络安全， IA，基础设施数字）。</p>
-                        </div>
-                        <div class="pt-4 border-t border-blue-500/20">
-                            <p class="opacity-90leading-relaxed">此演示演示了 <strong>SentinelHQ</strong> 如何聚合代币信号、计算风险评分并生成
-                                AI 见解。这些屏幕截图基于我们用于 Web3 风险智能引擎原型设计的内部 Retool 仪表板。</p>
-                        </div>
-                    </div><!-- 主要功能标签 -->
-                    <div class="flex flex-wrap justify-center gap-3 mb-8"><span
-                            class="px-4 py-2 rounded-full bg-blue-500/20 border border-blue-500/40 text-sm font-medium">AI
-                            驱动</span> <span
-                            class="px-4 py-2 rounded-full bg-purple-500/20 border border-purple-500/40 text-sm font-medium">Web3
-                            安全</span> <span
-                            class="px-4 py-2 rounded-full bg-cyan-500/20 border border-cyan-500/40 text-sm font-medium">实时监控</span>
-                        <span
-                            class="px-4 py-2 rounded-full bg-pink-500/20 border border-pink-500/40 text-sm font-medium">SaaS
-                            原型</span> </div><!-- Hero 中的功能卡片 -->
-                    <div class="grid md:grid-cols-3 gap-6 mb-12">
-                        <div class="glass-effect rounded-xl p-6 hover:border-blue-500 transition-all group">
-                            <div
-                                class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                </svg> </div>
-                            <h3 class="text-lg font-bold mb-2">低延迟风险信号处理</h3>
-                            <p class="text-sm opacity-70">以毫秒级延迟处理链上事件、CEX 警报、行为信号和钱包移动。专为跨多个区块链网络的实时风险情报基础设施而构建。</p>
-                        </div>
-                        <div class="glass-effect rounded-xl p-6 hover:border-purple-500 transition-all group">
-                            <div
-                                class="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                                </svg> </div>
-                            <h3 class="text-lg font-bold mb-2">符合监管要求且可审计的安全</h3>
-                            <p class="text-sm opacity-70">端到端加密处理，符合 GDPR
-                                标准，并提供可审计日志。专为需要可追溯性、可解释风险评估和合规级文档的交易所、基金和受监管实体而设计。</p>
-                        </div>
-                        <div class="glass-effect rounded-xl p-6 hover:border-blue-500 transition-all group">
-                            <div
-                                class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
-                                </svg> </div>
-                            <h3 class="text-lg font-bold mb-2">模块化风险智能架构</h3>
-                            <p class="text-sm opacity-70">
-                                一个模块化的基础设施，结合了多链监听器、行为异常检测和可解释的AI评分管道。可扩展至从单资产监控到机构级风险情报信息流和应用程序接口。</p>
-                        </div>
-                    </div>
-                </div><!-- 概览信息框 -->
-                <div class="glass-effect rounded-xl p-6 mb-8 max-w-5xl mx-auto">
-                    <div class="flex items-start gap-4">
-                        <div class="flex-shrink-0">
-                            <div
-                                class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg> </div>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="text-lg font-bold mb-2 text-blue-300">🇫🇷 FR · 信号引擎概览 — 代币活动、信号量和高风险警报。</h3>
-                            <p class="opacity-80 leading-relaxed mb-2">以下视图取自用于引擎原型设计的内部 Retool 仪表板。</p>
-                            <p class="opacity-80 leading-relaxed">过去 24 小时内活跃代币、信号量和高风险警报的概览。</p>
-                        </div>
-                    </div>
-                </div><!-- 交互式仪表板预览 -->
-                <div class="glass-effect rounded-2xl p-8 float-animation mb-8">
-                    <h2 class="text-2xl font-bold mb-6"> text-center">系统级风险信号 — 跨链行为监控</h2>
-                    <div class="grid grid-cols-4 gap-4 mb-8"><!-- 胶囊卡片 1 -->
-                        <div class="relative group">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-b from-blue-500/20 to-purple-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all">
-                            </div>
-                            <div
-                                class="relative px-4 py-8 rounded-full border-2 border-blue-500/40 hover:border-blue-400 transition-all h-full flex flex-col items-center text-center">
-                                <div
-                                    class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0 mb-4">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                    </svg> </div>
-                                <div class="text-sm font-bold text-blue-400 mb-1"> 信号引擎 </div>
-                                <div class="text-xs opacity-70 mb-2"> 多源警报</div>
-                                <div class="text-3xl font-bold text-blue-300 mb-3"> 34 </div>
-                                <div class="text-xs opacity-60 leading-relaxed"> 来自 CEX 上市、巨鲸转移、风险投资活动和链上模式的聚合警报。按风险评分进行
-                                    AI 排名。 </div>
-                            </div>
-                        </div><!-- 胶囊卡 2 -->
-                        <div class="relative group">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-b from-purple-500/20 to-blue-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all">
-                            </div>
-                            <div
-                                class="relative px-4 py-8 rounded-full border-2 border-purple-500/40 hover:border-purple-400 transition-all h-full flex flex-col items-center text-center">
-                                <div
-                                    class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center flex-shrink-0 mb-4">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                                    </svg> </div>
-                                <div class="text-sm font-bold text-purple-400 mb-1"> 链上监控 </div>
-                                <div class="text-xs opacity-70 mb-2"> 多链监听器 </div>
-                                <div class="text-3xl font-bold text-purple-300 mb-3"> 8 </div>
-                                <div class="text-xs opacity-60 leading-relaxed"> 实时跟踪
-                                    BTC、ETH、BSC、Solana、Arbitrum、Base、zkSync、Linea。 </div>
-                            </div>
-                        </div><!-- 胶囊卡片 3 -->
-                        <div class="relative group">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-b from-cyan-500/20 to-blue-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all">
-                            </div>
-                            <div
-                                class="relative px-4 py-8 rounded-full border-2 border-cyan-500/40 hover:border-cyan-400 transition-all h-full flex flex-col items-center text-center">
-                                <div
-                                    class="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center flex-shrink-0 mb-4">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24" 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                    </svg> </div>
-                                <div class="text-sm font-bold text-cyan-400 mb-1"> VC & Whale Radar</div>
-                                <div class="text-xs opacity-70 mb-2"> 跟踪实体</div>
-                                <div class="text-3xl font-bold text-cyan-300 mb-3"> 120</div>
-                                <div class="text-xs opacity-60 leading-relaxed"> 检测与价格敏感事件相关的资金流入/流出和模式。 </div>
-                            </div>
-                        </div><!-- 胶囊卡片 4 -->
-                        <div class="relative group">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-b from-pink-500/20 to-purple-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all">
-                            </div>
-                            <div
-                                class="relative px-4 py-8 rounded-full border-2 border-pink-500/40 hover:border-pink-400 transition-all h-full flex flex-col items-center text-center">
-                                <div
-                                    class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center flex-shrink-0 mb-4">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
-                                    </svg> </div>
-                                <div class="text-sm font-bold text-pink-400 mb-1"> 观察列表 </div>
-                                <div class="text-xs opacity-70 mb-2"> 自定义代币追踪 </div>
-                                <div class="text-3xl font-bold text-pink-300 mb-3"> 12 </div>
-                                <div class="text-xs opacity-60 leading-relaxed"> 用户自定义观察列表 + 主题分组（AI、L1、DeFi、Meme）。
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- 实时数据表 -->
-                    <div class="bg-slate-900/50 rounded-xl border border-blue-500/30 overflow-hidden mb-8">
-                        <div class="px-6 py-4 border-b border-blue-500/30 <div class=" flex items-center
-                            justify-between">
-                            <div class="flex items-center gap-3">
-                                <div class="w-2 h-2 rounded-full bg-green-400 pulse-glow"></div>
-                                <h3 class="font-bold text-lg">实时信号</h3><span class="text-xs opacity-60">每 5 秒自动刷新</span>
-                            </div>
-                            <div class="flex gap-2"><button
-                                    class="px-3 py-1 rounded bg-blue-500/20 hover:bg-blue-500/30 text-xs font-medium border border-blue-500/40 transition-all">全部</button>
-                                <button
-                                    class="px-3 py-1 rounded bg-slate-800/50 hover:bg-slate-700/50 text-xs font-medium border border-slate-600/40 transition-all">高风险</button>
-                                <button
-                                    class="px-3 py-1 rounded bg-slate-800/50 hover:bg-slate-700/50 text-xs font-medium border border-slate-600/40 transition-all">鲸鱼警报</button>
-                            </div>
-                        </div><!-- 表格标题 -->
-                        <div
-                            class="grid grid-cols-12 gap-4 px-6 py-3 bg-slate-800/70 text-xs font-semibold border-b border-blue-500/20">
-                            <div class="col-span-2"> 风险对象 </div>
-                            <div class="col-span-2"> 信号类型 </div>
-                            <div class="col-span-3"> 详情 </div>
-                            <div class="col-span-2"> 风险影响 </div>
-                            <div class="col-span-1 text-center" title="基于多源信号的综合风险评分"> 风险（0-10）</div>
-                            <div class="col-span-1 text-center">优先级</div>
-                            <div class="col-span-1 text-right">时间</div>
-                        </div><!-- 表格主体 -->
-                        <div id="signal-table-body" class="divide-y divide-slate-700/50"><!-- 行将在此处动态插入 --> </div>
-                    </div><!-- Token 详情 + AI 洞察面板 -->
-                    <div class="glass-effect rounded-2xl p-8 mb-8">
-                        <div class="flex items-center justify-between mb-6">
-                            <div class="flex items-center gap-4">
-                                <div
-                                    class="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500 to-yellow-500 flex items-center justify-center text-2xl font-bold shadow-lg">
-                                    🔥 </div>
-                                <div>
-                                    <div class="flex items-center gap-3 mb-2">
-                                        <h3 class="text-2xl font-bold text-blue-300">Token 级风险评估（资产无关）</h3><span
-                                            class="px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-500/40 text-xs font-semibold text-cyan-300">用例示例</span>
-                                    </div>
-                                    <div class="flex items-center gap-3"><span
-                                            class="text-sm opacity-90 font-semibold">资产类别：高流动性 ERC-20 代币（以太坊）</span>
-                                    </div>
-                                    <div class="mt-1 space-y-1"><span class="text-xs opacity-50 italic">使用公开交易的 ERC-20
-                                            资产进行示例演示。</span>
-                                        <div class="text-[10px] opacity-40 italic">显示的资产标识符仅用于演示目的。 </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-right">
-                                <div class="text-xs font-bold text-blue-300/70 mb-1"> 市场环境 (24 小时) </div>
-                                <div class="text-sm text-green-400 flex items-center justify-end gap-1 mb-1"> <svg
-                                        class="w-3 h-3" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                                    </svg> +12.5% </div>
-                                <div class="text-2xl font-bold text-green-400"> $0.000012 </div>
-                            </div>
-                        </div><!-- 代币风险上下文网格 -->
-                        <div class="mb-2">
-                            <h4 class="text-sm font-bold text-blue-300 opacity-90">代币风险上下文</h4>
-                        </div>
-                        <div class="grid grid-cols-4 gap-4 mb-6">
-                            <div class="bg-slate-800/50 rounded-lg p-4 border border-blue-500/20">
-                                <div class="text-xs opacity-60 mb-1">市值 </div>
-                                <div class="text-xl font-bold"> 5.2B </div>
-                            </div>
-                            <div class="bg-slate-800/50 rounded-lg p-4 border border-blue-500/20">
-                                <div class="text-xs opacity-60 mb-1"> 流动性 &成交量（24小时）</div>
-                                <div class="text-xl font-bold"> 8.42亿美元</div>
-                            </div>
-                            <div class="bg-slate-800/50 rounded-lg p-4 border border-blue-500/20">
-                                <div class="text-xs opacity-60 mb-1"> 持有人分配</div>
-                                <div class="text-xl font-bold"> 23.6万</div>
-                            </div>
-                            <div class="bg-slate-800/50 rounded-lg p-4 border border-blue-500/20">
-                                <div class="text-xs font-bold text-blue-300 mb-2"> 🎯 综合风险评分</div>
-                                <div class="text-2xl font-bold text-yellow-400 mb-1"> 6.8 / 10</div>
-                                <div class="text-xs <div class=" text-yellow-400/80 font-semibold mb-1"> 中等风险</div>
-                                <div class="text-[10px] opacity-60 leading-relaxed mb-2"> 基于链上、流动性、行为和社会信号。</div>
-                                <div class="text-[9px] opacity-50 italic border-t border-blue-500/20 pt-2">
-                                    风险评分取决于具体情况，不同资产之间不具有可比性。</div>
-                            </div>
-                        </div>
-                    </div><!-- AI 洞察面板 - 状态感知可解释 AI -->
-                    <div
-                        class="relative bg-gradient-to-br from-purple-900/30 to-blue-900/30 rounded-xl p-6 border border-purple-500/40 overflow-hidden">
-                        <!-- 动画背景 -->
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/20 rounded-full blur-3xl pulse-glow">
-                        </div>
-                        <div class="relative"><!-- 标题 -->
-                            <div class="mb-4 pb-3 border-b border-purple-500/30 flex items-center justify-between">
-                                <div class="text-sm font-bold text-purple-300/90 tracking-wide"> 风险推理输出（可解释 AI） </div>
-                                <div class="flex items-center gap-2">
-                                    <div class="w-2 h-2 rounded-full bg-green-400 pulse-glow"></div><span
-                                        class="text-xs text-green-400 font-semibold">实时 · 87% 置信度</span>
-                                </div>
-                            </div><!-- ========== 第一层：风险姿态指标 (0.（5秒理解） ========== -->
-                            <div
-                                class="mb-6 p-6 bg-gradient-to-br from-yel​​low-900/40 to-orange-900/30 rounded-xl border-2 border-yellow-500/50 relative overflow-hidden">
-                                <div class="absolute top-0 right-0 w-48 h-48 bg-yellow-500/10 rounded-full blur-3xl">
-                                </div>
-                                <div class="relative">
-                                    <div class="text-center mb-6">
-                                        <div class="text-xs text-yellow-300/70 font-bold tracking-widest mb-2"> 风险姿势
-                                        </div>
-                                        <div class="flex items-center justify-center gap-3 mb-1"><span
-                                                class="text-5xl">⚠️</span>
-                                            <div class="text-4xl font-black"> text-yellow-300 tracking-tight">混合风险</div>
-                                        </div>
-                                        <div class="text-sm text-yellow-200/60 font-medium">检测到结构性压力 · 需要监控</div>
-                                    </div><!-- 状态栏 - 可视化风险分解 -->
-                                    <div class="space-y-3 bg-slate-900/60 rounded-lg p-4 border border-yellow-500/20">
-                                        <div class="text-xs font-bold text-yellow-300/80 mb-3 text-center">风险维度分析</div>
-                                        <!-- 流动性风险栏 -->
-                                        <div class="flex items-center gap-3">
-                                            <div class="w-20 text-xs font-bold text-red-300">流动性</div>
-                                            <div class="flex-1 bg-slate-800/80 <div class=" absolute inset-0
-                                                bg-gradient-to-r from-red-600 to-red-400 rounded-full"
-                                                style="width: 85%; animation: pulse-glow 2s ease-in-out infinite;">
-                                            </div>
-                                        </div>
-                                        <div class="w-16 text-xs font-bold text-red-400 text-right"> 高 </div>
-                                    </div><!-- 情绪风险条 -->
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-20 text-xs font-bold text-yellow-300"> 情绪 </div>
-                                        <div
-                                            class="flex-1 bg-slate-800/80 rounded-full h-3 relative overflow-hidden border border-yellow-500/30">
-                                            <div class="absolute inset-0 bg-gradient-to-r from-yel​​low-600 to-yellow-400 rounded-full"
-                                                style="width: 65%;"></div>
-                                        </div>
-                                        <div class="w-16 text-xs font-bold text-yellow-400 text-right"> MEDIUM </div>
-                                    </div><!-- 网络风险条 -->
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-20 text-xs font-bold text-cyan-300"> 网络 </div>
-                                        <div
-                                            class="flex-1 bg-slate-800/80 rounded-full h-3 relative overflow-hidden border border-cyan-500/30">
-                                            <div class="absolute inset-0 bg-gradient-to-r from-cyan-600 to-cyan-400 rounded-full"
-                                                style="width: 60%;"></div>
-                                        </div>
-                                        <div class="w-16 text-xs font-bold text-cyan-400 text-right"> 中等 </div>
-                                    </div>
-                                </div>
-                                <div class="mt-4 pt-3 border-t border-yellow-500/20 text-center">
-                                    <div class="text-xs font-bold text-yellow-300/90 mb-1"> 主要风险驱动因素 </div>
-                                    <div class="text-sm text-yellow-200/80"> 交易所流动性流入压力 </div>
-                                </div>
-                            </div>
-                        </div><!-- ========== 第二层：风险来源及方向性指标 ========== -->
-                        <div class="mb-6">
-                            <div class="text-xs font-bold text-purple-300/80 mb-3 tracking-wide"> 主动风险向量 · 实时状态 </div>
-                            <div class="grid grid-cols-3 gap-3"><!-- 流动性向量 -->
-                                <div
-                                    class="bg-slate-900/60 rounded-lg p-4 border-2 border-red-500/40 hover:border-red-400/60 transition-all relative overflow-hidden group">
-                                    <div class="absolute inset-0 bg-red-500/5 group-hover:bg-red-500/10 transition-all">
-                                    </div>
-                                    <div class="relative">
-                                        <div class="flex items-center justify-between mb-3"><span
-                                                class="text-2xl">⚠️</span>
-                                            <div class="flex items-center gap-1"><span
-                                                    class="text-red-400 text-xl font-bold">↑</span> <span
-                                                    class="text-xs font-bold text-red-400/70">RISING</span> </div>
-                                        </div>
-                                        <div class="text-sm font-bold text-red-300 mb-1"> Liquidity </div>
-                                        <div class="text-xs text-red-200/60"> Exchange inflow </div>
-                                    </div>
-                                </div><!-- 情感向量 -->
-                                <div
-                                    class="bg-slate-900/60 rounded-lg p-4 border-2 border-blue-500/40 hover:border-blue-400/60 transition-all relative overflow-hidden group">
-                                    <div
-                                        class="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/10 transition-all">
-                                    </div>
-                                    <div class="relative">
-                                        <div class="flex items-center justify-between mb-3"><span
-                                                class="text-2xl">📈</span>
-                                            <div class="flex items-center gap-1"><span
-                                                    class="text-blue-400 text-xl font-bold">→</span> <span
-                                                    class="text-xs font-bold text-blue-400/70">活跃</span> </div>
-                                        </div>
-                                        <div class="text-sm font-bold text-blue-300 mb-1">情感</div>
-                                        <div class="text-xs text-blue-200/60">异常放大</div>
-                                    </div>
-                                </div><!-- 网络向量 -->
-                                <div
-                                    class="bg-slate-900/60 rounded-lg p-4 border-2 border-cyan-500/40 hover:border-cyan-400/60 transition-all relative overflow-hidden group">
-                                    <div
-                                        class="absolute inset-0 bg-cyan-500/5 group-hover:bg-cyan-500/10 transition-all">
-                                    </div>
-                                    <div class="relative">
-                                        <div class="flex items-center justify-between mb-3"><span
-                                                class="text-2xl">🔁</span>
-                                            <div class="flex items-center gap-1"><span
-                                                    class="text-cyan-400 text-xl font-bold">→</span> <span
-                                                    class="text-xs font-bold text-cyan-400/70">ACTIVE</span> </div>
-                                        </div>
-                                        <div class="text-sm font-bold text-cyan-300 mb-1"> Network </div>
-                                        <div class="text-xs text-cyan-200/60"> Usage surge </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-3 flex items-center justify-center gap-4 text-xs">
-                                <div class="flex items-center gap-1.5"><span class="text-red-400 text-sm">↑</span> <span
-                                        class="text-red-300/70">升级中</span> </div>
-                                <div class="flex items-center gap-1.5"><span class="text-yellow-400 text-sm">→</span>
-                                    <span class="text-yellow-300/70">活跃中</span> </div>
-                                <div class="flex items-center gap-1.5"><span class="text-green-400 text-sm">✓</span>
-                                    <span class="text-green-300/70">稳定中</span> </div>
-                            </div>
-                        </div><!-- ========== 第三层：证据芯片（视觉，非文本）========== -->
-                        <div class="mb-6 bg-slate-900/60 rounded-lg p-4 border border-cyan-500/30">
-                            <div class="text-xs font-bold text-cyan-300 mb-3 tracking-wide"> 证据信号 · 可追踪数据点 </div>
-                            <div class="flex flex-wrap gap-2"><!-- 证据芯片 1 -->
-                                <div
-                                    class="inline-flex items-center gap-2 px-3 py-2 bg-red-500/15 border border-red-500/40 rounded-full hover:bg-red-500/25 transition-all group">
-                                    <span class="text-sm">🏦</span>
-                                    <div class="text-xs font-bold text-red-300"> +2880万美元 → 币安 </div>
-                                    <div <div class="text-xs text-red-200/60"> (4小时) </div>
-                                </div><!-- 证据芯片 2 -->
-                                <div
-                                    class="inline-flex items-center gap-2 px-3 py-2 bg-blue-500/15 border border-blue-500/40 rounded-full hover:bg-blue-500/25 transition-all group">
-                                    <span class="text-sm">💬</span>
-                                    <div class="text-xs font-bold text-blue-300"> 提及 +340% </div>
-                                    <div class="text-xs text-blue-200/60"> (12小时) </div>
-                                </div><!-- 证据芯片 3 -->
-                                <div class="inline-flex items-center gap-2 px-3 py-2 bg-cyan-500/15 border border-cyan-500/40 <span class="
-                                    text-sm">🔗</span>
-                                    <div class="text-xs font-bold text-cyan-300"> 活动地址 +180% </div>
-                                </div><!-- 证据芯片 4 -->
-                                <div
-                                    class="inline-flex items-center gap-2 px-3 py-2 bg-purple-500/15 border border-purple-500/40 rounded-full hover:bg-purple-500/25 transition-all group">
-                                    <span class="text-sm">🐋</span>
-                                    <div class="text-xs font-bold text-purple-300"> 鲸鱼活动 </div>
-                                    <div class="text-xs text-purple-200/60"> （3 个钱包） </div>
-                                </div><!-- 证据芯片 5 -->
-                                <div
-                                    class="inline-flex items-center gap-2 px-3 py-2 bg-orange-500/15 border border-orange-500/40 rounded-full hover:bg-orange-500/25 transition-all group">
-                                    <span class="text-sm">�����</span>
-                                    <div class="text-xs font-bold text-orange-300"> 音量 +215% </div>
-                                    <div class="text-xs text-orange-200/60"> (24 小时) </div>
-                                </div>
-                            </div>
-                        </div><!-- ========== 第 4 层：系统模式（机器可读操作状态） ========== -->
-                        <div
-                            class="mb-5 bg-gradient-to-br from-slate-900/80 to-blue-900/40 rounded-lg p-5 border-2 border-blue-500/40">
-                            <div class="flex items-start gap-4">
-                                <div
-                                    class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center flex-shrink-0">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg> </div>
-                                <div class="flex-1">
-                                    <div class="flex items-center gap-3 mb-3">
-                                        <div class="text-sm font-bold text-blue-300"> 系统模式： </div>
-                                        <div
-                                            class="px-3 py-1.5 bg-yellow-500/20 border-2 border-yellow-500/50 rounded-lg">
-                                            <span class="text-sm font-black text-yellow-300 tracking-wide">�� 监控</span>
-                                        </div>
-                                    </div>
-                                    <div class="grid grid-cols-3 gap-3 mb-3">
-                                        <div class="bg-slate-800/60 rounded-lg p-3 border border-cyan-500/30">
-                                            <div class="flex items-center gap-2 mb-1"><span
-                                                    class="text-cyan-400">⏱</span>
-                                                <div class="text-xs font-bold text-cyan-300"> 高频 </div>
-                                            </div>
-                                            <div class="text-[10px] text-cyan-200/60"> 监控激活 </div>
-                                        </div>
-                                        <div class="bg-slate-800/60 <div class=" flex items-center gap-2 mb-1"><span
-                                                class="text-yellow-400">🔔</span>
-                                            <div class="text-xs font-bold text-yellow-300">警报已启用</div>
-                                        </div>
-                                        <div class="text-[10px] text-yellow-200/60">准备触发</div>
-                                    </div>
-                                    <div class="bg-slate-800/60 rounded-lg p-3 border border-green-500/30">
-                                        <div class="flex items-center gap-2 mb-1"><span class="text-green-400">⛔</span>
-                                            <div class="text-xs font-bold text-green-300">暂无操作</div>
-                                        </div>
-                                        <div class="text-[10px] text-green-200/60"> 未达到阈值 </div>
-                                    </div>
-                                </div>
-                                <div
-                                    class="text-xs font-bold opacity-90 px-3 py-2 bg-cyan-500/10 border border-cyan-500/30 rounded">
-                                    ℹ️ 此系统以风险监控模式运行，而非交易执行模式。仅进行基础设施级评估。 </div>
-                            </div>
-                        </div>
-                    </div><!-- ========== 第 5 层：可折叠可解释性（用于合规性） ========== -->
-                    <details class="bg-slate-900/40 rounded-lg border border-purple-500/20 overflow-hidden">
-                        <summary
-                            class="px-4 py-3 cursor-pointer hover:bg-slate-800/50 transition-all flex items-center justify-between">
-                            <div class="flex items-center gap-2"> <svg class="w-4 h-4 text-purple-400" fill="none"
-                                    stroke="currentColor" viewbox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                </svg><span class="text-xs font-bold text-purple-300">可解释性和审计跟踪</span> <span
-                                    class="text-xs text-purple-400/60">（用于合规性和审查）</span> </div> <svg
-                                class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </summary>
-                        <div class="px-4 py-4 border-t border-purple-500/20 space-y-4"><!-- 原始详细说明 -->
-                            <div>
-                                <div class="text-xs font-bold text-purple-300 mb-2">风险评估理由</div>
-                                <p class="text-xs opacity-80混合风险分类源自多维信号分析。由于交易所资金大量流入（4 小时内流入主要中心化交易所 2880 万美元），该资产表现出较高的流动性风险，而历史上这与抛售压力相关。该资产显示出异常的社交媒体放大效应（12 小时内提及量增加 340%），表明可能存在协同活动或自然病毒式传播，需要进一步验证。受监控的代币呈现网络活动激增（活跃地址增加 180%），表明其使用量确实在增长，但仍需监控是否存在女巫攻击模式。</p> </div> <div> <div class="
-                                    text-xs font-bold text-purple-300 mb-2"> 监控触发条件
-                            </div>
-                            <div class="space-y-2 text-xs opacity-80">
-                                <div class="flex items-start gap-2"><span class="text-purple-400 mt-0.5">•</span>
-                                    <span><strong>交易所资金流入阈值：</strong> 如果累计资金流入超过阈值，则发出警报6 小时内累计达 1000 万美元</span> </div>
-                                <div class="flex items-start gap-2"><span class="text-purple-400 mt-0.5">•</span>
-                                    <span><strong>流动性支持中断：</strong> 监控订单簿深度是否低于基线阈值</span> </div>
-                                <div class="flex items-start gap-2"><span class="text-purple-400 mt-0.5">•</span>
-                                    <span><strong>情绪逆转：</strong> 追踪情绪突然恶化（正面提及量下降超过 50%）</span> </div>
-                            </div>
-                        </div>
-                        <div class="pt-3 border-t border-purple-500/20">
-                            <div class="text-xs font-bold text-purple-300 mb-2"> 与资产无关的框架 </div>
-                            <p class="text-xs opacity-70 leading-relaxed">此评估方法与资产无关，统一适用于 SentinelHQ
-                                监控的任何代币、协议或钱包集群。风险评分框架专为机构用户场景而设计，包括交易所上市风险评估、基金投资组合监控和监管合规报告。</p>
-                        </div>
-                        <div class="pt-4 border-t border-purple-500/20 bg-slate-900/40 rounded-lg p-4 mt-4">
-                            <div class="text-xs font-bold text-blue-300 mb-2"> 方法论说明 </div>
-                            <p class="text-xs opacity-90 leading-relaxed mb-2">SentinelHQ
-                                对风险行为的建模独立于资产品牌。本演示中显示的所有资产名称仅用于说明目的。风险评估是根据行为模式、流动性动态和多源信号分析生成的。</p>
-                            <p
-                                class="text-[10px] opacity-70 italicleading-relaxed border-t border-purple-500/10 pt-2 mt-2">
-                                🇫🇷 FR — Les évaluations de risque de SentinelHQ sont indépendantes des actifs observés
-                                et et </p>
-                        </div>
-                        <div class="text-[10px] opacity-50 text-center pt-3 border-t border-purple-500/10 mt-3">LLM 推理层
-                            + 专有的基于规则的分析生成的分析统计检测管道 · 置信度：87% </div>
-                </div>
-                </details>
-            </div>
-    </div>
-    </div>
-    </div><!-- 赛博朋克 AI 自动化工厂 -->
-    <div class="h-[600px] rounded-xl border-2 border-cyan-400/60 p-8 relative overflow-hidden bg-black shadow-2xl"
-        style="box-shadow: 0 0 80px rgba(6, 182, 212, 0.5), inset 0 0 80px rgba(139, 92, 246, 0.3);"><!-- 动画扫描线 -->
-        <div class="absolute inset-0 opacity-15 pointer-events-none"
-            style="background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(6, 182, 212, 0.15) 2px, rgba(6, 182, 212, 0.15) 4px); 动画:scan 8s linear infinite;">
-        </div><!-- Cyber​​ Grid -->
-        <div class="absolute inset-0 opacity-15"
-            style="background-image: linear-gradient(rgba(6, 182, 212, 0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(6, 182, 212, 0.4) 1px, transparent 1px); background-size: 25px 25px;">
-        </div><!-- 浮动数据粒子（更突出）-->
-        <div class="absolute top-1/4 left-1/4 w-3 h-3 rounded-full bg-cyan-400 blur-sm"
-            style="animation: pulse-glow 2s ease-in-out infinite, float 4s ease-in-out infinite;"></div>
-        <div class="absolute top-1/3 left-1/2 w-2 h-2 rounded-full bg-pink-400 blur-sm"
-            style="animation: pulse-glow 2.5s ease-in-out infinite, float 5s ease-in-out infinite; animation-delay: 0.5s;">
+      .heartbeat {
+        animation: heartbeat 2s ease-in-out infinite;
+      }
+  </style>
+  <div id="app" class="w-full h-full overflow-auto"><!-- 导航 -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-effect">
+      <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="text-2xl font-bold"> SentinelHQ </div>
+            <div class="text-sm opacity-70 mt-1"> Web3 风险智能引擎 </div>
+          </div>
+          <div class="flex gap-4"><button
+              class="px-6 py-2 rounded-md font-semibold transition-all hover:scale-105 bg-blue-600 hover:bg-blue-700">
+              请求演示 </button> <button
+              class="px-6 py-2 rounded-md border border-blue-500 hover:bg-blue-500 transition-all"> 联系我们 </button>
+          </div>
         </div>
-        <div class="absolute top-2/3 right-1/3 w-3 h-3 rounded-full bg-purple-400 blur-sm"
-            style="animation: pulse-glow 2.2s ease-in-out infinite, float 4.5s ease-in-out infinite; animation-delay: 1s;">
-        </div>
-        <div class="absolute bottom-1/4 left-1/3 w-2 h-2 rounded-full bg-yellow-400 blur-sm"
-            style="animation: pulse-glow 2.8s ease-in-out infinite, float 5.5s ease-in-out infinite; animation-delay: 1.5s;">
-        </div>
-        <div class="absolute top-1/2 right-1/4 w-3 h-3 rounded-full bg-blue-400 blur-sm"
-            style="animation: pulse-glow 2.3s ease-in-out infinite, float 4.8s ease-in-out infinite; animation-delay: 2s;">
-        </div><!-- 增强型神经网络，带有粗能量光束 --> <svg class="absolute inset-0 w-full h-full pointer-events-none"
-            style="filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.8));"><!-- 粗动画能量光束层 1 → AI 核心 -->
-            <line x1="12%" y1="25%" x2="43%" y2="50%" stroke="url(#cyber-grad1)" stroke-width="5" opacity="0.9"
-                stroke-linecap="round">​​
-                <animate attributename="opacity" values="0.4;1;0.4" dur="1.5s" repeatcount="indefinite" />
-                <animate attributename="stroke-width" values="4;6;4" dur="1.5s" repeatcount="indefinite" />
-            </line>
-            <line x1="12%" y1="50%" x2="43%" y2="50%" stroke="url(#cyber-grad2)" stroke-width="7" opacity="1"
-                stroke-linecap="round">​​
-                <animate attributename="opacity" values="0.6;1;0.6" dur="1.2s" repeatcount="indefinite" />
-                <animate attributename="stroke-width" values="6;8;6" dur="1.2s" repeatcount="indefinite" />
-            </line>
-            <line x1="12%" y1="75%" x2="43%" y2="50%" stroke="url(#cyber-grad3)" stroke-width="5" opacity="0.9"
-                stroke-linecap="round">​​
-                <animate attributename="opacity" values="0.4;1;0.4" dur="1.8s" repeatcount="indefinite" />
-                <animate attributename="stroke-width" values="4;6;4" dur="1.8s" repeatcount="indefinite" />
-            </line> <!-- THICK Animated Energy Beams AI Core → Layer 3 -->
-            <line x1="57%" y1="50%" x2="88%" y2="25%" stroke="url(#cyber-grad4)" stroke-width="5" opacity="0.9"
-                stroke-linecap="round">​​
-                <animate attributename="opacity" values="0.4;1;0.4" dur="1.4s" repeatcount="indefinite" />
-                <animate attributename="stroke-width" values="4;6;4" dur="1.4s" repeatcount="indefinite" />
-            </line>
-            <line x1="57%" y1="50%" x2="88%" y2="50%" stroke="url(#cyber-grad5)" stroke-width="7" opacity="1"
-                stroke-linecap="round">​​
-                <animate attributename="opacity" values="0.6;1;0.6" dur="1.1s" repeatcount="indefinite" />
-                <animate attributename="stroke-width" values="6;8;6" dur="1.1s" repeatcount="indefinite" />
-            </line>
-            <line x1="57%" y1="50%" x2="88%" y2="75%" stroke="url(#cyber-grad6)" stroke-width="5" opacity="0.9"
-                stroke-linecap="round">​​
-                <animate attributename="opacity" values="0.4;1;0.4" dur="1.6s" repeatcount="indefinite" />
-                <animate attributename="stroke-width" values="4;6;4" dur="1.6s" repeatcount="indefinite" />
-            </line> <!-- 快速移动的数据粒子（更大，更可见） -->
-            <circle r="4" fill="#00ffff" opacity="0.9" filter="url(#particle-glow)">
-                <animatemotion dur="2.5s" repeatcount="indefinite">
-                    <mpath href="#path1" />
-                </animatemotion>
-                <animate attributename="opacity" values="0;1;1;0" dur="2.5s" repeatcount="indefinite" />
-            </circle>
-            <circle r="4" fill="#ff00ff" opacity="0.9" filter="url(#particle-glow)">
-                <animatemotion dur="2s" repeatcount="indefinite">
-                    <mpath href="#path2" />
-                </animatemotion>
-                <animate attributename="opacity" values="0;1;1;0" dur="2s" repeatcount="indefinite" />
-            </circle>
-            <circle r="4" fill="#00ff88" opacity="0.9" filter="url(#particle-glow)">
-                <animatemotion dur="2.8s" repeatcount="indefinite">
-                    <mpath href="#path3" />
-                </animatemotion>
-                <animate attributename="opacity" values="0;1;1;0" dur="2.8s" repeatcount="indefinite" />
-            </circle>
-            <circle r="4" fill="#ff0088" opacity="0.9" filter="url(#particle-glow)">
-                <animatemotion dur="2.3s" repeatcount="indefinite">
-                    <mpath href="#path4" />
-                </animatemotion>
-                <animate attributename="opacity" values="0;1;1;0" dur="2.3s" repeatcount="indefinite" />
-            </circle>
-            <circle r="4" fill="#ffff00" opacity="0.9" filter="url(#particle-glow)">
-                <animatemotion dur="1.9s" repeatcount="indefinite">
-                    <mpath href="#path5" />
-                </animatemotion>
-                <animate attributename="opacity" values="0;1;1;0" dur="1.9s" repeatcount="indefinite" />
-            </circle>
-            <circle r="4" fill="#00ffff" opacity="0.9" filter="url(#particle-glow)">
-                <animatemotion dur="2.6s" repeatcount="indefinite">
-                    <mpath href="#path6" />
-                </animatemotion>
-                <animate attributename="opacity" values="0;1;1;0" dur="2.6s" repeatcount="indefinite" />
-            </circle> <!-- 粒子路径 -->
-            <path id="path1" d="M 12,25 Q 27,37 43,50" fill="none" />
-            <path id="path2" d="M 12,50 L 43,50" fill="none" />
-            <path id="path3" d="M 12,75 Q 27,62 43,50" fill="none" />
-            <path id="path4" d="M 57,50 Q 72,37 88,25" fill="none" />
-            <path id="path5" d="M 57,50 L 88,50" fill="none" />
-            <path id="path6" d="M 57,50 Q 72,62 88,75" fill="none" /> <!-- 赛博朋克动画渐变 -->
-            <defs><!-- 增强发光滤镜 -->
-                <filter id="particle-glow">
-                    <fegaussianblur stddeviation="4" result="coloredBlur" />
-                    <femerge>
-                        <femergenode in="coloredBlur" />
-                        <femergenode in="coloredBlur" />
-                        <femergenode in="SourceGraphic" />
-                    </femerge>
-                </filter>
-                <lineargradient id="cyber-grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:rgb(0,255,255);stop-opacity:0" />
-                    <stop offset="50%" style="stop-color:rgb(0,255,255);stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:rgb(255,0,255);stop-opacity:0" />
-                    <animate attributename="x1" values="0%;-50%;0%" dur="3s" repeatcount="indefinite" />
-                    <animate attributename="x2" values="100%;150%;100%" dur="3s" repeatcount="indefinite" />
-                </lineargradient>
-                <lineargradient id="cyber-grad2" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:rgb(255,0,255);stop-opacity:0" />
-                    <stop offset="50%" style="stop-color:rgb(255,0,255);stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:rgb(0,255,136);stop-opacity:0" />
-                    <animate attributename="x1" values="0%;-50%;0%" dur="2.5s" repeatcount="indefinite" />
-                    <animate attributename="x2" values="100%;150%;100%" dur="2.5s" repeatcount="indefinite" />
-                </lineargradient>
-                <lineargradient id="cyber-grad3" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:rgb(0,255,136);stop-opacity:0" />
-                    <stop offset="50%" style="stop-color:rgb(0,255,136);stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:rgb(0,255,255);stop-opacity:0" />
-                    <animate attributename="x1" values="0%;-50%;0%" dur="3.2s" repeatcount="indefinite" />
-                    <animate attributename="x2" values="100%;150%;100%" dur="3.2s" repeatcount="indefinite" />
-                </lineargradient>
-                <lineargradient id="cyber-grad4" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:rgb(255,0,136);stop-opacity:<lineargradient id=" cyber-grad5"
-                        x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" style="stop-color:rgb(0,255,255);stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:rgb(255,255,0);stop-opacity:0" />
-                        <animate attributename="x1" values="0%;-50%;0%" dur="2.8s" repeatcount="indefinite" />
-                        <animate attributename="x2" values="100%;150%;100%" dur="2.8s" repeatcount="indefinite" />
-                </lineargradient>
-                <lineargradient id="cyber-grad5" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:rgb(0,255,255);stop-opacity:0" />
-                    <stop offset="50%" style="stop-color:rgb(0,255,255);stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:rgb(255,0,255);stop-opacity:0" />
-                    <animate attributename="x1" values="0%;-50%;0%" dur="2.4s" repeatcount="indefinite" />
-                    <animate attributename="x2" values="100%;150%;100%" dur="2.4s" repeatcount="indefinite" />
-                </lineargradient>
-                <lineargradient id="cyber-grad6" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:0" />
-                    <stop offset="50%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:rgb(255,136,0);stop-opacity:0" />
-                    <animate attributename="x1" values="0%;-50%;0%" dur="2.9s" repeatcount="indefinite" />
-                    <animate attributename="x2" values="100%;150%;100%" dur="2.9s" repeatcount="indefinite" />
-                </lineargradient>
-            </defs>
-        </svg><!-- Layer 1: Multi-Source Data Ingestion (LEFT) -->
-        <div class="absolute left-6 top-20 w-36">
-            <div class="text-xs font-bold text-cyan-300 mb-3 text-center tracking-widest"
-                style="text-shadow: 0 0 10px rgba(6, 182, 212, 0.8);"> ◢ 图层 1 ◣ </div>
-            <div class="text-[10px] text-center text-cyan-200/70 mb-5 font-bold uppercase"> 数据导入 </div>
-            <div class="space-y-4"><!-- 数据源节点 -->
-                <div class="relative group">
-                    <div class="absolute inset-0 bg-cyan-400/30 rounded-lg blur-lg group-hover:blur-xl transition-all">
-                    </div>
-                    <div class="relative bg-gradient-to-br from-cyan-500/60 to-blue-600/60 backdrop-blur-md border-2 border-cyan-400/60 rounded-lg p-3 shadow-2xl hover:scale-110 transition-transform"
-                        style="box-shadow: 0 0 20px rgba(6, 182, 212, 0.6);">
-                        <div class="flex items-center gap-2">
-                            <div
-                                class="w-9 h-9 rounded-lg bg-cyan-400/40 flex items-center justify-center flex-shrink-0 border border-cyan-300">
-                                <svg class="w-5 h-5 text-cyan-100" fill="none" stroke="currentColor"
-                                    viewbox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                        d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-                                </svg> </div>
-                            <div class="flex-1">
-                                <div class="text-[11px] font-bold text-cyan-100"> 链上 </div>
-                                <div class="text-[9px] text-cyan-200/70"> 8 个网络 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="relative group">
-                    <div
-                        class="absolute inset-0 bg-purple-400/30 rounded-lg blur-lg group-hover:blur-xl transition-all">
-                    </div>
-                    <div class="relative bg-gradient-to-br from-purple-500/60 to-pink-600/60 backdrop-blur-md border-2 border-purple-400/60 rounded-lg p-3 shadow-2xl hover:scale-110 transition-transform"
-                        style="box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);">
-                        <div class="flex items-center gap-2">
-                            <div
-                                class="w-9 h-9 rounded-lg bg-purple-400/40 flex items-center justify-center flex-shrink-0 border border-purple-300">
-                                <svg class="w-5 h-5 text-purple-100" fill="none" stroke="currentColor"
-                                    viewbox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                        d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-                                </svg> </div>
-                            <div class="flex-1">
-                                <div class="text-[11px] font-bold text-purple-100"> CEX Feed </div>
-                                <div class="text-[9px] text-purple-200/70"> Live APIs </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      </div>
+    </nav><!-- 英雄区域 -->
+    <section class="relative pt-32 pb-20 px-6 overflow-hidden">
+      <div class="absolute inset-0 grid-background">​​</div><!-- 动画背景元素 -->
+      <div class="absolute top-20 left-10 w-64 h-64 bg-blue-500 rounded-full blur-3xl opacity-20 pulse-glow"></div>
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl opacity-20 pulse-glow"
+        style="animation-delay: 1.5s;"></div>
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="text-center mb-16">
+          <h1
+            class="text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            AI Web3 风险智能引擎演示</h1>
+          <p class="text-xl mb-6 max-w-3xl mx-auto">基于 AI 的实时 Web3 风险智能基础设施，用于检测、监控和可解释地评估系统性区块链风险</p>
+          <!-- 目标用户 - 对 i-Lab 至关重要 -->
+          <div class="mt-6 mb-4">
+            <div
+              class="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 border-2 border-blue-400/40 rounded-full">
+              <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewbox="0 0 24" 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg><span class="text-sm font-bold text-blue-200">专为以下用途设计：</span> <span
+                class="text-sm font-semibold text-white">交易所 · 基金 · 合规团队 · L2 生态系统</span> </div>
+          </div><!-- 战略定位声明 -->
+          <div class="mt-4 mb-6">
+            <p class="text-sm opacity-75 italic max-w-2xl mx-auto leading-relaxed">此演示展示的是风险智能基础设施，而非交易或价格预测工具。</p>
+          </div><!-- 法语描述框 -->
+          <div class="max-w-4xl mx-auto glass-effect rounded-xl p-6 mb-4 text-left">
+            <div class="mb-4">
+              <h3 class="text-lg font-bold mb-3 text-blue-300">🇫🇷 FR · i-Lab</h3>
+              <p class="opacity-90 leading-relaxed mb-2"><strong>Version de演示（法语/英语）</strong> conçue pour le dossier
+                i-Lab。</p>
+              <p class="opacity-80leading-relaxed text-sm">Prototype d'un moteur d'intelligence Web3 nouvelle génération
+                — IA可解释+分析comportementale —aligné avec les Priorités France2030（网络安全， IA，基础设施数字）。</p>
             </div>
+            <div class="pt-4 border-t border-blue-500/20">
+              <p class="opacity-90leading-relaxed">此演示演示了 <strong>SentinelHQ</strong> 如何聚合代币信号、计算风险评分并生成 AI
+                见解。这些屏幕截图基于我们用于 Web3 风险智能引擎原型设计的内部 Retool 仪表板。</p>
+            </div>
+          </div><!-- 主要功能标签 -->
+          <div class="flex flex-wrap justify-center gap-3 mb-8"><span
+              class="px-4 py-2 rounded-full bg-blue-500/20 border border-blue-500/40 text-sm font-medium">AI 驱动</span>
+            <span class="px-4 py-2 rounded-full bg-purple-500/20 border border-purple-500/40 text-sm font-medium">Web3
+              安全</span> <span
+              class="px-4 py-2 rounded-full bg-cyan-500/20 border border-cyan-500/40 text-sm font-medium">实时监控</span>
+            <span class="px-4 py-2 rounded-full bg-pink-500/20 border border-pink-500/40 text-sm font-medium">SaaS
+              原型</span> </div><!-- Hero 中的功能卡片 -->
+          <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <div class="glass-effect rounded-xl p-6 hover:border-blue-500 transition-all group">
+              <div
+                class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg> </div>
+              <h3 class="text-lg font-bold mb-2">低延迟风险信号处理</h3>
+              <p class="text-sm opacity-70">以毫秒级延迟处理链上事件、CEX 警报、行为信号和钱包移动。专为跨多个区块链网络的实时风险情报基础设施而构建。</p>
+            </div>
+            <div class="glass-effect rounded-xl p-6 hover:border-purple-500 transition-all group">
+              <div
+                class="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg> </div>
+              <h3 class="text-lg font-bold mb-2">符合监管要求且可审计的安全</h3>
+              <p class="text-sm opacity-70">端到端加密处理，符合 GDPR 标准，并提供可审计日志。专为需要可追溯性、可解释风险评估和合规级文档的交易所、基金和受监管实体而设计。</p>
+            </div>
+            <div class="glass-effect rounded-xl p-6 hover:border-blue-500 transition-all group">
+              <div
+                class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                </svg> </div>
+              <h3 class="text-lg font-bold mb-2">模块化风险智能架构</h3>
+              <p class="text-sm opacity-70">一个模块化的基础设施，结合了多链监听器、行为异常检测和可解释的AI评分管道。可扩展至从单资产监控到机构级风险情报信息流和应用程序接口。</p>
+            </div>
+          </div>
+        </div><!-- 概览信息框 -->
+        <div class="glass-effect rounded-xl p-6 mb-8 max-w-5xl mx-auto">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0">
+              <div
+                class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg> </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg font-bold mb-2 text-blue-300">🇫🇷 FR · 信号引擎概览 — 代币活动、信号量和高风险警报。</h3>
+              <p class="opacity-80 leading-relaxed mb-2">以下视图取自用于引擎原型设计的内部 Retool 仪表板。</p>
+              <p class="opacity-80 leading-relaxed">过去 24 小时内活跃代币、信号量和高风险警报的概览。</p>
+            </div>
+          </div>
+        </div><!-- 交互式仪表板预览 -->
+        <div class="glass-effect rounded-2xl p-8 float-animation mb-8">
+          <h2 class="text-2xl font-bold mb-6"> text-center">系统级风险信号 — 跨链行为监控</h2>
+          <div class="grid grid-cols-4 gap-4 mb-8"><!-- 胶囊卡片 1 -->
             <div class="relative group">
-                <div class="absolute inset-0"> bg-green-400/30 rounded-lg blur-lg group-hover:blur-xl transition-all">
-                </div>
-                <div class="relative bg-gradient-to-br from-green-500/60 to-cyan-600/60 backdrop-blur-md border-2 border-green-400/60 rounded-lg p-3 shadow-2xl hover:scale-110 transition-transform"
-                    style="box-shadow: 0 0 20px rgba(34, 197, 94, 0.6);">
-                    <div class="flex items-center gap-2">
-                        <div
-                            class="w-9 h-9 rounded-lg bg-green-400/40 flex items-center justify-center flex-shrink-0 border border-green-300">
-                            <svg class="w-5 h-5 text-green-100" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                    d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                            </svg> </div>
-                        <div class="flex-1">
-                            <div class="text-[11px] font-bold text-green-100"> Social </div>
-                            <div class="text-[9px] text-green-200/70"> Sentiment </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div><!-- Layer 2: AI CORE (CENTER) - CYBERPUNK HEART -->
-    <div class="absolute" style="left: 50%; top: 50%; transform: translate(-50%, -50%); width: 400px; height: 400px;">
-        <div class="text-xs font-bold text-pink-300 mb-3 text-center tracking-widest"
-            style="position: absolute; top: -32px; left: 50%; transform: translateX(-50%); text-shadow: 0 0 15px rgba(236, 72, 153, 1);">
-            ◢ LAYER 2 ◣ </div>
-        <div class="text-[10px] text-center text-pink-200/70 font-bold uppercase"
-            style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%);"> 神经核心 </div>
-        <div class="relative w-full h-full flex items-center justify-center"><!-- 多个脉冲轨道环 -->
-            <div class="absolute rounded-full border-2 border-cyan-400/20"
-                style="top: 50%; left: 50%; width: 224px; height: 224px; transform: translate(-50%, -50%); animation: rotate 25s linear infinite;">
-            </div>
-            <div class="absolute rounded-full border-2 border-purple-400/25"
-                style="top: 50%; left: 50%; width: 192px; height: 192px; transform: translate(-50%, -50%); animation: counter-rotate 20s linear infinite;">
-            </div>
-            <div class="absolute rounded-full border-2 border-pink-400/30"
-                style="top: 50%; left: 50%; width: 160px; height: 160px; transform: translate(-50%, -50%); animation: rotate 15s linear infinite;">
-            </div><!-- 脉冲环 -->
-            <div class="absolute rounded-full border border-cyan-400/40"
-                style="top: 50%; left: 50%; width: 208px; height: 208px; transform: translate(-50%, -50%); animation: pulse-ring 3s ease-in-out infinite;">
-            </div>
-            <div class="absolute rounded-full border border-purple-400/40"
-                style="top: 50%; left: 50%; width: 176px; height: 176px; transform: translate(-50%, -50%); animation: pulse-ring 3.5s ease-in-out infinite; animation-delay: 0.5s;">
-            </div><!-- 带有心跳的中央人工智能核心 -->
-            <div class="relative w-36 h-36 heartbeat" style="z-index: 10;">
+              <div
+                class="absolute inset-0 bg-gradient-to-b from-blue-500/20 to-purple-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all">
+              </div>
+              <div
+                class="relative px-4 py-8 rounded-full border-2 border-blue-500/40 hover:border-blue-400 transition-all h-full flex flex-col items-center text-center">
                 <div
-                    class="absolute inset-0 bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 rounded-2xl blur-2xl opacity-80">
-                </div>
-                <div class="relative w-full h-full rounded-2xl bg-gradient-to-br from-cyan-500/95 via-purple-600/95 to-pink-600/95 backdrop-blur-sm border-4 border-white/30 shadow-2xl flex flex-col items-center justify-center"
-                    style="box-shadow: 0 0 60px rgba(6, 182, 212, 0.8), 0 0 90px rgba(236, 72, 153, 0.6), inset 0 0 30px rgba(255, 255, 255, 0.2);">
-                    <svg class="w-14 h-14 mb-2 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"
-                        style="filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                    </svg>
-                    <div class="text-sm font-bold text-white tracking-wider"
-                        style="text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);"> AI CORE </div>
-                    <div class="text-[9px] text-white/90 mt-1 font-semibold"> GPT-4 + DeepSeek </div>
-                </div>
-            </div><!-- 带有增强发光效果的处理模块 -->
-            <div <div class="absolute" style="top: 0; left: 50%; transform: translate(-50%, -64px);">
-                <div class="bg-cyan-500/30 backdrop-blur-md border-2 border-cyan-400/50 rounded-lg px-4 py-2 text-center shadow-lg"
-                    style="box-shadow: 0 0 20px rgba(6, 182, 212, 0.7);">
-                    <div class="text-[10px] text-cyan-100 font-bold"> 图案检测 </div>
-                </div>
-            </div>
-            <div class="absolute" style="bottom: 0; left: 50%; transform: translate(-50%,64px);">
-                <div class="bg-purple-500/30 backdrop-blur-md border-2 border-purple-400/50 rounded-lg px-4 py-2 text-center shadow-lg"
-                    style="box-shadow: 0 0 20px rgba(168, 85, 247, 0.7);">
-                    <div class="text-[10px] text-purple-100 font-bold"> 风险评分 </div>
-                </div>
-            </div>
-            <div class="absolute" style="top: 50%; left: 0; transform: translate(-128px, -50%);">
-                <div class="bg-green-500/30 backdrop-blur-md border-2 border-green-400/50 rounded-lg px-4 py-2 text-center shadow-lg"
-                    style="box-shadow: 0 0 20px rgba(34, 197, 94, 0.7);">
-                    <div class="text-[10px] text-green-100 font-bold"> Anomaly ML </div>
-                </div>
-            </div>
-            <div class="absolute" style="top: 50%; right: 0; transform: translate(128px, -50%);">
-                <div class="bg-pink-500/30 backdrop-blur-md border-2 border-pink-400/50 rounded-lg px-4 py-2 text-center shadow-lg"
-                    style="box-shadow: 0 0 20px rgba(236, 72, 153, 0.7);">
-                    <div class="text-[10px] text-pink-100 font-bold"> 可解释人工智能 </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div><!-- 第 3 层：人类智能与行动（右侧） -->
-    <div class="absolute right-6 top-20 w-36">
-        <div class="text-xs font-bold text-yellow-300 mb-3 text-center tracking-widest"
-            style="text-shadow: 0 0 10px rgba(250, 204, 21, 0.8);"> ◢ 图层 3 ◣ </div>
-        <div class="text-[10px] text-center text-yellow-200/70 mb-5 font-bold uppercase"> 人工监督 </div>
-        <div class="space-y-4"><!-- 分析节点 -->
+                  class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0 mb-4">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg> </div>
+                <div class="text-sm font-bold text-blue-400 mb-1"> 信号引擎 </div>
+                <div class="text-xs opacity-70 mb-2"> 多源警报</div>
+                <div class="text-3xl font-bold text-blue-300 mb-3"> 34 </div>
+                <div class="text-xs opacity-60 leading-relaxed"> 来自 CEX 上市、巨鲸转移、风险投资活动和链上模式的聚合警报。按风险评分进行 AI 排名。 </div>
+              </div>
+            </div><!-- 胶囊卡 2 -->
             <div class="relative group">
-                <div class="absolute inset-0 bg-emerald-400/30 rounded-lg blur-lg group-hover:blur-xl transition-all">
+              <div
+                class="absolute inset-0 bg-gradient-to-b from-purple-500/20 to-blue-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all">
+              </div>
+              <div
+                class="relative px-4 py-8 rounded-full border-2 border-purple-500/40 hover:border-purple-400 transition-all h-full flex flex-col items-center text-center">
+                <div
+                  class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center flex-shrink-0 mb-4">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                  </svg> </div>
+                <div class="text-sm font-bold text-purple-400 mb-1"> 链上监控 </div>
+                <div class="text-xs opacity-70 mb-2"> 多链监听器 </div>
+                <div class="text-3xl font-bold text-purple-300 mb-3"> 8 </div>
+                <div class="text-xs opacity-60 leading-relaxed"> 实时跟踪 BTC、ETH、BSC、Solana、Arbitrum、Base、zkSync、Linea。
                 </div>
-                <div class="relative bg-gradient-to-br from-emerald-500/60 to-green-600/60 backdrop-blur-md border-2 border-emerald-400/60 rounded-lg p-3 shadow-2xl hover:scale-110 transition-transform"
-                    style="box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);">
-                    <div class="flex items-center gap-2">
-                        <div
-                            class="w-9 h-9 rounded-lg bg-emerald-400/40 flex items-center justify-center flex-shrink-0 border border-emerald-300">
-                            <svg class="w-5 h-5 text-emerald-100" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                            </svg> </div>
-                        <div class="flex-1">
-                            <div class="text-[11px]粗体字体text-emerald-100"> 分析 </div>
-                            <div class="text-[9px] text-emerald-200/70"> 专家评审 </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
+            </div><!-- 胶囊卡片 3 -->
+            <div class="relative group">
+              <div
+                class="absolute inset-0 bg-gradient-to-b from-cyan-500/20 to-blue-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all">
+              </div>
+              <div
+                class="relative px-4 py-8 rounded-full border-2 border-cyan-500/40 hover:border-cyan-400 transition-all h-full flex flex-col items-center text-center">
+                <div
+                  class="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center flex-shrink-0 mb-4">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24" 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg> </div>
+                <div class="text-sm font-bold text-cyan-400 mb-1"> VC & Whale Radar</div>
+                <div class="text-xs opacity-70 mb-2"> 跟踪实体</div>
+                <div class="text-3xl font-bold text-cyan-300 mb-3"> 120</div>
+                <div class="text-xs opacity-60 leading-relaxed"> 检测与价格敏感事件相关的资金流入/流出和模式。 </div>
+              </div>
+            </div><!-- 胶囊卡片 4 -->
+            <div class="relative group">
+              <div
+                class="absolute inset-0 bg-gradient-to-b from-pink-500/20 to-purple-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all">
+              </div>
+              <div
+                class="relative px-4 py-8 rounded-full border-2 border-pink-500/40 hover:border-pink-400 transition-all h-full flex flex-col items-center text-center">
+                <div
+                  class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center flex-shrink-0 mb-4">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                  </svg> </div>
+                <div class="text-sm font-bold text-pink-400 mb-1"> 观察列表 </div>
+                <div class="text-xs opacity-70 mb-2"> 自定义代币追踪 </div>
+                <div class="text-3xl font-bold text-pink-300 mb-3"> 12 </div>
+                <div class="text-xs opacity-60 leading-relaxed"> 用户自定义观察列表 + 主题分组（AI、L1、DeFi、Meme）。 </div>
+              </div>
             </div>
-        </div><!-- 验证节点 -->
-        <div class="relative group">
-            <div class="absolute inset-0 bg-pink-400/30 rounded-lg blur-lg group-hover:blur-xl transition-all"></div>
-            <div class="relative bg-gradient-to-br from-pink-500/60 to-rose-600/60 backdrop-blur-md border-2 border-pink-400/60 rounded-lg p-3 shadow-2xl hover:scale-110 transition-transform"
-                style="box-shadow: 0 0 20px rgba(236, 72, 153, 0.6);">
+          </div><!-- 实时数据表 -->
+          <div class="bg-slate-900/50 rounded-xl border border-blue-500/30 overflow-hidden mb-8">
+            <div class="px-6 py-4 border-b border-blue-500/30 <div class=" flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-2 h-2 rounded-full bg-green-400 pulse-glow"></div>
+                <h3 class="font-bold text-lg">实时信号</h3><span class="text-xs opacity-60">每 5 秒自动刷新</span>
+              </div>
+              <div class="flex gap-2"><button
+                  class="px-3 py-1 rounded bg-blue-500/20 hover:bg-blue-500/30 text-xs font-medium border border-blue-500/40 transition-all">全部</button>
+                <button
+                  class="px-3 py-1 rounded bg-slate-800/50 hover:bg-slate-700/50 text-xs font-medium border border-slate-600/40 transition-all">高风险</button>
+                <button
+                  class="px-3 py-1 rounded bg-slate-800/50 hover:bg-slate-700/50 text-xs font-medium border border-slate-600/40 transition-all">鲸鱼警报</button>
+              </div>
+            </div><!-- 表格标题 -->
+            <div
+              class="grid grid-cols-12 gap-4 px-6 py-3 bg-slate-800/70 text-xs font-semibold border-b border-blue-500/20">
+              <div class="col-span-2"> 风险对象 </div>
+              <div class="col-span-2"> 信号类型 </div>
+              <div class="col-span-3"> 详情 </div>
+              <div class="col-span-2"> 风险影响 </div>
+              <div class="col-span-1 text-center" title="基于多源信号的综合风险评分"> 风险（0-10）</div>
+              <div class="col-span-1 text-center">优先级</div>
+              <div class="col-span-1 text-right">时间</div>
+            </div><!-- 表格主体 -->
+            <div id="signal-table-body" class="divide-y divide-slate-700/50"><!-- 行将在此处动态插入 --> </div>
+          </div><!-- Token 详情 + AI 洞察面板 -->
+          <div class="glass-effect rounded-2xl p-8 mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500 to-yellow-500 flex items-center justify-center text-2xl font-bold shadow-lg">
+                  🔥 </div>
+                <div>
+                  <div class="flex items-center gap-3 mb-2">
+                    <h3 class="text-2xl font-bold text-blue-300">Token 级风险评估（资产无关）</h3><span
+                      class="px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-500/40 text-xs font-semibold text-cyan-300">用例示例</span>
+                  </div>
+                  <div class="flex items-center gap-3"><span class="text-sm opacity-90 font-semibold">资产类别：高流动性 ERC-20
+                      代币（以太坊）</span> </div>
+                  <div class="mt-1 space-y-1"><span class="text-xs opacity-50 italic">使用公开交易的 ERC-20 资产进行示例演示。</span>
+                    <div class="text-[10px] opacity-40 italic">显示的资产标识符仅用于演示目的。 </div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-right">
+                <div class="text-xs font-bold text-blue-300/70 mb-1"> 市场环境 (24 小时) </div>
+                <div class="text-sm text-green-400 flex items-center justify-end gap-1 mb-1"> <svg class="w-3 h-3"
+                    fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg> +12.5% </div>
+                <div class="text-2xl font-bold text-green-400"> $0.000012 </div>
+              </div>
+            </div><!-- 代币风险上下文网格 -->
+            <div class="mb-2">
+              <h4 class="text-sm font-bold text-blue-300 opacity-90">代币风险上下文</h4>
+            </div>
+            <div class="grid grid-cols-4 gap-4 mb-6">
+              <div class="bg-slate-800/50 rounded-lg p-4 border border-blue-500/20">
+                <div class="text-xs opacity-60 mb-1">市值 </div>
+                <div class="text-xl font-bold"> 5.2B </div>
+              </div>
+              <div class="bg-slate-800/50 rounded-lg p-4 border border-blue-500/20">
+                <div class="text-xs opacity-60 mb-1"> 流动性 &成交量（24小时）</div>
+                <div class="text-xl font-bold"> 8.42亿美元</div>
+              </div>
+              <div class="bg-slate-800/50 rounded-lg p-4 border border-blue-500/20">
+                <div class="text-xs opacity-60 mb-1"> 持有人分配</div>
+                <div class="text-xl font-bold"> 23.6万</div>
+              </div>
+              <div class="bg-slate-800/50 rounded-lg p-4 border border-blue-500/20">
+                <div class="text-xs font-bold text-blue-300 mb-2"> 🎯 综合风险评分</div>
+                <div class="text-2xl font-bold text-yellow-400 mb-1"> 6.8 / 10</div>
+                <div class="text-xs <div class=" text-yellow-400/80 font-semibold mb-1"> 中等风险</div>
+                <div class="text-[10px] opacity-60 leading-relaxed mb-2"> 基于链上、流动性、行为和社会信号。</div>
+                <div class="text-[9px] opacity-50 italic border-t border-blue-500/20 pt-2"> 风险评分取决于具体情况，不同资产之间不具有可比性。
+                </div>
+              </div>
+            </div>
+          </div><!-- AI 洞察面板 - 状态感知可解释 AI -->
+          <div
+            class="relative bg-gradient-to-br from-purple-900/30 to-blue-900/30 rounded-xl p-6 border border-purple-500/40 overflow-hidden">
+            <!-- 动画背景 -->
+            <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/20 rounded-full blur-3xl pulse-glow"></div>
+            <div class="relative"><!-- 标题 -->
+              <div class="mb-4 pb-3 border-b border-purple-500/30 flex items-center justify-between">
+                <div class="text-sm font-bold text-purple-300/90 tracking-wide"> 风险推理输出（可解释 AI） </div>
                 <div class="flex items-center gap-2">
-                    <div
-                        class="w-9 h-9 rounded-lg bg-pink-400/40 flex items-center justify-center flex-shrink-0 border border-pink-300">
-                        <svg class="w-5 h-5 text-pink-100" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg> </div>
-                    <div class="flex-1">
-                        <div class="text-[11px] font-bold text-pink-100"> 验证 </div>
-                        <div class="text-[9px] text-pink-200/70"> 结束 </div>
-                    </div>
+                  <div class="w-2 h-2 rounded-full bg-green-400 pulse-glow"></div><span
+                    class="text-xs text-green-400 font-semibold">实时 · 87% 置信度</span>
                 </div>
+              </div><!-- ========== 第一层：风险姿态指标 (0.（5秒理解） ========== -->
+              <div
+                class="mb-6 p-6 bg-gradient-to-br from-yel​​low-900/40 to-orange-900/30 rounded-xl border-2 border-yellow-500/50 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-48 h-48 bg-yellow-500/10 rounded-full blur-3xl"></div>
+                <div class="relative">
+                  <div class="text-center mb-6">
+                    <div class="text-xs text-yellow-300/70 font-bold tracking-widest mb-2"> 风险姿势 </div>
+                    <div class="flex items-center justify-center gap-3 mb-1"><span class="text-5xl">⚠️</span>
+                      <div class="text-4xl font-black"> text-yellow-300 tracking-tight">混合风险</div>
+                    </div>
+                    <div class="text-sm text-yellow-200/60 font-medium">检测到结构性压力 · 需要监控</div>
+                  </div><!-- 状态栏 - 可视化风险分解 -->
+                  <div class="space-y-3 bg-slate-900/60 rounded-lg p-4 border border-yellow-500/20">
+                    <div class="text-xs font-bold text-yellow-300/80 mb-3 text-center">风险维度分析</div><!-- 流动性风险栏 -->
+                    <div class="flex items-center gap-3">
+                      <div class="w-20 text-xs font-bold text-red-300">流动性</div>
+                      <div class="flex-1 bg-slate-800/80 <div class=" absolute inset-0 bg-gradient-to-r from-red-600
+                        to-red-400 rounded-full" style="width: 85%; animation: pulse-glow 2s ease-in-out infinite;">
+                      </div>
+                    </div>
+                    <div class="w-16 text-xs font-bold text-red-400 text-right"> 高 </div>
+                  </div><!-- 情绪风险条 -->
+                  <div class="flex items-center gap-3">
+                    <div class="w-20 text-xs font-bold text-yellow-300"> 情绪 </div>
+                    <div
+                      class="flex-1 bg-slate-800/80 rounded-full h-3 relative overflow-hidden border border-yellow-500/30">
+                      <div class="absolute inset-0 bg-gradient-to-r from-yel​​low-600 to-yellow-400 rounded-full"
+                        style="width: 65%;"></div>
+                    </div>
+                    <div class="w-16 text-xs font-bold text-yellow-400 text-right"> MEDIUM </div>
+                  </div><!-- 网络风险条 -->
+                  <div class="flex items-center gap-3">
+                    <div class="w-20 text-xs font-bold text-cyan-300"> 网络 </div>
+                    <div
+                      class="flex-1 bg-slate-800/80 rounded-full h-3 relative overflow-hidden border border-cyan-500/30">
+                      <div class="absolute inset-0 bg-gradient-to-r from-cyan-600 to-cyan-400 rounded-full"
+                        style="width: 60%;"></div>
+                    </div>
+                    <div class="w-16 text-xs font-bold text-cyan-400 text-right"> 中等 </div>
+                  </div>
+                </div>
+                <div class="mt-4 pt-3 border-t border-yellow-500/20 text-center">
+                  <div class="text-xs font-bold text-yellow-300/90 mb-1"> 主要风险驱动因素 </div>
+                  <div class="text-sm text-yellow-200/80"> 交易所流动性流入压力 </div>
+                </div>
+              </div>
+            </div><!-- ========== 第二层：风险来源及方向性指标 ========== -->
+            <div class="mb-6">
+              <div class="text-xs font-bold text-purple-300/80 mb-3 tracking-wide"> 主动风险向量 · 实时状态 </div>
+              <div class="grid grid-cols-3 gap-3"><!-- 流动性向量 -->
+                <div
+                  class="bg-slate-900/60 rounded-lg p-4 border-2 border-red-500/40 hover:border-red-400/60 transition-all relative overflow-hidden group">
+                  <div class="absolute inset-0 bg-red-500/5 group-hover:bg-red-500/10 transition-all"></div>
+                  <div class="relative">
+                    <div class="flex items-center justify-between mb-3"><span class="text-2xl">⚠️</span>
+                      <div class="flex items-center gap-1"><span class="text-red-400 text-xl font-bold">↑</span> <span
+                          class="text-xs font-bold text-red-400/70">RISING</span> </div>
+                    </div>
+                    <div class="text-sm font-bold text-red-300 mb-1"> Liquidity </div>
+                    <div class="text-xs text-red-200/60"> Exchange inflow </div>
+                  </div>
+                </div><!-- 情感向量 -->
+                <div
+                  class="bg-slate-900/60 rounded-lg p-4 border-2 border-blue-500/40 hover:border-blue-400/60 transition-all relative overflow-hidden group">
+                  <div class="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/10 transition-all"></div>
+                  <div class="relative">
+                    <div class="flex items-center justify-between mb-3"><span class="text-2xl">📈</span>
+                      <div class="flex items-center gap-1"><span class="text-blue-400 text-xl font-bold">→</span> <span
+                          class="text-xs font-bold text-blue-400/70">活跃</span> </div>
+                    </div>
+                    <div class="text-sm font-bold text-blue-300 mb-1">情感</div>
+                    <div class="text-xs text-blue-200/60">异常放大</div>
+                  </div>
+                </div><!-- 网络向量 -->
+                <div
+                  class="bg-slate-900/60 rounded-lg p-4 border-2 border-cyan-500/40 hover:border-cyan-400/60 transition-all relative overflow-hidden group">
+                  <div class="absolute inset-0 bg-cyan-500/5 group-hover:bg-cyan-500/10 transition-all"></div>
+                  <div class="relative">
+                    <div class="flex items-center justify-between mb-3"><span class="text-2xl">🔁</span>
+                      <div class="flex items-center gap-1"><span class="text-cyan-400 text-xl font-bold">→</span> <span
+                          class="text-xs font-bold text-cyan-400/70">ACTIVE</span> </div>
+                    </div>
+                    <div class="text-sm font-bold text-cyan-300 mb-1"> Network </div>
+                    <div class="text-xs text-cyan-200/60"> Usage surge </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-3 flex items-center justify-center gap-4 text-xs">
+                <div class="flex items-center gap-1.5"><span class="text-red-400 text-sm">↑</span> <span
+                    class="text-red-300/70">升级中</span> </div>
+                <div class="flex items-center gap-1.5"><span class="text-yellow-400 text-sm">→</span> <span
+                    class="text-yellow-300/70">活跃中</span> </div>
+                <div class="flex items-center gap-1.5"><span class="text-green-400 text-sm">✓</span> <span
+                    class="text-green-300/70">稳定中</span> </div>
+              </div>
+            </div><!-- ========== 第三层：证据芯片（视觉，非文本）========== -->
+            <div class="mb-6 bg-slate-900/60 rounded-lg p-4 border border-cyan-500/30">
+              <div class="text-xs font-bold text-cyan-300 mb-3 tracking-wide"> 证据信号 · 可追踪数据点 </div>
+              <div class="flex flex-wrap gap-2"><!-- 证据芯片 1 -->
+                <div
+                  class="inline-flex items-center gap-2 px-3 py-2 bg-red-500/15 border border-red-500/40 rounded-full hover:bg-red-500/25 transition-all group">
+                  <span class="text-sm">🏦</span>
+                  <div class="text-xs font-bold text-red-300"> +2880万美元 → 币安 </div>
+                  <div <div class="text-xs text-red-200/60"> (4小时) </div>
+                </div><!-- 证据芯片 2 -->
+                <div
+                  class="inline-flex items-center gap-2 px-3 py-2 bg-blue-500/15 border border-blue-500/40 rounded-full hover:bg-blue-500/25 transition-all group">
+                  <span class="text-sm">💬</span>
+                  <div class="text-xs font-bold text-blue-300"> 提及 +340% </div>
+                  <div class="text-xs text-blue-200/60"> (12小时) </div>
+                </div><!-- 证据芯片 3 -->
+                <div
+                  class="inline-flex items-center gap-2 px-3 py-2 bg-cyan-500/15 border border-cyan-500/40 <span class="
+                  text-sm">🔗</span>
+                  <div class="text-xs font-bold text-cyan-300"> 活动地址 +180% </div>
+                </div><!-- 证据芯片 4 -->
+                <div
+                  class="inline-flex items-center gap-2 px-3 py-2 bg-purple-500/15 border border-purple-500/40 rounded-full hover:bg-purple-500/25 transition-all group">
+                  <span class="text-sm">🐋</span>
+                  <div class="text-xs font-bold text-purple-300"> 鲸鱼活动 </div>
+                  <div class="text-xs text-purple-200/60"> （3 个钱包） </div>
+                </div><!-- 证据芯片 5 -->
+                <div
+                  class="inline-flex items-center gap-2 px-3 py-2 bg-orange-500/15 border border-orange-500/40 rounded-full hover:bg-orange-500/25 transition-all group">
+                  <span class="text-sm">�����</span>
+                  <div class="text-xs font-bold text-orange-300"> 音量 +215% </div>
+                  <div class="text-xs text-orange-200/60"> (24 小时) </div>
+                </div>
+              </div>
+            </div><!-- ========== 第 4 层：系统模式（机器可读操作状态） ========== -->
+            <div
+              class="mb-5 bg-gradient-to-br from-slate-900/80 to-blue-900/40 rounded-lg p-5 border-2 border-blue-500/40">
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg> </div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-3 mb-3">
+                    <div class="text-sm font-bold text-blue-300"> 系统模式： </div>
+                    <div class="px-3 py-1.5 bg-yellow-500/20 border-2 border-yellow-500/50 rounded-lg"><span
+                        class="text-sm font-black text-yellow-300 tracking-wide">�� 监控</span> </div>
+                  </div>
+                  <div class="grid grid-cols-3 gap-3 mb-3">
+                    <div class="bg-slate-800/60 rounded-lg p-3 border border-cyan-500/30">
+                      <div class="flex items-center gap-2 mb-1"><span class="text-cyan-400">⏱</span>
+                        <div class="text-xs font-bold text-cyan-300"> 高频 </div>
+                      </div>
+                      <div class="text-[10px] text-cyan-200/60"> 监控激活 </div>
+                    </div>
+                    <div class="bg-slate-800/60 <div class=" flex items-center gap-2 mb-1"><span
+                        class="text-yellow-400">🔔</span>
+                      <div class="text-xs font-bold text-yellow-300">警报已启用</div>
+                    </div>
+                    <div class="text-[10px] text-yellow-200/60">准备触发</div>
+                  </div>
+                  <div class="bg-slate-800/60 rounded-lg p-3 border border-green-500/30">
+                    <div class="flex items-center gap-2 mb-1"><span class="text-green-400">⛔</span>
+                      <div class="text-xs font-bold text-green-300">暂无操作</div>
+                    </div>
+                    <div class="text-[10px] text-green-200/60"> 未达到阈值 </div>
+                  </div>
+                </div>
+                <div class="text-xs font-bold opacity-90 px-3 py-2 bg-cyan-500/10 border border-cyan-500/30 rounded"> ℹ️
+                  此系统以风险监控模式运行，而非交易执行模式。仅进行基础设施级评估。 </div>
+              </div>
             </div>
-        </div><!-- 操作节点 -->
+          </div><!-- ========== 第 5 层：可折叠可解释性（用于合规性） ========== -->
+          <details class="bg-slate-900/40 rounded-lg border border-purple-500/20 overflow-hidden">
+            <summary
+              class="px-4 py-3 cursor-pointer hover:bg-slate-800/50 transition-all flex items-center justify-between">
+              <div class="flex items-center gap-2"> <svg class="w-4 h-4 text-purple-400" fill="none"
+                  stroke="currentColor" viewbox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg><span class="text-xs font-bold text-purple-300">可解释性和审计跟踪</span> <span
+                  class="text-xs text-purple-400/60">（用于合规性和审查）</span> </div> <svg class="w-4 h-4 text-purple-400"
+                fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-4 py-4 border-t border-purple-500/20 space-y-4"><!-- 原始详细说明 -->
+              <div>
+                <div class="text-xs font-bold text-purple-300 mb-2">风险评估理由</div>
+                <p class="text-xs opacity-80混合风险分类源自多维信号分析。由于交易所资金大量流入（4 小时内流入主要中心化交易所 2880 万美元），该资产表现出较高的流动性风险，而历史上这与抛售压力相关。该资产显示出异常的社交媒体放大效应（12 小时内提及量增加 340%），表明可能存在协同活动或自然病毒式传播，需要进一步验证。受监控的代币呈现网络活动激增（活跃地址增加 180%），表明其使用量确实在增长，但仍需监控是否存在女巫攻击模式。</p> </div> <div> <div class="
+                  text-xs font-bold text-purple-300 mb-2"> 监控触发条件
+              </div>
+              <div class="space-y-2 text-xs opacity-80">
+                <div class="flex items-start gap-2"><span class="text-purple-400 mt-0.5">•</span>
+                  <span><strong>交易所资金流入阈值：</strong> 如果累计资金流入超过阈值，则发出警报6 小时内累计达 1000 万美元</span> </div>
+                <div class="flex items-start gap-2"><span class="text-purple-400 mt-0.5">•</span>
+                  <span><strong>流动性支持中断：</strong> 监控订单簿深度是否低于基线阈值</span> </div>
+                <div class="flex items-start gap-2"><span class="text-purple-400 mt-0.5">•</span>
+                  <span><strong>情绪逆转：</strong> 追踪情绪突然恶化（正面提及量下降超过 50%）</span> </div>
+              </div>
+            </div>
+            <div class="pt-3 border-t border-purple-500/20">
+              <div class="text-xs font-bold text-purple-300 mb-2"> 与资产无关的框架 </div>
+              <p class="text-xs opacity-70 leading-relaxed">此评估方法与资产无关，统一适用于 SentinelHQ
+                监控的任何代币、协议或钱包集群。风险评分框架专为机构用户场景而设计，包括交易所上市风险评估、基金投资组合监控和监管合规报告。</p>
+            </div>
+            <div class="pt-4 border-t border-purple-500/20 bg-slate-900/40 rounded-lg p-4 mt-4">
+              <div class="text-xs font-bold text-blue-300 mb-2"> 方法论说明 </div>
+              <p class="text-xs opacity-90 leading-relaxed mb-2">SentinelHQ
+                对风险行为的建模独立于资产品牌。本演示中显示的所有资产名称仅用于说明目的。风险评估是根据行为模式、流动性动态和多源信号分析生成的。</p>
+              <p class="text-[10px] opacity-70 italicleading-relaxed border-t border-purple-500/10 pt-2 mt-2">🇫🇷 FR —
+                Les évaluations de risque de SentinelHQ sont indépendantes des actifs observés et et </p>
+            </div>
+            <div class="text-[10px] opacity-50 text-center pt-3 border-t border-purple-500/10 mt-3">LLM 推理层 +
+              专有的基于规则的分析生成的分析统计检测管道 · 置信度：87% </div>
+        </div>
+        </details>
+      </div>
+  </div>
+  </div>
+  </div><!-- 赛博朋克 AI 自动化工厂 -->
+  <div class="h-[600px] rounded-xl border-2 border-cyan-400/60 p-8 relative overflow-hidden bg-black shadow-2xl"
+    style="box-shadow: 0 0 80px rgba(6, 182, 212, 0.5), inset 0 0 80px rgba(139, 92, 246, 0.3);"><!-- 动画扫描线 -->
+    <div class="absolute inset-0 opacity-15 pointer-events-none"
+      style="background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(6, 182, 212, 0.15) 2px, rgba(6, 182, 212, 0.15) 4px); 动画:scan 8s linear infinite;">
+    </div><!-- Cyber​​ Grid -->
+    <div class="absolute inset-0 opacity-15"
+      style="background-image: linear-gradient(rgba(6, 182, 212, 0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(6, 182, 212, 0.4) 1px, transparent 1px); background-size: 25px 25px;">
+    </div><!-- 浮动数据粒子（更突出）-->
+    <div class="absolute top-1/4 left-1/4 w-3 h-3 rounded-full bg-cyan-400 blur-sm"
+      style="animation: pulse-glow 2s ease-in-out infinite, float 4s ease-in-out infinite;"></div>
+    <div class="absolute top-1/3 left-1/2 w-2 h-2 rounded-full bg-pink-400 blur-sm"
+      style="animation: pulse-glow 2.5s ease-in-out infinite, float 5s ease-in-out infinite; animation-delay: 0.5s;">
+    </div>
+    <div class="absolute top-2/3 right-1/3 w-3 h-3 rounded-full bg-purple-400 blur-sm"
+      style="animation: pulse-glow 2.2s ease-in-out infinite, float 4.5s ease-in-out infinite; animation-delay: 1s;">
+    </div>
+    <div class="absolute bottom-1/4 left-1/3 w-2 h-2 rounded-full bg-yellow-400 blur-sm"
+      style="animation: pulse-glow 2.8s ease-in-out infinite, float 5.5s ease-in-out infinite; animation-delay: 1.5s;">
+    </div>
+    <div class="absolute top-1/2 right-1/4 w-3 h-3 rounded-full bg-blue-400 blur-sm"
+      style="animation: pulse-glow 2.3s ease-in-out infinite, float 4.8s ease-in-out infinite; animation-delay: 2s;">
+    </div><!-- 增强型神经网络，带有粗能量光束 --> <svg class="absolute inset-0 w-full h-full pointer-events-none"
+      style="filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.8));"><!-- 粗动画能量光束层 1 → AI 核心 -->
+      <line x1="12%" y1="25%" x2="43%" y2="50%" stroke="url(#cyber-grad1)" stroke-width="5" opacity="0.9"
+        stroke-linecap="round">​​
+        <animate attributename="opacity" values="0.4;1;0.4" dur="1.5s" repeatcount="indefinite" />
+        <animate attributename="stroke-width" values="4;6;4" dur="1.5s" repeatcount="indefinite" />
+      </line>
+      <line x1="12%" y1="50%" x2="43%" y2="50%" stroke="url(#cyber-grad2)" stroke-width="7" opacity="1"
+        stroke-linecap="round">​​
+        <animate attributename="opacity" values="0.6;1;0.6" dur="1.2s" repeatcount="indefinite" />
+        <animate attributename="stroke-width" values="6;8;6" dur="1.2s" repeatcount="indefinite" />
+      </line>
+      <line x1="12%" y1="75%" x2="43%" y2="50%" stroke="url(#cyber-grad3)" stroke-width="5" opacity="0.9"
+        stroke-linecap="round">​​
+        <animate attributename="opacity" values="0.4;1;0.4" dur="1.8s" repeatcount="indefinite" />
+        <animate attributename="stroke-width" values="4;6;4" dur="1.8s" repeatcount="indefinite" />
+      </line> <!-- THICK Animated Energy Beams AI Core → Layer 3 -->
+      <line x1="57%" y1="50%" x2="88%" y2="25%" stroke="url(#cyber-grad4)" stroke-width="5" opacity="0.9"
+        stroke-linecap="round">​​
+        <animate attributename="opacity" values="0.4;1;0.4" dur="1.4s" repeatcount="indefinite" />
+        <animate attributename="stroke-width" values="4;6;4" dur="1.4s" repeatcount="indefinite" />
+      </line>
+      <line x1="57%" y1="50%" x2="88%" y2="50%" stroke="url(#cyber-grad5)" stroke-width="7" opacity="1"
+        stroke-linecap="round">​​
+        <animate attributename="opacity" values="0.6;1;0.6" dur="1.1s" repeatcount="indefinite" />
+        <animate attributename="stroke-width" values="6;8;6" dur="1.1s" repeatcount="indefinite" />
+      </line>
+      <line x1="57%" y1="50%" x2="88%" y2="75%" stroke="url(#cyber-grad6)" stroke-width="5" opacity="0.9"
+        stroke-linecap="round">​​
+        <animate attributename="opacity" values="0.4;1;0.4" dur="1.6s" repeatcount="indefinite" />
+        <animate attributename="stroke-width" values="4;6;4" dur="1.6s" repeatcount="indefinite" />
+      </line> <!-- 快速移动的数据粒子（更大，更可见） -->
+      <circle r="4" fill="#00ffff" opacity="0.9" filter="url(#particle-glow)">
+        <animatemotion dur="2.5s" repeatcount="indefinite">
+          <mpath href="#path1" />
+        </animatemotion>
+        <animate attributename="opacity" values="0;1;1;0" dur="2.5s" repeatcount="indefinite" />
+      </circle>
+      <circle r="4" fill="#ff00ff" opacity="0.9" filter="url(#particle-glow)">
+        <animatemotion dur="2s" repeatcount="indefinite">
+          <mpath href="#path2" />
+        </animatemotion>
+        <animate attributename="opacity" values="0;1;1;0" dur="2s" repeatcount="indefinite" />
+      </circle>
+      <circle r="4" fill="#00ff88" opacity="0.9" filter="url(#particle-glow)">
+        <animatemotion dur="2.8s" repeatcount="indefinite">
+          <mpath href="#path3" />
+        </animatemotion>
+        <animate attributename="opacity" values="0;1;1;0" dur="2.8s" repeatcount="indefinite" />
+      </circle>
+      <circle r="4" fill="#ff0088" opacity="0.9" filter="url(#particle-glow)">
+        <animatemotion dur="2.3s" repeatcount="indefinite">
+          <mpath href="#path4" />
+        </animatemotion>
+        <animate attributename="opacity" values="0;1;1;0" dur="2.3s" repeatcount="indefinite" />
+      </circle>
+      <circle r="4" fill="#ffff00" opacity="0.9" filter="url(#particle-glow)">
+        <animatemotion dur="1.9s" repeatcount="indefinite">
+          <mpath href="#path5" />
+        </animatemotion>
+        <animate attributename="opacity" values="0;1;1;0" dur="1.9s" repeatcount="indefinite" />
+      </circle>
+      <circle r="4" fill="#00ffff" opacity="0.9" filter="url(#particle-glow)">
+        <animatemotion dur="2.6s" repeatcount="indefinite">
+          <mpath href="#path6" />
+        </animatemotion>
+        <animate attributename="opacity" values="0;1;1;0" dur="2.6s" repeatcount="indefinite" />
+      </circle> <!-- 粒子路径 -->
+      <path id="path1" d="M 12,25 Q 27,37 43,50" fill="none" />
+      <path id="path2" d="M 12,50 L 43,50" fill="none" />
+      <path id="path3" d="M 12,75 Q 27,62 43,50" fill="none" />
+      <path id="path4" d="M 57,50 Q 72,37 88,25" fill="none" />
+      <path id="path5" d="M 57,50 L 88,50" fill="none" />
+      <path id="path6" d="M 57,50 Q 72,62 88,75" fill="none" /> <!-- 赛博朋克动画渐变 -->
+      <defs><!-- 增强发光滤镜 -->
+        <filter id="particle-glow">
+          <fegaussianblur stddeviation="4" result="coloredBlur" />
+          <femerge>
+            <femergenode in="coloredBlur" />
+            <femergenode in="coloredBlur" />
+            <femergenode in="SourceGraphic" />
+          </femerge>
+        </filter>
+        <lineargradient id="cyber-grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:rgb(0,255,255);stop-opacity:0" />
+          <stop offset="50%" style="stop-color:rgb(0,255,255);stop-opacity:1" />
+          <stop offset="100%" style="stop-color:rgb(255,0,255);stop-opacity:0" />
+          <animate attributename="x1" values="0%;-50%;0%" dur="3s" repeatcount="indefinite" />
+          <animate attributename="x2" values="100%;150%;100%" dur="3s" repeatcount="indefinite" />
+        </lineargradient>
+        <lineargradient id="cyber-grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:rgb(255,0,255);stop-opacity:0" />
+          <stop offset="50%" style="stop-color:rgb(255,0,255);stop-opacity:1" />
+          <stop offset="100%" style="stop-color:rgb(0,255,136);stop-opacity:0" />
+          <animate attributename="x1" values="0%;-50%;0%" dur="2.5s" repeatcount="indefinite" />
+          <animate attributename="x2" values="100%;150%;100%" dur="2.5s" repeatcount="indefinite" />
+        </lineargradient>
+        <lineargradient id="cyber-grad3" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:rgb(0,255,136);stop-opacity:0" />
+          <stop offset="50%" style="stop-color:rgb(0,255,136);stop-opacity:1" />
+          <stop offset="100%" style="stop-color:rgb(0,255,255);stop-opacity:0" />
+          <animate attributename="x1" values="0%;-50%;0%" dur="3.2s" repeatcount="indefinite" />
+          <animate attributename="x2" values="100%;150%;100%" dur="3.2s" repeatcount="indefinite" />
+        </lineargradient>
+        <lineargradient id="cyber-grad4" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:rgb(255,0,136);stop-opacity:<lineargradient id=" cyber-grad5" x1="0%"
+            y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgb(0,255,255);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgb(255,255,0);stop-opacity:0" />
+            <animate attributename="x1" values="0%;-50%;0%" dur="2.8s" repeatcount="indefinite" />
+            <animate attributename="x2" values="100%;150%;100%" dur="2.8s" repeatcount="indefinite" />
+        </lineargradient>
+        <lineargradient id="cyber-grad5" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:rgb(0,255,255);stop-opacity:0" />
+          <stop offset="50%" style="stop-color:rgb(0,255,255);stop-opacity:1" />
+          <stop offset="100%" style="stop-color:rgb(255,0,255);stop-opacity:0" />
+          <animate attributename="x1" values="0%;-50%;0%" dur="2.4s" repeatcount="indefinite" />
+          <animate attributename="x2" values="100%;150%;100%" dur="2.4s" repeatcount="indefinite" />
+        </lineargradient>
+        <lineargradient id="cyber-grad6" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:0" />
+          <stop offset="50%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+          <stop offset="100%" style="stop-color:rgb(255,136,0);stop-opacity:0" />
+          <animate attributename="x1" values="0%;-50%;0%" dur="2.9s" repeatcount="indefinite" />
+          <animate attributename="x2" values="100%;150%;100%" dur="2.9s" repeatcount="indefinite" />
+        </lineargradient>
+      </defs>
+    </svg><!-- Layer 1: Multi-Source Data Ingestion (LEFT) -->
+    <div class="absolute left-6 top-20 w-36">
+      <div class="text-xs font-bold text-cyan-300 mb-3 text-center tracking-widest"
+        style="text-shadow: 0 0 10px rgba(6, 182, 212, 0.8);"> ◢ 图层 1 ◣ </div>
+      <div class="text-[10px] text-center text-cyan-200/70 mb-5 font-bold uppercase"> 数据导入 </div>
+      <div class="space-y-4"><!-- 数据源节点 -->
         <div class="relative group">
-            <div class="absolute inset-0 bg-orange-400/30 rounded-lg blur-lg group-hover:blur-xl transition-all"></div>
-            <div class="relative bg-gradient-to-br from-orange-500/60 to-yellow-600/60 backdrop-blur-md border-2 border-orange-400/60 rounded-lg p-3 shadow-2xl hover:scale-110 transition-transform"
-                style="box-shadow: 0 0 20px rgba(249, 115, 22, 0.6);">
-                <div class="flex items-center gap-2">
-                    <div
-                        class="w-9 h-9 rounded-lg bg-orange-400/40 flex items-center justify-center flex-shrink-0 border border-orange-300">
-                        <svg class="w-5 h-5 text-orange-100" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg> </div>
-                    <div class="flex-1">
-                        <div class="text-[11px] font-bold text-orange-100"> 部署 </div>
-                        <div class="text-[9px] text-orange-200/70"> 警报/API </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    </div><!-- 带有赛博朋克效果的标题 -->
-    <div class="absolute top-4 left-1/2 transform -translate-x-1/2 text-center">
-        <div class="text-xl font-bold tracking-wider mb-2"
-            style="background: linear-gradient(90deg, #00ffff 0%, #ff00ff 25%, #ffff00 50%, #00ff88 75%, #00ffff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 30px rgba(0, 255, 255, 0.5); background-size: 200% auto; animation: shimmer 3s linear infinite;">
-            ⚡ 自主AI风险工厂 ⚡ </div>
-        <div class="text-xs text-cyan-300/80 font-semibold tracking-wide"
-            style="text-shadow: 0 0 10px rgba(6, 182, 212, 0.8);"> 实时智能管道 · 零延迟处理 </div>
-    </div><!-- 实时系统指标（底部）带动态计数器 -->
-    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center gap-6">
-        <div class="flex items-center gap-2 bg-black/60 backdrop-blur-md border-2 border-green-500/60 rounded-lg px-5 py-2.5 shadow-lg"
-            style="box-shadow: 0 0 25px rgba(34, 197, 94, 0.7);">
-            <div class="w-3 h-3 rounded-full bg-green-400"
-                style="animation: pulse-glow 1s ease-in-out infinite; box-shadow: 0 0 10px rgba(34, 197, 94, 1);"></div>
-            <span class="text-xs text-green-300 font-bold tracking-wider">● 直播</span>
-        </div>
-        <div class="bg-black/60 backdrop-blur-md border-2 border-cyan-500/60 rounded-lg px-5 py-2.5 shadow-lg"
+          <div class="absolute inset-0 bg-cyan-400/30 rounded-lg blur-lg group-hover:blur-xl transition-all"></div>
+          <div
+            class="relative bg-gradient-to-br from-cyan-500/60 to-blue-600/60 backdrop-blur-md border-2 border-cyan-400/60 rounded-lg p-3 shadow-2xl hover:scale-110 transition-transform"
             style="box-shadow: 0 0 20px rgba(6, 182, 212, 0.6);">
-            <div class="text-[10px] text-cyan-300/80 font-semibold"> 吞吐量 </div>
-            <div class="text-sm font-bold text-cyan-300"> 数百/小时 </div>
+            <div class="flex items-center gap-2">
+              <div
+                class="w-9 h-9 rounded-lg bg-cyan-400/40 flex items-center justify-center flex-shrink-0 border border-cyan-300">
+                <svg class="w-5 h-5 text-cyan-100" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                    d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                </svg> </div>
+              <div class="flex-1">
+                <div class="text-[11px] font-bold text-cyan-100"> 链上 </div>
+                <div class="text-[9px] text-cyan-200/70"> 8 个网络 </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="bg-black/60 backdrop-blur-md border-2 border-purple-500/60 rounded-lg px-5 py-2.5 shadow-lg"
+        <div class="relative group">
+          <div class="absolute inset-0 bg-purple-400/30 rounded-lg blur-lg group-hover:blur-xl transition-all"></div>
+          <div
+            class="relative bg-gradient-to-br from-purple-500/60 to-pink-600/60 backdrop-blur-md border-2 border-purple-400/60 rounded-lg p-3 shadow-2xl hover:scale-110 transition-transform"
             style="box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);">
-            <div class="text-[10px] text-purple-300/80 font-semibold"> 延迟 </div>
-            <div class="text-sm font-bold text-purple-300"> 亚秒级 </div>
-        </div>
-        <div class="bg-black/60 background-blur-md border-2 border-pink-500/60 rounded-lg px-5 py-2.5 shadow-lg"
-            style="box-shadow: 0 0 20px rgba(236, 72, 153, 0.6);">
-            <div class="text-[10px] text-pink-300/80 font-semibold"> 覆盖范围 </div>
-            <div class="text-sm font-bold text-pink-300"> 多链 </div>
-        </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </section><!-- France2030 研究声明及方法免责声明 -->
-    <div class="py-8 px-6 bg-slate-900/50 border-t border-blue-500/10">
-        <div class="max-w-7xl mx-auto text-center space-y-3">
-            <p <p class="text-xs opacity-60 leading-relaxed">SentinelHQ 是一个以研究为导向的基础设施项目，与法国 2030
-                年在人工智能、网络安全和数字韧性方面的优先事项保持一致。</p>
-            <p class="text-xs opacity-50 leading-relaxed italic">SentinelHQ 是一个以研究为导向的风险情报基础设施。显示的指标仅供参考，不构成财务建议或资产评估。
-            </p>
-        </div>
-    </div><!-- 页脚 -->
-    <footer class="border-t border-blue-500/20 py-16 px-6 mt-0">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-12"><!-- 左侧模块 - 研发 DeepTech -->
-                <div class="glass-effect rounded-xl p-8">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div
-                            class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                            </svg> </div>
-                        <h3 class="text-xl font-bold">演示如何由研发 DeepTech 提供支持</h3>
-                    </div>
-                    <p class="opacity-80 leading-relaxed mb-6">
-                        此演示由一个真正的监控引擎支持，该引擎是一个结合了人工智能、区块链数据工程和行为分析的研发深度技术堆栈。核心实现模块包括：</p>
-                    <ul class="space-y-3 mb-6">
-                        <li class="flex items-start gap-3"><span class="text-blue-400 mt-1">•</span> <span
-                                class="opacity-80"><strong>alpha_listener 模块</strong> 用于 Twitter、CEX 公告和 RSS</span></li>
-                        <li class="flex items-start gap-3"><span class="text-blue-400 mt-1">•</span> <span
-                                class="opacity-80"><strong>多链监听器</strong> 和 VC/鲸鱼钱包聚类</span></li>
-                        <li class="flex items-start gap-3"><span class="text-blue-400 mt-1">•</span> <span
-                                class="opacity-80"><strong>信号分析层</strong>（模式检测、聚类分析、波动性和趋势模块）</span></li>
-                        <li class="flex items-start gap-3"><span <li class="text-blue-400 mt-1">•</span> <span
-                                class="opacity-80"><strong>AI 解释层</strong> 使用 DeepSeek/GPT 提供可解释的洞察</span></li>
-                        <li class="flex items-start gap-3"><span class="text-blue-400 mt-1">•</span> <span
-                                class="opacity-80"><strong>Notion + Telegram 集成</strong> 用于日志记录和警报</span></li>
-                    </ul>
-                    <div class="pt-4 border-t border-blue-500/20">
-                        <p class="text-sm opacity-70 leading-relaxed mb-3">此架构构成了 <strong>SentinelHQ Web3
-                                风险智能引擎</strong> 的基础，与法国 2030 年在人工智能、网络安全和数字基础设施方面的优先事项保持一致。</p>
-                        <p class="text-sm opacity-60 leading-relaxed italic">此基础设施旨在解决系统级网络风险检测、可解释的 AI 治理以及欧洲数字韧性问题。
-                        </p>
-                    </div>
-                </div><!-- 右侧模块 - 从演示到产品 -->
-                <div class="glass-effect rounded-xl p-8">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div
-                            class="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
-                            </svg> </div>
-                        <h3 class="text-xl font-bold">从演示到产品</h3>
-                    </div>
-                    <p class="opacity-80 leading-relaxed mb-6">对于 i-Lab 竞赛和投资者，此演示展示了未来的 SaaS / API 产品：</p>
-                    <div class="space-y-4 mb-6">
-                        <div
-                            class="bg-slate-800/50 rounded-lg p-4 border border-purple-500/20 hover:border-purple-500/40 transition-all">
-                            <div class="font-semibold text-purple-400 mb-1"> • 风险评分 SaaS </div>
-                            <div class="text-sm opacity-70"> 针对交易所和基金的代币级风险评分 </div>
-                        </div>
-                        <div
-                            class="bg-slate-800/50 rounded-lg p-4 border border-blue-500/20 hover:border-blue-500/40 transition-all">
-                            <div class="font-semibold text-blue-400 mb-1"> • Token Intelligence API </div>
-                            <div class="text-sm opacity-70"> 基于使用情况的事件级智能 API </div>
-                        </div>
-                        <div
-                            class="bg-slate-800/50 rounded-lg p-4 border border-cyan-500/20 hover:border-cyan-500/40 transition-all">
-                            <div class="font-semibold text-cyan-400 mb-1"> • Whale Alert Pro </div>
-                            <div class="text-sm opacity-70"> 基于订阅的 VC 和鲸鱼活动仪表板 </div>
-                        </div>
-                        <div
-                            class="bg-slate-800/50 rounded-lg p-4 border border-pink-500/20 hover:border-pink-500/40 transition-all">
-                            <div class="font-semibold text-pink-400 mb-1"> • 企业集成 </div>
-                            <div class="text-sm opacity-70"> 受监管实体的自定义数据源和风险模型 </div>
-                        </div>
-                    </div>
-                    <div class="pt-4 border-t border-purple-500/20">
-                        <p class="text-sm opacity-70 leading-relaxed">
-                            目标是从研究级监控堆栈发展成为一个<strong>生产就绪、可解释的Web3风险智能平台</strong>，专为满足机构需求而设计。</p>
-                    </div>
-                </div>
+            <div class="flex items-center gap-2">
+              <div
+                class="w-9 h-9 rounded-lg bg-purple-400/40 flex items-center justify-center flex-shrink-0 border border-purple-300">
+                <svg class="w-5 h-5 text-purple-100" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                    d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                </svg> </div>
+              <div class="flex-1">
+                <div class="text-[11px] font-bold text-purple-100"> CEX Feed </div>
+                <div class="text-[9px] text-purple-200/70"> Live APIs </div>
+              </div>
             </div>
+          </div>
         </div>
-    </footer><!-- 合作伙伴关系部分 -->
-    <section class="py-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <div class="glass-effect rounded-2xl p-10 border-2"> border-blue-500/40 relative
-                overflow-hidden"><!-- 动画背景 -->
-                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pulse-glow"></div>
-                <div class="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl pulse-glow"
-                    style="animation-delay: 1.5s;"></div>
-                <div class="relative"><!-- 头部 -->
-                    <div class="text-center mb-8">
-                        <div class="inline-flex items-center gap-3 mb-4">
-                            <div
-                                class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                                </svg> </div>
-                            <h2 class="text-3xl font-bold">有兴趣合作吗？</h2>
-                        </div>
-                    </div><!-- 主要内容 -->
-                    <div class="bg-slate-900/50 rounded-xl p-8 mb-6 border border-blue-500/20">
-                        <p class="text-lg opacity-90 leading-relaxed mb-6">作为我们研发路线图和 i-Lab 开发阶段的一部分，我们正在寻找合作伙伴——<strong
-                                class="text-blue-300">CEX 安全团队</strong>，<strong资金和 L2 项目 — 用于验证用例和共同设计风险仪表板智能 API
-                                和可解释评分模型。</p>
-                                <div class="grid md:grid-cols-3 gap-4 mb-6">
-                                    <div class="bg-blue-500/10 rounded-lg p-4 border border-blue-500/30">
-                                        <div class="text-2xl mb-2"> 🛡️ </div>
-                                        <div class="text-sm font-semibold text-blue-300"> CEX 安全 </div>
-                                        <div class="text-xs opacity-70 mt-1"> 风险监控和上市情报 </div>
-                                    </div>
-                                    <div class="bg-purple-500/10 rounded-lg p-4 border border-purple-500/30">
-                                        <div class="text-2xl mb-2"> 💼 </div>
-                                        <div class="text-sm font-semibold text-purple-300"> 基金和VC </div>
-                                        <div class="text-xs opacity-70 mt-1"> 投资组合跟踪和尽职调查 </div>
-                                    </div>
-                                    <div class="bg-cyan-500/10 rounded-lg p-4 border border-cyan-500/30">
-                                        <div class="text-2xl mb-2"> ⛓️ </div>
-                                        <div class="text-sm font-semibold text-cyan-300"> L2 项目 </div>
-                                        <div class="text-xs opacity-70 mt-1"> 链上安全 &生态系统健康</div>
-                                    </div>
-                                </div>
-                                <div
-                                    class="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg p-4 border border-blue-500/20">
-                                    <div class="flex items-start gap-3"> <svg
-                                            class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none"
-                                            stroke="currentColor" viewbox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                        </svg>
-                                        <p class="text-sm opacity-90 leading-relaxed"><strong
-                                                class="text-blue-300">合作优势：</strong>
-                                            提前体验引擎并参与塑造Web3风险基础设施与<strong>法国2030优先事项</strong>保持一致。</p>
-                                    </div>
-                                </div>
-                    </div><!-- 联系方式 -->
-                    <div class="space-y-4">
-                        <div class="text-center">
-                            <h3 class="text-xl font-bold mb-3 text-blue-300">联系我们</h3>
-                        </div>
-                        <div class="bg-slate-900/50 rounded-lg p-6 border border-blue-500/30">
-                            <div class="space-y-3">
-                                <div class="flex items-center justify-center gap-3"> <svg class="w-5 h-5 text-blue-400"
-                                        fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                    </svg><span class="text-sm opacity-80">合作咨询或 i-Lab 评估：</span> </div>
-                                <div class="text-center"><a href="mailto:admin@sentinelhq.io"
-                                        class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24" 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                        </svg> admin@sentinelhq.io </a> </div>
-                                <div class="pt-3 border-t border-blue-500/20 text-center">
-                                    <p class="text-sm opacity-70"><strong>FR</strong> : Pour toute demande liée au
-                                        partenariat ou à l'évaluation i-Lab : <a href="mailto:admin@sentinelhq.io"
-                                            class="text-blue-400 hover:text-blue-300 underline">admin@sentinelhq.io</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      </div>
+      <div class="relative group">
+        <div class="absolute inset-0"> bg-green-400/30 rounded-lg blur-lg group-hover:blur-xl transition-all"></div>
+        <div
+          class="relative bg-gradient-to-br from-green-500/60 to-cyan-600/60 backdrop-blur-md border-2 border-green-400/60 rounded-lg p-3 shadow-2xl hover:scale-110 transition-transform"
+          style="box-shadow: 0 0 20px rgba(34, 197, 94, 0.6);">
+          <div class="flex items-center gap-2">
+            <div
+              class="w-9 h-9 rounded-lg bg-green-400/40 flex items-center justify-center flex-shrink-0 border border-green-300">
+              <svg class="w-5 h-5 text-green-100" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                  d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+              </svg> </div>
+            <div class="flex-1">
+              <div class="text-[11px] font-bold text-green-100"> Social </div>
+              <div class="text-[9px] text-green-200/70"> Sentiment </div>
             </div>
+          </div>
         </div>
-    </section>
+      </div>
     </div>
-    <script> // 实时数据表逻辑 const tokens = [ { name: 'ERC-20 资产', icon: '🔹', chain: 'ETH', tooltip: 'PEPE' }, { name: 'Solana 资产', icon: '⚡', chain: 'SOL', tooltip: 'WIF' }, { name: 'Solana 资产', icon: '🟣', chain: 'SOL', tooltip: 'BONK' }, { name: 'ERC-20 资产', icon: '🔸', chain: 'ETH', tooltip: 'SHIB' }, { name: 'ERC-20 资产', icon: '⚔️', chain: 'ETH', tooltip: 'FLOKI' }, { name: 'L1 资产', icon: '🪙',链：'DOGE'，工具提示：'DOGE'}, { 名称：'L2 Asset'，图标：'🔵'，链：'ARB'，工具提示：'ARB'}, { 名称：'L2 Asset'，图标：'🔴'，链：'OP'，工具提示：'OP' } ]; const signalTypes = [ { type: '鲸鱼警报', color: 'yellow', icon: '🐋' }, { type: 'CEX上市', color: 'green', icon: '📈' }, { type: '风险投资活动', color: 'purple', icon: '💼' }, { type: '社交媒体活跃', color: 'blue', icon: '🔥' }, { type: '精明资金', color: 'cyan', icon: '🧠' }, { type: '流动性下降', color: 'red', icon: '⚠️' } ]; const impacts = ['流动性压力上升', '波动性风险上升', '结构性压力', '中性风险环境']; const prioritys = ['P1', 'P2', 'P3']; let signalData = []; let signalIdCounter = 0; function generateSignal() { const token = tokens[Math.floor(Math.random() * tokens.length)]; const signal = signalTypes[Math.floor(Math.random() * signalTypes.length)]; const impact = impacts[Math.floor(Math.random() * impacts.length)]; const priority = prioritys[Math.floor(Math.random() * prioritys.length)]; const riskScore = (Math.random() * 10).toFixed(1); const details = [ `检测到 $${(Math.random() * 50 + 10).toFixed(1)}M 的转账`, `24 小时内新增 ${Math.floor(Math.random() * 500 + 100)}K 个地址`, `交易量激增 +${Math.floor(Math.random() * 300 + 50)}%`, `Twitter 提及量增加 ${Math.floor(Math.random() * 400 + 100)}%`, `${Math.floor(Math.random() * 5 + 2)} 个主要钱包正在积累` ]; return { id: signalIdCounter++, token, signal, details: details[Math.floor(Math.random() * details.length)], impact, priority, riskScore, timestamp: new Date() }; } function renderTable() { const tbody = document.getElementById('signal-table-body'); // 只保留最近的 10 个信号 if (signalData.length > 10) { signalData = signalData.slice(0, 10); } tbody.innerHTML = signalData.map(signal => { const timeDiff = Math.floor((new Date() - signal.timestamp) / 1000); const timeStr = timeDiff < 60 ? `${timeDiff}s ago` : `${Math.floor(timeDiff / 60)}m ago`; const impactColors = { '流动性压力 ↑': 'text-red-400', '波动性风险 ↑': 'text-orange-400', '结构性压力': 'text-yellow-400', '中性风险环境': 'text-gray-400' }; const priorityColors = { 'P1':const riskColor = signal.riskScore >= 7 ? 'text-red-400' : signal.riskScore >= 5 ? 'text-yellow-400' : 'text-green-400'; return ` <div class="grid grid-cols-12 gap-4 px-6 py-4 hover:bg-slate-800/30 transition-colors" data-signal-id="${signal.id}" title="${signal.token.tooltip}"> <div class="col-span-2 flex items-center gap-2"> <span class="text-xl">${signal.token.icon}</span> <div> <div class="font-bold text-sm">${signal.token.name}</div> <div class="text-xs opacity-60">${signal.token.chain}</div> </div> </div> <div class="col-span-2 flex items-center gap-2"> <span>${signal.signal.icon}</span> <span class="text-sm text-${signal.signal.color}-400">${signal.signal.type}</span> </div> <div class="col-span-3 flex items-center"> <span class="text-xs opacity-80">${signal.details}</span> </div> <div class="col-span-2 flex items-center"> <span class="text-sm font-semibold ${impactColors[signal.impact]}">${signal.impact}</span> </div> <div class="col-span-1 flex items-center justify-center"> <span class="text-sm font-bold ${riskColor}">${signal.riskScore}</span> </div> <div class="col-span-1 flex items-center justify-center"> <span class="px-2 py-1 rounded text-xs font-medium border ${priorityColors[signal.priority]}">${signal.priority}</span> </div> <div class="col-span-1 flex items-center justify-end"> <span class="text-xs opacity-60">${timeStr}</span> </div> </div> `; }).join(''); } // 使用一些信号初始化 for (let i = 0; i < 8; i++) { signalData.unshift(generateSignal()); } renderTable(); // 每 3-5 秒添加一个新信号 setInterval(() => { signalData.unshift(generateSignal()); renderTable(); }, Math.random() * 2000 + 3000); // 每秒更新一次时间戳 setInterval(() => { renderTable(); }, 1000); // 筛选按钮功能 document.querySelectorAll('button').forEach((btn​​) => { if (btn.textContent === '全部' || btn.textContent === '高风险' || btn.textContent === '鲸鱼警报') { btn.addEventListener('click', function() { // 更新按钮的激活状态 this.parentElement.querySelectorAll('button').forEach(b => { b.classList.remove('bg-blue-500/20'); b.classList.add('bg-slate-800/50'); }); this.classList.remove('bg-slate-800/50'); this.classList.add('bg-blue-500/20'); }); } }); </script>
-    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'9ad67d8d13c49d86',t:'MTc2NTYzOTY5Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+  </div>
+  </div><!-- Layer 2: AI CORE (CENTER) - CYBERPUNK HEART -->
+  <div class="absolute" style="left: 50%; top: 50%; transform: translate(-50%, -50%); width: 400px; height: 400px;">
+    <div class="text-xs font-bold text-pink-300 mb-3 text-center tracking-widest"
+      style="position: absolute; top: -32px; left: 50%; transform: translateX(-50%); text-shadow: 0 0 15px rgba(236, 72, 153, 1);">
+      ◢ LAYER 2 ◣ </div>
+    <div class="text-[10px] text-center text-pink-200/70 font-bold uppercase"
+      style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%);"> 神经核心 </div>
+    <div class="relative w-full h-full flex items-center justify-center"><!-- 多个脉冲轨道环 -->
+      <div class="absolute rounded-full border-2 border-cyan-400/20"
+        style="top: 50%; left: 50%; width: 224px; height: 224px; transform: translate(-50%, -50%); animation: rotate 25s linear infinite;">
+      </div>
+      <div class="absolute rounded-full border-2 border-purple-400/25"
+        style="top: 50%; left: 50%; width: 192px; height: 192px; transform: translate(-50%, -50%); animation: counter-rotate 20s linear infinite;">
+      </div>
+      <div class="absolute rounded-full border-2 border-pink-400/30"
+        style="top: 50%; left: 50%; width: 160px; height: 160px; transform: translate(-50%, -50%); animation: rotate 15s linear infinite;">
+      </div><!-- 脉冲环 -->
+      <div class="absolute rounded-full border border-cyan-400/40"
+        style="top: 50%; left: 50%; width: 208px; height: 208px; transform: translate(-50%, -50%); animation: pulse-ring 3s ease-in-out infinite;">
+      </div>
+      <div class="absolute rounded-full border border-purple-400/40"
+        style="top: 50%; left: 50%; width: 176px; height: 176px; transform: translate(-50%, -50%); animation: pulse-ring 3.5s ease-in-out infinite; animation-delay: 0.5s;">
+      </div><!-- 带有心跳的中央人工智能核心 -->
+      <div class="relative w-36 h-36 heartbeat" style="z-index: 10;">
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 rounded-2xl blur-2xl opacity-80">
+        </div>
+        <div
+          class="relative w-full h-full rounded-2xl bg-gradient-to-br from-cyan-500/95 via-purple-600/95 to-pink-600/95 backdrop-blur-sm border-4 border-white/30 shadow-2xl flex flex-col items-center justify-center"
+          style="box-shadow: 0 0 60px rgba(6, 182, 212, 0.8), 0 0 90px rgba(236, 72, 153, 0.6), inset 0 0 30px rgba(255, 255, 255, 0.2);">
+          <svg class="w-14 h-14 mb-2 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"
+            style="filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+          </svg>
+          <div class="text-sm font-bold text-white tracking-wider"
+            style="text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);"> AI CORE </div>
+          <div class="text-[9px] text-white/90 mt-1 font-semibold"> GPT-4 + DeepSeek </div>
+        </div>
+      </div><!-- 带有增强发光效果的处理模块 -->
+      <div <div class="absolute" style="top: 0; left: 50%; transform: translate(-50%, -64px);">
+        <div
+          class="bg-cyan-500/30 backdrop-blur-md border-2 border-cyan-400/50 rounded-lg px-4 py-2 text-center shadow-lg"
+          style="box-shadow: 0 0 20px rgba(6, 182, 212, 0.7);">
+          <div class="text-[10px] text-cyan-100 font-bold"> 图案检测 </div>
+        </div>
+      </div>
+      <div class="absolute" style="bottom: 0; left: 50%; transform: translate(-50%,64px);">
+        <div
+          class="bg-purple-500/30 backdrop-blur-md border-2 border-purple-400/50 rounded-lg px-4 py-2 text-center shadow-lg"
+          style="box-shadow: 0 0 20px rgba(168, 85, 247, 0.7);">
+          <div class="text-[10px] text-purple-100 font-bold"> 风险评分 </div>
+        </div>
+      </div>
+      <div class="absolute" style="top: 50%; left: 0; transform: translate(-128px, -50%);">
+        <div
+          class="bg-green-500/30 backdrop-blur-md border-2 border-green-400/50 rounded-lg px-4 py-2 text-center shadow-lg"
+          style="box-shadow: 0 0 20px rgba(34, 197, 94, 0.7);">
+          <div class="text-[10px] text-green-100 font-bold"> Anomaly ML </div>
+        </div>
+      </div>
+      <div class="absolute" style="top: 50%; right: 0; transform: translate(128px, -50%);">
+        <div
+          class="bg-pink-500/30 backdrop-blur-md border-2 border-pink-400/50 rounded-lg px-4 py-2 text-center shadow-lg"
+          style="box-shadow: 0 0 20px rgba(236, 72, 153, 0.7);">
+          <div class="text-[10px] text-pink-100 font-bold"> 可解释人工智能 </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div><!-- 第 3 层：人类智能与行动（右侧） -->
+  <div class="absolute right-6 top-20 w-36">
+    <div class="text-xs font-bold text-yellow-300 mb-3 text-center tracking-widest"
+      style="text-shadow: 0 0 10px rgba(250, 204, 21, 0.8);"> ◢ 图层 3 ◣ </div>
+    <div class="text-[10px] text-center text-yellow-200/70 mb-5 font-bold uppercase"> 人工监督 </div>
+    <div class="space-y-4"><!-- 分析节点 -->
+      <div class="relative group">
+        <div class="absolute inset-0 bg-emerald-400/30 rounded-lg blur-lg group-hover:blur-xl transition-all"></div>
+        <div
+          class="relative bg-gradient-to-br from-emerald-500/60 to-green-600/60 backdrop-blur-md border-2 border-emerald-400/60 rounded-lg p-3 shadow-2xl hover:scale-110 transition-transform"
+          style="box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);">
+          <div class="flex items-center gap-2">
+            <div
+              class="w-9 h-9 rounded-lg bg-emerald-400/40 flex items-center justify-center flex-shrink-0 border border-emerald-300">
+              <svg class="w-5 h-5 text-emerald-100" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg> </div>
+            <div class="flex-1">
+              <div class="text-[11px]粗体字体text-emerald-100"> 分析 </div>
+              <div class="text-[9px] text-emerald-200/70"> 专家评审 </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- 验证节点 -->
+    <div class="relative group">
+      <div class="absolute inset-0 bg-pink-400/30 rounded-lg blur-lg group-hover:blur-xl transition-all"></div>
+      <div
+        class="relative bg-gradient-to-br from-pink-500/60 to-rose-600/60 backdrop-blur-md border-2 border-pink-400/60 rounded-lg p-3 shadow-2xl hover:scale-110 transition-transform"
+        style="box-shadow: 0 0 20px rgba(236, 72, 153, 0.6);">
+        <div class="flex items-center gap-2">
+          <div
+            class="w-9 h-9 rounded-lg bg-pink-400/40 flex items-center justify-center flex-shrink-0 border border-pink-300">
+            <svg class="w-5 h-5 text-pink-100" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg> </div>
+          <div class="flex-1">
+            <div class="text-[11px] font-bold text-pink-100"> 验证 </div>
+            <div class="text-[9px] text-pink-200/70"> 结束 </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- 操作节点 -->
+    <div class="relative group">
+      <div class="absolute inset-0 bg-orange-400/30 rounded-lg blur-lg group-hover:blur-xl transition-all"></div>
+      <div
+        class="relative bg-gradient-to-br from-orange-500/60 to-yellow-600/60 backdrop-blur-md border-2 border-orange-400/60 rounded-lg p-3 shadow-2xl hover:scale-110 transition-transform"
+        style="box-shadow: 0 0 20px rgba(249, 115, 22, 0.6);">
+        <div class="flex items-center gap-2">
+          <div
+            class="w-9 h-9 rounded-lg bg-orange-400/40 flex items-center justify-center flex-shrink-0 border border-orange-300">
+            <svg class="w-5 h-5 text-orange-100" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg> </div>
+          <div class="flex-1">
+            <div class="text-[11px] font-bold text-orange-100"> 部署 </div>
+            <div class="text-[9px] text-orange-200/70"> 警报/API </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div><!-- 带有赛博朋克效果的标题 -->
+  <div class="absolute top-4 left-1/2 transform -translate-x-1/2 text-center">
+    <div class="text-xl font-bold tracking-wider mb-2"
+      style="background: linear-gradient(90deg, #00ffff 0%, #ff00ff 25%, #ffff00 50%, #00ff88 75%, #00ffff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 30px rgba(0, 255, 255, 0.5); background-size: 200% auto; animation: shimmer 3s linear infinite;">
+      ⚡ 自主AI风险工厂 ⚡ </div>
+    <div class="text-xs text-cyan-300/80 font-semibold tracking-wide"
+      style="text-shadow: 0 0 10px rgba(6, 182, 212, 0.8);"> 实时智能管道 · 零延迟处理 </div>
+  </div><!-- 实时系统指标（底部）带动态计数器 -->
+  <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center gap-6">
+    <div
+      class="flex items-center gap-2 bg-black/60 backdrop-blur-md border-2 border-green-500/60 rounded-lg px-5 py-2.5 shadow-lg"
+      style="box-shadow: 0 0 25px rgba(34, 197, 94, 0.7);">
+      <div class="w-3 h-3 rounded-full bg-green-400"
+        style="animation: pulse-glow 1s ease-in-out infinite; box-shadow: 0 0 10px rgba(34, 197, 94, 1);"></div><span
+        class="text-xs text-green-300 font-bold tracking-wider">● 直播</span>
+    </div>
+    <div class="bg-black/60 backdrop-blur-md border-2 border-cyan-500/60 rounded-lg px-5 py-2.5 shadow-lg"
+      style="box-shadow: 0 0 20px rgba(6, 182, 212, 0.6);">
+      <div class="text-[10px] text-cyan-300/80 font-semibold"> 吞吐量 </div>
+      <div class="text-sm font-bold text-cyan-300"> 数百/小时 </div>
+    </div>
+    <div class="bg-black/60 backdrop-blur-md border-2 border-purple-500/60 rounded-lg px-5 py-2.5 shadow-lg"
+      style="box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);">
+      <div class="text-[10px] text-purple-300/80 font-semibold"> 延迟 </div>
+      <div class="text-sm font-bold text-purple-300"> 亚秒级 </div>
+    </div>
+    <div class="bg-black/60 background-blur-md border-2 border-pink-500/60 rounded-lg px-5 py-2.5 shadow-lg"
+      style="box-shadow: 0 0 20px rgba(236, 72, 153, 0.6);">
+      <div class="text-[10px] text-pink-300/80 font-semibold"> 覆盖范围 </div>
+      <div class="text-sm font-bold text-pink-300"> 多链 </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </section><!-- France2030 研究声明及方法免责声明 -->
+  <div class="py-8 px-6 bg-slate-900/50 border-t border-blue-500/10">
+    <div class="max-w-7xl mx-auto text-center space-y-3">
+      <p <p class="text-xs opacity-60 leading-relaxed">SentinelHQ 是一个以研究为导向的基础设施项目，与法国 2030 年在人工智能、网络安全和数字韧性方面的优先事项保持一致。
+      </p>
+      <p class="text-xs opacity-50 leading-relaxed italic">SentinelHQ 是一个以研究为导向的风险情报基础设施。显示的指标仅供参考，不构成财务建议或资产评估。</p>
+    </div>
+  </div><!-- 页脚 -->
+  <footer class="border-t border-blue-500/20 py-16 px-6 mt-0">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12"><!-- 左侧模块 - 研发 DeepTech -->
+        <div class="glass-effect rounded-xl p-8">
+          <div class="flex items-center gap-3 mb-6">
+            <div
+              class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg> </div>
+            <h3 class="text-xl font-bold">演示如何由研发 DeepTech 提供支持</h3>
+          </div>
+          <p class="opacity-80 leading-relaxed mb-6">此演示由一个真正的监控引擎支持，该引擎是一个结合了人工智能、区块链数据工程和行为分析的研发深度技术堆栈。核心实现模块包括：</p>
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3"><span class="text-blue-400 mt-1">•</span> <span
+                class="opacity-80"><strong>alpha_listener 模块</strong> 用于 Twitter、CEX 公告和 RSS</span></li>
+            <li class="flex items-start gap-3"><span class="text-blue-400 mt-1">•</span> <span
+                class="opacity-80"><strong>多链监听器</strong> 和 VC/鲸鱼钱包聚类</span></li>
+            <li class="flex items-start gap-3"><span class="text-blue-400 mt-1">•</span> <span
+                class="opacity-80"><strong>信号分析层</strong>（模式检测、聚类分析、波动性和趋势模块）</span></li>
+            <li class="flex items-start gap-3"><span <li class="text-blue-400 mt-1">•</span> <span
+                class="opacity-80"><strong>AI 解释层</strong> 使用 DeepSeek/GPT 提供可解释的洞察</span></li>
+            <li class="flex items-start gap-3"><span class="text-blue-400 mt-1">•</span> <span
+                class="opacity-80"><strong>Notion + Telegram 集成</strong> 用于日志记录和警报</span></li>
+          </ul>
+          <div class="pt-4 border-t border-blue-500/20">
+            <p class="text-sm opacity-70 leading-relaxed mb-3">此架构构成了 <strong>SentinelHQ Web3 风险智能引擎</strong> 的基础，与法国
+              2030 年在人工智能、网络安全和数字基础设施方面的优先事项保持一致。</p>
+            <p class="text-sm opacity-60 leading-relaxed italic">此基础设施旨在解决系统级网络风险检测、可解释的 AI 治理以及欧洲数字韧性问题。</p>
+          </div>
+        </div><!-- 右侧模块 - 从演示到产品 -->
+        <div class="glass-effect rounded-xl p-8">
+          <div class="flex items-center gap-3 mb-6">
+            <div
+              class="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg> </div>
+            <h3 class="text-xl font-bold">从演示到产品</h3>
+          </div>
+          <p class="opacity-80 leading-relaxed mb-6">对于 i-Lab 竞赛和投资者，此演示展示了未来的 SaaS / API 产品：</p>
+          <div class="space-y-4 mb-6">
+            <div
+              class="bg-slate-800/50 rounded-lg p-4 border border-purple-500/20 hover:border-purple-500/40 transition-all">
+              <div class="font-semibold text-purple-400 mb-1"> • 风险评分 SaaS </div>
+              <div class="text-sm opacity-70"> 针对交易所和基金的代币级风险评分 </div>
+            </div>
+            <div
+              class="bg-slate-800/50 rounded-lg p-4 border border-blue-500/20 hover:border-blue-500/40 transition-all">
+              <div class="font-semibold text-blue-400 mb-1"> • Token Intelligence API </div>
+              <div class="text-sm opacity-70"> 基于使用情况的事件级智能 API </div>
+            </div>
+            <div
+              class="bg-slate-800/50 rounded-lg p-4 border border-cyan-500/20 hover:border-cyan-500/40 transition-all">
+              <div class="font-semibold text-cyan-400 mb-1"> • Whale Alert Pro </div>
+              <div class="text-sm opacity-70"> 基于订阅的 VC 和鲸鱼活动仪表板 </div>
+            </div>
+            <div
+              class="bg-slate-800/50 rounded-lg p-4 border border-pink-500/20 hover:border-pink-500/40 transition-all">
+              <div class="font-semibold text-pink-400 mb-1"> • 企业集成 </div>
+              <div class="text-sm opacity-70"> 受监管实体的自定义数据源和风险模型 </div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-purple-500/20">
+            <p class="text-sm opacity-70 leading-relaxed">
+              目标是从研究级监控堆栈发展成为一个<strong>生产就绪、可解释的Web3风险智能平台</strong>，专为满足机构需求而设计。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- 合作伙伴关系部分 -->
+  <section class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="glass-effect rounded-2xl p-10 border-2"> border-blue-500/40 relative overflow-hidden"><!-- 动画背景 -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pulse-glow"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl pulse-glow"
+          style="animation-delay: 1.5s;"></div>
+        <div class="relative"><!-- 头部 -->
+          <div class="text-center mb-8">
+            <div class="inline-flex items-center gap-3 mb-4">
+              <div
+                class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg> </div>
+              <h2 class="text-3xl font-bold">有兴趣合作吗？</h2>
+            </div>
+          </div><!-- 主要内容 -->
+          <div class="bg-slate-900/50 rounded-xl p-8 mb-6 border border-blue-500/20">
+            <p class="text-lg opacity-90 leading-relaxed mb-6">作为我们研发路线图和 i-Lab 开发阶段的一部分，我们正在寻找合作伙伴——<strong
+                class="text-blue-300">CEX 安全团队</strong>，<strong资金和 L2 项目 — 用于验证用例和共同设计风险仪表板智能 API 和可解释评分模型。</p>
+                <div class="grid md:grid-cols-3 gap-4 mb-6">
+                  <div class="bg-blue-500/10 rounded-lg p-4 border border-blue-500/30">
+                    <div class="text-2xl mb-2"> 🛡️ </div>
+                    <div class="text-sm font-semibold text-blue-300"> CEX 安全 </div>
+                    <div class="text-xs opacity-70 mt-1"> 风险监控和上市情报 </div>
+                  </div>
+                  <div class="bg-purple-500/10 rounded-lg p-4 border border-purple-500/30">
+                    <div class="text-2xl mb-2"> 💼 </div>
+                    <div class="text-sm font-semibold text-purple-300"> 基金和VC </div>
+                    <div class="text-xs opacity-70 mt-1"> 投资组合跟踪和尽职调查 </div>
+                  </div>
+                  <div class="bg-cyan-500/10 rounded-lg p-4 border border-cyan-500/30">
+                    <div class="text-2xl mb-2"> ⛓️ </div>
+                    <div class="text-sm font-semibold text-cyan-300"> L2 项目 </div>
+                    <div class="text-xs opacity-70 mt-1"> 链上安全 &生态系统健康</div>
+                  </div>
+                </div>
+                <div
+                  class="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg p-4 border border-blue-500/20">
+                  <div class="flex items-start gap-3"> <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5"
+                      fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    <p class="text-sm opacity-90 leading-relaxed"><strong class="text-blue-300">合作优势：</strong>
+                      提前体验引擎并参与塑造Web3风险基础设施与<strong>法国2030优先事项</strong>保持一致。</p>
+                  </div>
+                </div>
+          </div><!-- 联系方式 -->
+          <div class="space-y-4">
+            <div class="text-center">
+              <h3 class="text-xl font-bold mb-3 text-blue-300">联系我们</h3>
+            </div>
+            <div class="bg-slate-900/50 rounded-lg p-6 border border-blue-500/30">
+              <div class="space-y-3">
+                <div class="flex items-center justify-center gap-3"> <svg class="w-5 h-5 text-blue-400" fill="none"
+                    stroke="currentColor" viewbox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg><span class="text-sm opacity-80">合作咨询或 i-Lab 评估：</span> </div>
+                <div class="text-center"><a href="mailto:admin@sentinelhq.io"
+                    class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24" 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg> admin@sentinelhq.io </a> </div>
+                <div class="pt-3 border-t border-blue-500/20 text-center">
+                  <p class="text-sm opacity-70"><strong>FR</strong> : Pour toute demande liée au partenariat ou à
+                    l'évaluation i-Lab : <a href="mailto:admin@sentinelhq.io"
+                      class="text-blue-400 hover:text-blue-300 underline">admin@sentinelhq.io</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+  <script> // 实时数据表逻辑 const tokens = [ { name: 'ERC-20 资产', icon: '🔹', chain: 'ETH', tooltip: 'PEPE' }, { name: 'Solana 资产', icon: '⚡', chain: 'SOL', tooltip: 'WIF' }, { name: 'Solana 资产', icon: '🟣', chain: 'SOL', tooltip: 'BONK' }, { name: 'ERC-20 资产', icon: '🔸', chain: 'ETH', tooltip: 'SHIB' }, { name: 'ERC-20 资产', icon: '⚔️', chain: 'ETH', tooltip: 'FLOKI' }, { name: 'L1 资产', icon: '🪙',链：'DOGE'，工具提示：'DOGE'}, { 名称：'L2 Asset'，图标：'🔵'，链：'ARB'，工具提示：'ARB'}, { 名称：'L2 Asset'，图标：'🔴'，链：'OP'，工具提示：'OP' } ]; const signalTypes = [ { type: '鲸鱼警报', color: 'yellow', icon: '🐋' }, { type: 'CEX上市', color: 'green', icon: '📈' }, { type: '风险投资活动', color: 'purple', icon: '💼' }, { type: '社交媒体活跃', color: 'blue', icon: '🔥' }, { type: '精明资金', color: 'cyan', icon: '🧠' }, { type: '流动性下降', color: 'red', icon: '⚠️' } ]; const impacts = ['流动性压力上升', '波动性风险上升', '结构性压力', '中性风险环境']; const prioritys = ['P1', 'P2', 'P3']; let signalData = []; let signalIdCounter = 0; function generateSignal() { const token = tokens[Math.floor(Math.random() * tokens.length)]; const signal = signalTypes[Math.floor(Math.random() * signalTypes.length)]; const impact = impacts[Math.floor(Math.random() * impacts.length)]; const priority = prioritys[Math.floor(Math.random() * prioritys.length)]; const riskScore = (Math.random() * 10).toFixed(1); const details = [ `检测到 $${(Math.random() * 50 + 10).toFixed(1)}M 的转账`, `24 小时内新增 ${Math.floor(Math.random() * 500 + 100)}K 个地址`, `交易量激增 +${Math.floor(Math.random() * 300 + 50)}%`, `Twitter 提及量增加 ${Math.floor(Math.random() * 400 + 100)}%`, `${Math.floor(Math.random() * 5 + 2)} 个主要钱包正在积累` ]; return { id: signalIdCounter++, token, signal, details: details[Math.floor(Math.random() * details.length)], impact, priority, riskScore, timestamp: new Date() }; } function renderTable() { const tbody = document.getElementById('signal-table-body'); // 只保留最近的 10 个信号 if (signalData.length > 10) { signalData = signalData.slice(0, 10); } tbody.innerHTML = signalData.map(signal => { const timeDiff = Math.floor((new Date() - signal.timestamp) / 1000); const timeStr = timeDiff < 60 ? `${timeDiff}s ago` : `${Math.floor(timeDiff / 60)}m ago`; const impactColors = { '流动性压力 ↑': 'text-red-400', '波动性风险 ↑': 'text-orange-400', '结构性压力': 'text-yellow-400', '中性风险环境': 'text-gray-400' }; const priorityColors = { 'P1':const riskColor = signal.riskScore >= 7 ? 'text-red-400' : signal.riskScore >= 5 ? 'text-yellow-400' : 'text-green-400'; return ` <div class="grid grid-cols-12 gap-4 px-6 py-4 hover:bg-slate-800/30 transition-colors" data-signal-id="${signal.id}" title="${signal.token.tooltip}"> <div class="col-span-2 flex items-center gap-2"> <span class="text-xl">${signal.token.icon}</span> <div> <div class="font-bold text-sm">${signal.token.name}</div> <div class="text-xs opacity-60">${signal.token.chain}</div> </div> </div> <div class="col-span-2 flex items-center gap-2"> <span>${signal.signal.icon}</span> <span class="text-sm text-${signal.signal.color}-400">${signal.signal.type}</span> </div> <div class="col-span-3 flex items-center"> <span class="text-xs opacity-80">${signal.details}</span> </div> <div class="col-span-2 flex items-center"> <span class="text-sm font-semibold ${impactColors[signal.impact]}">${signal.impact}</span> </div> <div class="col-span-1 flex items-center justify-center"> <span class="text-sm font-bold ${riskColor}">${signal.riskScore}</span> </div> <div class="col-span-1 flex items-center justify-center"> <span class="px-2 py-1 rounded text-xs font-medium border ${priorityColors[signal.priority]}">${signal.priority}</span> </div> <div class="col-span-1 flex items-center justify-end"> <span class="text-xs opacity-60">${timeStr}</span> </div> </div> `; }).join(''); } // 使用一些信号初始化 for (let i = 0; i < 8; i++) { signalData.unshift(generateSignal()); } renderTable(); // 每 3-5 秒添加一个新信号 setInterval(() => { signalData.unshift(generateSignal()); renderTable(); }, Math.random() * 2000 + 3000); // 每秒更新一次时间戳 setInterval(() => { renderTable(); }, 1000); // 筛选按钮功能 document.querySelectorAll('button').forEach((btn​​) => { if (btn.textContent === '全部' || btn.textContent === '高风险' || btn.textContent === '鲸鱼警报') { btn.addEventListener('click', function() { // 更新按钮的激活状态 this.parentElement.querySelectorAll('button').forEach(b => { b.classList.remove('bg-blue-500/20'); b.classList.add('bg-slate-800/50'); }); this.classList.remove('bg-slate-800/50'); this.classList.add('bg-blue-500/20'); }); } }); </script>
+  <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'9ad6a20887b9406b',t:'MTc2NTY0MTE5MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
 </body>
 
 </html>
