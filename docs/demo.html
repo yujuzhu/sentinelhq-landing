@@ -2028,6 +2028,92 @@
         });
     </script>
     <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'9ad668ad4545d821',t:'MTc2NTYzODg0Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
-</body>
+    // emoji-fix.js
+    // 运行时修复替代字符 (�) 导致的 emoji 显示问题。
+    // 说明：将此脚本放在 demo.html
+</body> 之前或作为单独文件引入。
+// 不会更改 HTML 结构，仅在渲染时替换不可显示字符并添加 emoji 字体回退。
+<script>
+    (function () {
+        function addEmojiFontFallback() {
+            if (document.getElementById('emoji-fallback-style')) return;
+            const css = `
+      /* 为可能包含 emoji 的元素添加字体回退，优先使用系统彩色 emoji 字体 */
+      .emoji-fallback, .inline-flex, .glass-effect, button, span, div {
+        font-family: system-ui, -apple-system, "Segoe UI Emoji", "Noto Color Emoji", "Apple Color Emoji", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+      }
+    `;
+            const style = document.createElement('style');
+            style.id = 'emoji-fallback-style';
+            style.appendChild(document.createTextNode(css));
+            document.head.appendChild(style);
+        }
 
-</html>
+        function replaceReplacementChars() {
+            // 寻找包含替代字符 U+FFFD 或连续问号的节点并进行有限修复
+            const replacementRegex = /[\uFFFD�\?]{1,}/g;
+
+            // 1) 修复 MONITOR badge（只在文本包含 MONITOR 时替换前导的替代字符）
+            Array.from(document.querySelectorAll('span, div, strong')).forEach(el => {
+                if (!el.textContent) return;
+                if (/MONITOR/i.test(el.textContent) && replacementRegex.test(el.textContent)) {
+                    // 用你想要的 emoji 替换前导的不可显示字符（默认使用 🟡）
+                    el.textContent = el.textContent.replace(replacementRegex, '🟡');
+                    el.classList.add('emoji-fallback');
+                }
+            });
+
+            // 2) 修复 Evidence chips 中出现的替代字符（例如 "���� Volume..."）
+            // 目标：只替换那些包含 "Volume" 或包含明显替代字符的 chip 文本前缀
+            Array.from(document.querySelectorAll('.inline-flex, .px-3, .group, .glass-effect, .flex, div')).forEach(el => {
+                if (!el.textContent) return;
+                if (replacementRegex.test(el.textContent)) {
+                    // 更有针对性地只替换前导的替代字符（保留原有文字如 "Volume +215% (24h)"）
+                    // 选择一个通用的图示 (📊) 来代替不可显示字符
+                    let newHtml = el.innerHTML.replace(replacementRegex, '📊');
+                    if (newHtml !== el.innerHTML) {
+                        el.innerHTML = newHtml;
+                        el.classList.add('emoji-fallback');
+                    }
+                }
+            });
+
+            // 3) 全局兜底：如果仍有单独的替代字符节点，用一个中性 emoji 替换（避免破坏原意）
+            Array.from(document.querySelectorAll('body *')).forEach(node => {
+                if (node.childNodes && node.childNodes.length) {
+                    node.childNodes.forEach(n => {
+                        if (n.nodeType === Node.TEXT_NODE && replacementRegex.test(n.nodeValue)) {
+                            // 仅替换替代字符，不动其他文本
+                            n.nodeValue = n.nodeValue.replace(replacementRegex, '🔔');
+                        }
+                    });
+                }
+            });
+        }
+
+        function runFixes() {
+            addEmojiFontFallback();
+            replaceReplacementChars();
+        }
+
+        // 在 DOM 完全就绪后运行并用 MutationObserver 捕获动态渲染的情况
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                runFixes();
+                // 监听后续动态变化（Retool / SPA 场景会动态插入节点）
+                const obs = new MutationObserver(() => {
+                    replaceReplacementChars();
+                });
+                obs.observe(document.body, { childList: true, subtree: true });
+            });
+        } else {
+            runFixes();
+            const obs = new MutationObserver(() => {
+                replaceReplacementChars();
+            });
+            obs.observe(document.body, { childList: true, subtree: true });
+        }
+    })();
+    </body >
+
+</html >
