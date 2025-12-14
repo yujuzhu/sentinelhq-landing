@@ -1,346 +1,344 @@
 <html lang="en" class="h-full">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SentinelHQ - AI Web3 Risk Intelligence Engine Demo</title>
-
     <style>
         @view-transition {
             navigation: auto;
         }
     </style>
-
     <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
     <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    </style>
 </head>
 
 <body class="h-full bg-slate-900 text-slate-100">
-    body {
-    box-sizing: border-box;
-    }
-
-    @keyframes pulse-glow {
-
-    0%,
-    100% {
-    opacity: 0.3;
-    }
-
-    50% {
-    opacity: 0.6;
-    }
-    }
-
-    @keyframes float {
-
-    0%,
-    100% {
-    transform: translateY(0px);
-    }
-
-    50% {
-    transform: translateY(-10px);
-    }
-    }
-
-    @keyframes scan {
-    0% {
-    transform: translateY(0);
-    }
-
-    100% {
-    transform: translateY(100%);
-    }
-    }
-
-    @keyframes rotate {
-    from {
-    transform: translate(-50%, -50%) rotate(0deg);
-    }
-
-    to {
-    transform: translate(-50%, -50%) rotate(360deg);
-    }
-    }
-
-    @keyframes pulse-ring {
-
-    0%,
-    100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.8;
-    }
-
-    50% {
-    transform: translate(-50%, -50%) scale(1.1);
-    opacity: 0.4;
-    }
-    }
-
-    @keyframes heartbeat {
-
-    0%,
-    100% {
-    transform: scale(1);
-    }
-
-    25% {
-    transform: scale(1.05);
-    }
-
-    50% {
-    transform: scale(1);
-    }
-
-    75% {
-    transform: scale(1.08);
-    }
-    }
-
-    @keyframes counter-rotate {
-    from {
-    transform: translate(-50%, -50%) rotate(360deg);
-    }
-
-    to {
-    transform: translate(-50%, -50%) rotate(0deg);
-    }
-    }
-
-    @keyframes shimmer {
-    to {
-    background-position: 200% center;
-    }
-    }
-
-    .pulse-glow {
-    animation: pulse-glow 3s ease-in-out infinite;
-    }
-
-    .float-animation {
-    animation: float 6s ease-in-out infinite;
-    }
-
-    .grid-background {
-    background-image:
-    linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
-    background-size: 50px 50px;
-    }
-
-    .glass-effect {
-    background: rgba(17, 24, 39, 0.7);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(59, 130, 246, 0.2);
-    }
-
-    .cyber-glow {
-    box-shadow: 0 0 20px currentColor;
-    }
-
-    .heartbeat {
-    animation: heartbeat 2s ease-in-out infinite;
-    }
-
-    /* ========== Responsive / Mobile adjustments ========== */
-    /* 仅添加响应式 CSS，不修改现有 HTML 结构或文本内容 */
-    @media (max-width: 1024px) {
-
-    /* tablet and small laptops: make large containers more compact */
-    .max-w-7xl {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-    }
-
-    .glass-effect {
-    border-radius: 0.75rem !important;
-    }
-    }
-
-    @media (max-width: 768px) {
-
-    /* General scale downs */
-    h1.text-6xl {
-    font-size: 1.6rem !important;
-    line-height: 1.15 !important;
-    }
-
-    p.text-xl {
-    font-size: 1rem !important;
-    }
-
-    .text-6xl {
-    font-size: 1.6rem !important;
-    }
-
-    .text-5xl {
-    font-size: 1.4rem !important;
-    }
-
-    .text-4xl {
-    font-size: 1.25rem !important;
-    }
-
-    .text-3xl {
-    font-size: 1.1rem !important;
-    }
-
-    .text-2xl {
-    font-size: 1rem !important;
-    }
-
-    /* Make large hero grids and card groups stack vertically */
-    .grid.md\:grid-cols-3,
-    .grid.grid-cols-4,
-    .grid.grid-cols-12 {
-    grid-template-columns: 1fr !important;
-    grid-auto-rows: auto !important;
-    }
-
-    /* Ensure each item stretches full width and has spacing */
-    .grid.md\:grid-cols-3>div,
-    .grid.grid-cols-4>div,
-    .grid.grid-cols-12>div {
-    width: 100% !important;
-    margin-bottom: 0.75rem !important;
-    }
-
-    /* Compact navigation */
-    nav .max-w-7xl .flex.items-center.justify-between {
-    gap: .5rem;
-    }
-
-    nav .text-2xl {
-    font-size: 1rem !important;
-    }
-
-    nav .text-sm {
-    font-size: 0.7rem !important;
-    }
-
-    nav button {
-    padding: 0.45rem 0.6rem !important;
-    font-size: 0.85rem !important;
-    }
-
-    /* Hide heavy decorative absolute blobs to reduce clutter */
-    .absolute.top-20.left-10.w-64.h-64,
-    .absolute.bottom-20.right-10.w-96.h-96,
-    .absolute.inset-0.bg-gradient-to-br.from-blue-500/20,
-    /* defensive */
-    .pulse-glow {
-    display: none !important;
-    }
-
-    /* Reduce the large cyberpunk block height */
-    .h-\[600px\] {
-    height: 340px !important;
-    }
-
-    /* Make the large central AI block responsive */
-    .ai-core-wrapper {
-    width: 92% !important;
-    height: auto !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    }
-    }
-
-    /* Reduce paddings globally where Tailwind used px-6 py-8 etc. */
-    .px-6 {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-    }
-
-    .py-8 {
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
-    }
-
-    /* Table / feed: stack columns and keep readable */
-    .grid.grid-cols-12.gap-4.px-6.py-3>div {
-    display: none !important;
-    /* header row hidden on mobile to save space */
-    }
-
-    #signal-table-body>div {
-    display: block !important;
-    padding: .75rem 1rem !important;
-    }
-
-    #signal-table-body>div .col-span-2,
-    #signal-table-body>div .col-span-3,
-    #signal-table-body>div .col-span-1 {
-    display: flex !important;
-    width: 100% !important;
-    justify-content: space-between !important;
-    gap: .5rem !important;
-    margin-bottom: .35rem !important;
-    }
-
-    #signal-table-body>div {
-    border-bottom: 1px solid rgba(148, 163, 184, 0.06) !important;
-    }
-
-    /* Make sure badge/priority cells wrap nicely */
-    .px-2.py-1.rounded.text-xs {
-    padding: 0.2rem 0.4rem !important;
-    font-size: 0.65rem !important;
-    }
-
-    /* Reduce font sizes inside capsules */
-    .relative.px-4.py-8.rounded-full {
-    padding: 0.75rem !important;
-    border-radius: 0.75rem !important;
-    }
-
-    .text-3xl.font-bold {
-    font-size: 1.6rem !important;
-    }
-
-    .text-xs {
-    font-size: 0.7rem !important;
-    }
-
-    /* Turn off float animations on mobile to save CPU / battery */
-    .float-animation {
-    animation: none !important;
-    transform: none !important;
-    }
-
-    /* Ensure overflow horizontally is handled by scroll where needed */
-    .bg-slate-900\/50.rounded-xl.border.overflow-hidden.mb-8,
-    .glass-effect,
-    .h-\[600px\] {
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-    }
-
-    /* Keep important interactive elements accessible */
-    button,
-    a {
-    touch-action: manipulation;
-    }
-
-    /* Slightly increase line-height for small screens readability */
-    body,
-    p,
-    span,
-    div {
-    line-height: 1.25 !important;
-    }
-
-    /* Ensure the footer stacks and remains readable */
-    footer .grid.md\:grid-cols-2 {
-    grid-template-columns: 1fr !important;
-    gap: 1rem !important;
-    }
-
-
-    /* End responsive CSS */
+    ` 和
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SentinelHQ - AI Web3 Risk Intelligence Engine Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes scan {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(100%);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        @keyframes pulse-ring {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.1);
+                opacity: 0.4;
+            }
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1.05);
+            }
+
+            50% {
+                transform: scale(1);
+            }
+
+            75% {
+                transform: scale(1.08);
+            }
+        }
+
+        @keyframes counter-rotate {
+            from {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+
+            to {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+        }
+
+        @keyframes shimmer {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        .pulse-glow {
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .grid-background {
+            background-image:
+                linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .glass-effect {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .cyber-glow {
+            box-shadow: 0 0 20px currentColor;
+        }
+
+        .heartbeat {
+            animation: heartbeat 2s ease-in-out infinite;
+        }
+
+        /* ========== Responsive / Mobile adjustments ========== */
+        /* 仅添加响应式 CSS，不修改现有 HTML 结构或文本内容 */
+        @media (max-width: 1024px) {
+
+            /* tablet and small laptops: make large containers more compact */
+            .max-w-7xl {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            .glass-effect {
+                border-radius: 0.75rem !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            /* General scale downs */
+            h1.text-6xl {
+                font-size: 1.6rem !important;
+                line-height: 1.15 !important;
+            }
+
+            p.text-xl {
+                font-size: 1rem !important;
+            }
+
+            .text-6xl {
+                font-size: 1.6rem !important;
+            }
+
+            .text-5xl {
+                font-size: 1.4rem !important;
+            }
+
+            .text-4xl {
+                font-size: 1.25rem !important;
+            }
+
+            .text-3xl {
+                font-size: 1.1rem !important;
+            }
+
+            .text-2xl {
+                font-size: 1rem !important;
+            }
+
+            /* Make large hero grids and card groups stack vertically */
+            .grid.md\:grid-cols-3,
+            .grid.grid-cols-4,
+            .grid.grid-cols-12 {
+                grid-template-columns: 1fr !important;
+                grid-auto-rows: auto !important;
+            }
+
+            /* Ensure each item stretches full width and has spacing */
+            .grid.md\:grid-cols-3>div,
+            .grid.grid-cols-4>div,
+            .grid.grid-cols-12>div {
+                width: 100% !important;
+                margin-bottom: 0.75rem !important;
+            }
+
+            /* Compact navigation */
+            nav .max-w-7xl .flex.items-center.justify-between {
+                gap: .5rem;
+            }
+
+            nav .text-2xl {
+                font-size: 1rem !important;
+            }
+
+            nav .text-sm {
+                font-size: 0.7rem !important;
+            }
+
+            nav button {
+                padding: 0.45rem 0.6rem !important;
+                font-size: 0.85rem !important;
+            }
+
+            /* Hide heavy decorative absolute blobs to reduce clutter */
+            .absolute.top-20.left-10.w-64.h-64,
+            .absolute.bottom-20.right-10.w-96.h-96,
+            .absolute.inset-0.bg-gradient-to-br.from-blue-500/20,
+            /* defensive */
+            .pulse-glow {
+                display: none !important;
+            }
+
+            /* Reduce the large cyberpunk block height */
+            .h-\[600px\] {
+                height: 340px !important;
+            }
+
+            /* Make the large central AI block responsive */
+            .absolute[style*="left: 50%"][style*="width: 400px"] {
+                width: 92% !important;
+                height: auto !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+            }
+
+            /* Reduce paddings globally where Tailwind used px-6 py-8 etc. */
+            .px-6 {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            .py-8 {
+                padding-top: 1rem !important;
+                padding-bottom: 1rem !important;
+            }
+
+            /* Table / feed: stack columns and keep readable */
+            .grid.grid-cols-12.gap-4.px-6.py-3>div {
+                display: none !important;
+                /* header row hidden on mobile to save space */
+            }
+
+            #signal-table-body>div {
+                display: block !important;
+                padding: .75rem 1rem !important;
+            }
+
+            #signal-table-body>div .col-span-2,
+            #signal-table-body>div .col-span-3,
+            #signal-table-body>div .col-span-1 {
+                display: flex !important;
+                width: 100% !important;
+                justify-content: space-between !important;
+                gap: .5rem !important;
+                margin-bottom: .35rem !important;
+            }
+
+            #signal-table-body>div {
+                border-bottom: 1px solid rgba(148, 163, 184, 0.06) !important;
+            }
+
+            /* Make sure badge/priority cells wrap nicely */
+            .px-2.py-1.rounded.text-xs {
+                padding: 0.2rem 0.4rem !important;
+                font-size: 0.65rem !important;
+            }
+
+            /* Reduce font sizes inside capsules */
+            .relative.px-4.py-8.rounded-full {
+                padding: 0.75rem !important;
+                border-radius: 0.75rem !important;
+            }
+
+            .text-3xl.font-bold {
+                font-size: 1.6rem !important;
+            }
+
+            .text-xs {
+                font-size: 0.7rem !important;
+            }
+
+            /* Turn off float animations on mobile to save CPU / battery */
+            .float-animation {
+                animation: none !important;
+                transform: none !important;
+            }
+
+            /* Ensure overflow horizontally is handled by scroll where needed */
+            .bg-slate-900\/50.rounded-xl.border.overflow-hidden.mb-8,
+            .glass-effect,
+            .h-\[600px\] {
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+
+            /* Keep important interactive elements accessible */
+            button,
+            a {
+                touch-action: manipulation;
+            }
+
+            /* Slightly increase line-height for small screens readability */
+            body,
+            p,
+            span,
+            div {
+                line-height: 1.25 !important;
+            }
+
+            /* Ensure the footer stacks and remains readable */
+            footer .grid.md\:grid-cols-2 {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+        }
+
+        /* End responsive CSS */
     </style>
     <div id="app" class="w-full h-full overflow-auto"><!-- Navigation -->
         <nav class="fixed top-0 left-0 right-0 z-50 glass-effect">
@@ -1421,7 +1419,7 @@
                                 </div>
                             </div>
                         </div><!-- Layer 2: AI CORE (CENTER) - CYBERPUNK HEART -->
-                        <div class="absolute ai-core-wrapper"
+                        <div class="absolute"
                             style="left: 50%; top: 50%; transform: translate(-50%, -50%); width: 400px; height: 400px;">
                             <div class="text-xs font-bold text-pink-300 mb-3 text-center tracking-widest"
                                 style="position: absolute; top: -32px; left: 50%; transform: translateX(-50%); text-shadow: 0 0 15px rgba(236, 72, 153, 1);">
@@ -1469,7 +1467,7 @@
                                         </div>
                                     </div>
                                 </div><!-- Processing Modules with Enhanced Glow -->
-                                <div class="absolute pattern-detection" style="left: 50%;">
+                                <div class="absolute" style="top: 0; left: 50%; transform: translate(-50%, -64px);">
                                     <div class="bg-cyan-500/30 backdrop-blur-md border-2 border-cyan-400/50 rounded-lg px-4 py-2 text-center shadow-lg"
                                         style="box-shadow: 0 0 20px rgba(6, 182, 212, 0.7);">
                                         <div class="text-[10px] text-cyan-100 font-bold">
